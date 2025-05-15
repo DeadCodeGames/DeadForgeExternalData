@@ -40,7 +40,7 @@
                     "russian": "https://cdn2.steamgriddb.com/grid/11d4f482a301ef575f4fda7c5cefba37.png"
                 }
             },
-            "capsuleUrl":{
+            "capsuleUrl": {
                 "filePath": {
                     "english": "%USERDATA%/game_assets/itch_89457.capsule_english.png",
                     "russian": "%USERDATA%/game_assets/itch_89457.capsule_russian.png"
@@ -78,6 +78,54 @@
                 "remoteUrl": "https://cdn2.steamgriddb.com/grid/610a45d03d044510efd4f49a7b45c7a4.png"
             }
         }
-        
+    },
+    {
+        "matches": [
+            {
+                "source": "epic",
+                "id": "88814f1dc3aa4b7f810821e03edebb81"
+            }
+        ],
+        "media": {
+            "iconUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_88814f1dc3aa4b7f810821e03edebb81.icon.jpg",
+                "remoteUrl": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/2795000/4be12126f4ed5d74addfca7e854acff3d716b09e.jpg"
+            },
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_88814f1dc3aa4b7f810821e03edebb81.hero.jpg",
+                "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/2795000/library_hero_2x.jpg"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_88814f1dc3aa4b7f810821e03edebb81.logo.png",
+                "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/2795000/logo_2x.png",
+                "logo_position": {
+                    "pinned_position": "CenterCenter",
+                    "height_pct": 100,
+                    "width_pct": 67.28754365541329
+                }
+            },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_88814f1dc3aa4b7f810821e03edebb81.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/d38eb535478e1308298aa38d1ed4cf9f.png"
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_88814f1dc3aa4b7f810821e03edebb81.capsule.png",
+                "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/2795000/library_600x900_2x.jpg"
+            }
+        }
+    },
+    {
+        "matches": [
+            {
+                "source": "steam",
+                "id": "2795000"
+            }
+        ],
+        "media": {
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_2795000.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/d38eb535478e1308298aa38d1ed4cf9f.png"
+            }
+        }
     }
 ]
