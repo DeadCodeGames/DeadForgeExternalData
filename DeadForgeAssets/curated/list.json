@@ -1,0 +1,55 @@
+[
+    {
+        "matches": [
+            {
+                "source": "itch",
+                "id": "89457"
+            }
+        ],
+        "media": {
+            "iconUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_89457.icon.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/icon/e15c3c9bd7cf13f040f3af84ecb31e3a.png"
+            },
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_89457.hero.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/hero/afe16ad52c7c39deed23783b44a599fe.png"
+            },
+            "logoUrl": {
+                "filePath": {
+                    "english": "%USERDATA%/game_assets/itch_89457.logo_english.png",
+                    "russian": "%USERDATA%/game_assets/itch_89457.logo_russian.png"
+                },
+                "remoteUrl": {
+                    "english": "https://cdn2.steamgriddb.com/logo/986bd8886c5f81a19111ef4e4feac27f.png",
+                    "russian": "https://cdn2.steamgriddb.com/logo/6826f764806a40fd23befa2d9a3b17a9.png"
+                },
+                "logoPosition": {
+                    "pinned_position": "BottomLeft",
+                    "height_pct": 75,
+                    "width_pct": 50
+                }
+            },
+            "headerUrl": {
+                "filePath": {
+                    "english": "%USERDATA%/game_assets/itch_89457.header_english.png",
+                    "russian": "%USERDATA%/game_assets/itch_89457.header_russian.png"
+                },
+                "remoteUrl": {
+                    "english": "https://cdn2.steamgriddb.com/grid/66828455a6e8ff61e3cbcda8362c8ba6.png",
+                    "russian": "https://cdn2.steamgriddb.com/grid/11d4f482a301ef575f4fda7c5cefba37.png"
+                }
+            },
+            "capsuleUrl":{
+                "filePath": {
+                    "english": "%USERDATA%/game_assets/itch_89457.capsule_english.png",
+                    "russian": "%USERDATA%/game_assets/itch_89457.capsule_russian.png"
+                },
+                "remoteUrl": {
+                    "english": "https://cdn2.steamgriddb.com/grid/063a53005880eddbf60cb8b23f71605e.png",
+                    "russian": "https://cdn2.steamgriddb.com/grid/395c45611069ea605582815be3e84cd0.png"
+                }
+            }
+        }
+    }
+]
