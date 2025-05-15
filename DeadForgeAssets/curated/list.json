@@ -24,9 +24,9 @@
                     "english": "https://cdn2.steamgriddb.com/logo/986bd8886c5f81a19111ef4e4feac27f.png",
                     "russian": "https://cdn2.steamgriddb.com/logo/6826f764806a40fd23befa2d9a3b17a9.png"
                 },
-                "logoPosition": {
+                "logo_position": {
                     "pinned_position": "BottomLeft",
-                    "height_pct": 75,
+                    "height_pct": 100,
                     "width_pct": 50
                 }
             },
@@ -67,8 +67,8 @@
             "logoUrl": {
                 "filePath": "%USERDATA%/game_assets/steam_878320.logo.png",
                 "remoteUrl": "https://cdn2.steamgriddb.com/logo/e2c9342d0e670ec1cb3997d3c4427d83.png",
-                "logoPosition": {
-                    "pinned_position": "Center",
+                "logo_position": {
+                    "pinned_position": "CenterCenter",
                     "height_pct": 50,
                     "width_pct": 50
                 }
