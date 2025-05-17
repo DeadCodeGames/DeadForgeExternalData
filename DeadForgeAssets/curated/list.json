@@ -2,6 +2,111 @@
     {
         "matches": [
             {
+                "source": "steam",
+                "id": "-1"
+            }
+        ],
+        "media": {
+            "iconUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_-1.icon.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/icon/f161106ed7ba23d15491b99478d721b7/32/256x256.png"
+            },
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_-1.hero.jpg",
+                "remoteUrl": "https://cdn2.steamgriddb.com/hero/485e90ebaee7d3606c1a254721a46681.jpg"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_-1.logo.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/logo/2472ed54742b7773cffc40910063839b.png",
+                "logo_position": {
+                    "pinned_position": "CenterCenter",
+                    "height_pct": 50,
+                    "width_pct": 50
+                }
+            },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_-1.header.jpg",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/101342b37476104c212c5c2c0ed9bf62.jpg"
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_-1.capsule.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/39c2966989c4f0091a99eef7f1d09c09.png"
+            }
+        }
+    },
+    {
+        "matches": [
+            {
+                "source": "itch",
+                "id": "-1"
+            }
+        ],
+        "media": {
+            "iconUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_-1.icon.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/icon/2ad9e5e943e43cad612a7996c12a8796/32/256x256.png"
+            },
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_-1.hero.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/hero/234b941e88b755b7a72a1c1dd5022f30.png"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_-1.logo.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/logo/2b9eb12abdcf58e92fcf797a1eb2983d.png",
+                "logo_position": {
+                    "pinned_position": "CenterCenter",
+                    "height_pct": 75,
+                    "width_pct": 75
+                }
+            },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_-1.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/a888a53ef574af0a7e4084a2f6c80cdb.png"
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/itch_-1.capsule.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/6523cc2653ef3a0fed83fb40b32d16f3.png"
+            }
+        }
+    },
+    {
+        "matches": [
+            {
+                "source": "epic",
+                "id": "-1"
+            }
+        ],
+        "media": {
+            "iconUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_-1.icon.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/icon/34ffeb359a192eb8174b6854643cc046/32/256x256.png"
+            },
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_-1.hero.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/hero/164fbf608021ece8933758ee2b28dd7d.png"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_-1.logo.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/logo/8402e5776dfcbac2fe148bb2c35528fc.png",
+                "logo_position": {
+                    "pinned_position": "CenterCenter",
+                    "height_pct": 75,
+                    "width_pct": 75
+                }
+            },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_-1.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/5acb9e2ab65eb34efc7eb047a22db057.png"
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_-1.capsule.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/a233a10d769bacf766437e5d588f823e.png"
+            }
+        }
+    },
+    {
+        "matches": [
+            {
                 "source": "itch",
                 "id": "89457"
             }
