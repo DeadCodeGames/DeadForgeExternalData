@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '0 */6 * * *'  # Run every 6 hours (at minute 0 of hours 0, 6, 12, 18)
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,10 +19,20 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+          
+      - name: Download Images and Update Hashes
+        run: bun run download-and-hash
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./DeadForgeAssets
+          
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4

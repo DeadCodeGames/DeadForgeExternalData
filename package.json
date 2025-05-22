@@ -1,0 +1,14 @@
+{
+  "name": "deadforge-assets",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Assets for the DeadForge project",
+  "scripts": {
+    "download-and-hash": "bun run scripts/download-and-hash.js",
+    "predeploy": "bun run scripts/download-and-hash.js"
+  },
+  "dependencies": {},
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+} 
