@@ -26,6 +26,7 @@ jobs:
           bun-version: latest
           
       - name: Download Images and Update Hashes
+        id: download
         run: bun run download-and-hash
         
       - name: Upload artifact
@@ -36,3 +37,14 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
+      - name: Check for download failures
+        if: always() # Run even if previous steps fail
+        run: |
+          if [ -f "download_failures.txt" ]; then
+            echo "::error::Some images failed to download. See download_failures.txt for details."
+            cat download_failures.txt
+            exit 1
+          else
+            echo "All downloads were successful!"
+          fi
