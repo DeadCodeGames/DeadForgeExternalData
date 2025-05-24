@@ -1,6 +1,8 @@
 # DeadForge External Assets **××**
 
-This repository contains curated game assets for the DeadForge project, including icons, heroes, logos, headers and capsule images for various platforms.
+This repository contains:
+- curated game assets for the DeadForge project, including icons, heroes, logos, headers and capsule images for software from various other platforms
+- notes about specific games, including security warnings, compatibility issues, content warnings, and more
 
 ## External Assets
 
