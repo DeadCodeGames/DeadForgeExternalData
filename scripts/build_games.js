@@ -6,37 +6,59 @@ if (!isGitHubActionsEnvironment()) {
 const fs = require('fs');
 const path = require('path');
 
-// Read all game files from the games directory
+
 const gamesDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
-const outputFile = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+const notesDir = path.join(__dirname, '../DeadForgeAssets/notes/games');
+const outputGameFile = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+const outputNotesFile = path.join(__dirname, '../DeadForgeAssets/notes/list.json');
 
-// Read all .json files from the games directory
-const gameFiles = fs.readdirSync(gamesDir)
-    .filter(file => file.endsWith('.json'))
-    .map(file => path.join(gamesDir, file));
 
-// Combine all games into a single array, handling both single objects and arrays
-const combinedGames = gameFiles.flatMap(file => {
-    const content = JSON.parse(fs.readFileSync(file, 'utf8'));
-    // If the content is an array, return all its elements
-    // If it's a single object, wrap it in an array
-    return Array.isArray(content) ? content : [content];
-});
+function processDirectory(dir) {
+    if (!fs.existsSync(dir)) {
+        return [];
+    }
+    return fs.readdirSync(dir)
+        .filter(file => file.endsWith('.json'))
+        .map(file => path.join(dir, file));
+}
 
-// Write the combined file
-fs.writeFileSync(outputFile, JSON.stringify(combinedGames, null, 2));
+
+const gameFiles = processDirectory(gamesDir);
+const noteFiles = processDirectory(notesDir);
+
+
+function combineFiles(files) {
+    return files.flatMap(file => {
+        const content = JSON.parse(fs.readFileSync(file, 'utf8'));
+        return Array.isArray(content) ? content : [content];
+    });
+}
+
+
+const combinedGames = combineFiles(gameFiles);
+const combinedNotes = combineFiles(noteFiles);
+
+
+fs.writeFileSync(outputGameFile, JSON.stringify(combinedGames, null, 2));
+fs.writeFileSync(outputNotesFile, JSON.stringify(combinedNotes, null, 2));
 
 if (isGitHubActionsEnvironment()) {
-    // Delete all files in the games directory
-    gameFiles.forEach(file => {
+    // Delete all files in both directories
+    [...gameFiles, ...noteFiles].forEach(file => {
         fs.unlinkSync(file);
     });
 
-    // Remove the games directory
-    fs.rmdirSync(gamesDir);
+    // Remove both directories
+    if (fs.existsSync(gamesDir)) {
+        fs.rmdirSync(gamesDir);
+    }
+    if (fs.existsSync(notesDir)) {
+        fs.rmdirSync(notesDir);
+    }
 } else {
-    console.log('Deleting the games directory is of destructive nature, and should not be run outside of a CI environment during the build step. Skipping.');
+    console.log('Deleting the directories is of destructive nature, and should not be run outside of a CI environment during the build step. Skipping.');
 }
 
-console.log(`Combined ${combinedGames.length} games into ${outputFile}`);
-console.log(`Cleaned up ${gamesDir} directory`); 
+console.log(`Combined ${combinedGames.length} games into ${outputGameFile}`);
+console.log(`Combined ${combinedNotes.length} notes into ${outputNotesFile}`);
+console.log(`Cleaned up ${gamesDir} and ${notesDir} directories`); 

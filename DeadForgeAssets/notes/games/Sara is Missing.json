@@ -1,0 +1,17 @@
+{
+    "matches": [
+        {
+            "source": "itch",
+            "id": "89457"
+        }
+    ],
+    "notes": [
+        {
+            "type": "security_warning",
+            "severity": "medium",
+            "title": "End-game Domain Redirect Warning",
+            "description": "The game attempts to open saraismissing.com in your browser at the end. This domain is no longer controlled by the original developers and may be unsafe.\n\n<spoiler>At the end of the game, players are redirected to saraismissing.com. This domain was originally owned by Kaigan Games (the developers) and was used to redirect to their main website. However, after their domain registration expired, malicious actors registered the domain. The current domain behavior varies based on several factors:\n\n- Browser type (Chromium-based browsers are more likely to be affected)\n- Device type (Mobile devices are more frequently targeted)\n- ISP/VPN usage\n- Random chance\n\nThe domain may redirect to either a parking page or, more concerningly, to phishing/scam websites. Mobile user agents and Chromium-based browsers have been observed to have a significantly higher likelihood of being redirected to malicious content compared to desktop user agents or Firefox-based browsers.</spoiler>\n\nThis game is also available on Android via the itch.io page. This risk applies on mobile devices as well.\nWe advise you to be careful about clicking links on browser tabs opened by this website, and to take some of the following precautions:",
+            "recommendation": "1. Run the game in a sandboxed environment.\n2. Block access to saraismissing.com in your hosts file or firewall.\n3. Have network protection (antivirus/firewall) active while playing.\n4. Consider playing without an internet connection. The website cannot cause any damage, if it cannot load at all."
+        }
+    ]
+} 

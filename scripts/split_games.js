@@ -7,23 +7,41 @@ if (!isGitHubActionsEnvironment()) {
 const fs = require('fs');
 const path = require('path');
 
-// Read the source file
-const sourceData = JSON.parse(fs.readFileSync(path.join(__dirname, '../DeadForgeAssets/curated/list.json'), 'utf8'));
 
-// Create output directory if it doesn't exist
-const outputDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
-if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
+function processListFile(sourceFile, outputDir) {
+    if (!fs.existsSync(sourceFile)) {
+        console.log(`Source file ${sourceFile} does not exist, skipping...`);
+        return 0;
+    }
+
+    const sourceData = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
+
+    // Create output directory if it doesn't exist
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, { recursive: true });
+    }
+
+    // Process each item
+    sourceData.forEach((item) => {
+        // Generate a filename based on the item's identifier
+        const itemId = item.matches[0].source + '_' + item.matches[0].id;
+        const outputPath = path.join(outputDir, `${itemId}.json`);
+        
+        // Write the individual file
+        fs.writeFileSync(outputPath, JSON.stringify(item, null, 2));
+    });
+
+    return sourceData.length;
 }
 
-// Process each game
-sourceData.forEach((game) => {
-    // Generate a filename based on the game's identifier
-    const gameId = game.matches[0].source + '_' + game.matches[0].id;
-    const outputPath = path.join(outputDir, `${gameId}.json`);
-    
-    // Write the individual game file
-    fs.writeFileSync(outputPath, JSON.stringify(game, null, 2));
-});
 
-console.log(`Split ${sourceData.length} games into individual files in ${outputDir}`);
+const gamesSourceFile = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+const notesSourceFile = path.join(__dirname, '../DeadForgeAssets/notes/list.json');
+const gamesOutputDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
+const notesOutputDir = path.join(__dirname, '../DeadForgeAssets/notes/games');
+
+const gamesCount = processListFile(gamesSourceFile, gamesOutputDir);
+const notesCount = processListFile(notesSourceFile, notesOutputDir);
+
+console.log(`Split ${gamesCount} games into individual files in ${gamesOutputDir}`);
+console.log(`Split ${notesCount} notes into individual files in ${notesOutputDir}`);
