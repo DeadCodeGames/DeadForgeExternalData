@@ -52,3 +52,7 @@ Each game entry contains a `matches` array similar to the assets list, as well a
 - `recommendation`: Optional steps or suggestions to mitigate issues (can use Markdown formatting)
 
 For possible spoilers, we recommend using the `<spoiler>` and `</spoiler>` tags. However, we also recommend providing non-spoiler information and advice.
+
+For example, the note for Sara is Missing (**SPOILER WARNING FOR SARA IS MISSING**) is rendered as: 
+![Spoilered](README/SIMSpoilered.png)
+[Unspoilered image here](README/SIMUnspoilered.png)
