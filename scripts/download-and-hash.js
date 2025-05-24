@@ -1,3 +1,4 @@
+import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
 const fs = require('fs').promises;
 const path = require('path');
 const crypto = require('crypto');
@@ -66,9 +67,12 @@ async function processUrlEntry(urlEntry) {
                 const buffer = await downloadFile(url);
                 const hash = calculateHash(buffer);
                 
-                // Create language-specific hash object if it doesn't exist
-                if (!result.hash) result.hash = {};
-                result.hash[lang] = hash;
+
+                if (isGitHubActionsEnvironment()) {
+                    // Create language-specific hash object if it doesn't exist
+                    if (!result.hash) result.hash = {};
+                    result.hash[lang] = hash;
+                }
                 
                 // Save the file if download was successful
                 if (buffer) {
@@ -82,9 +86,11 @@ async function processUrlEntry(urlEntry) {
                 }
             } catch (error) {
                 console.error(`Error processing ${url}: ${error.message}`);
-                // Create language-specific hash object if it doesn't exist
-                if (!result.hash) result.hash = {};
-                result.hash[lang] = "404";
+                if (isGitHubActionsEnvironment()) {
+                    // Create language-specific hash object if it doesn't exist
+                    if (!result.hash) result.hash = {};
+                    result.hash[lang] = "404";
+                }
                 downloadFailures.push(url);
             }
         }
@@ -107,18 +113,29 @@ async function processUrlEntry(urlEntry) {
             } else {
                 console.log(`Recording hash as "404" for ${urlEntry.remoteUrl}`);
             }
-            
-            return { ...urlEntry, hash };
+            if (isGitHubActionsEnvironment()) {
+                return { ...urlEntry, hash };
+            } else {
+                return urlEntry;
+            }
         } catch (error) {
             console.error(`Error processing ${urlEntry.remoteUrl}: ${error.message}`);
             downloadFailures.push(urlEntry.remoteUrl);
-            return { ...urlEntry, hash: "404" };
+            if (isGitHubActionsEnvironment()) {
+                return { ...urlEntry, hash: "404" };
+            } else {
+                return urlEntry;
+            }
         }
     }
 }
 
 // Main function
 async function main() {
+    if (!isGitHubActionsEnvironment()) {
+        console.log('This script is of destructive nature, and should not be run outside of a CI environment.');
+        console.log('All destructive functions have been disabled.')
+    }
     try {
         // Reset the failure tracking array
         downloadFailures = [];
@@ -153,8 +170,6 @@ async function main() {
         // Write out the failure status for GitHub Actions to read
         if (downloadFailures.length > 0) {
             console.log(`::warning::${downloadFailures.length} images failed to download`);
-            console.log(`::set-output name=download_failures::${downloadFailures.length}`);
-            // For newer GitHub Actions
             console.log(`echo "download_failures=${downloadFailures.length}" >> $GITHUB_OUTPUT`);
             
             // Write out the list of failures to a file for reference
@@ -166,8 +181,6 @@ async function main() {
             process.exit(0);
         } else {
             console.log('All downloads successful!');
-            console.log(`::set-output name=download_failures::0`);
-            // For newer GitHub Actions
             console.log(`echo "download_failures=0" >> $GITHUB_OUTPUT`);
         }
     } catch (error) {

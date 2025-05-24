@@ -1,0 +1,27 @@
+{
+    "matches": [
+        {
+            "source": "steam",
+            "id": "878320"
+        }
+    ],
+    "media": {
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/steam_878320.hero.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/629cbc850fdffd979db78d9d37b2bab1.jpg"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/steam_878320.logo.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/logo/e2c9342d0e670ec1cb3997d3c4427d83.png",
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 50,
+                "width_pct": 50
+            }
+        },
+        "capsuleUrl": {
+            "filePath": "%USERDATA%/game_assets/steam_878320.capsule.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/610a45d03d044510efd4f49a7b45c7a4.png"
+        }
+    }
+}

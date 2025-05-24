@@ -5,10 +5,20 @@
   "description": "Assets for the DeadForge project",
   "scripts": {
     "download-and-hash": "bun run scripts/download-and-hash.js",
-    "predeploy": "bun run scripts/download-and-hash.js"
+    "predeploy": "bun run build && bun run scripts/download-and-hash.js",
+    "build": "bun run scripts/build_games.js",
+    "lint": "eslint DeadForgeAssets"
   },
-  "dependencies": {},
   "engines": {
     "bun": ">=1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "@eslint/json": "^0.12.0",
+    "eslint-plugin-json": "^4.0.1",
+    "jsonc-eslint-parser": "^2.4.0"
+  },
+  "dependencies": {
+    "eslint-plugin-jsonc": "^2.20.1"
   }
-} 
+}

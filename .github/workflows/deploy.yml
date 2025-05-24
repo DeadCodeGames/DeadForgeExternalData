@@ -27,7 +27,7 @@ jobs:
           
       - name: Download Images and Update Hashes
         id: download
-        run: bun run download-and-hash
+        run: bun run predeploy
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

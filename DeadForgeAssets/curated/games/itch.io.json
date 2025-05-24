@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "itch",
+            "id": "-1"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_-1.icon.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/2ad9e5e943e43cad612a7996c12a8796/32/256x256.png"
+        },
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_-1.hero.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/234b941e88b755b7a72a1c1dd5022f30.png"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_-1.logo.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/logo/2b9eb12abdcf58e92fcf797a1eb2983d.png",
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 75,
+                "width_pct": 75
+            }
+        },
+        "headerUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_-1.header.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/a888a53ef574af0a7e4084a2f6c80cdb.png"
+        },
+        "capsuleUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_-1.capsule.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/6523cc2653ef3a0fed83fb40b32d16f3.png"
+        }
+    }
+}

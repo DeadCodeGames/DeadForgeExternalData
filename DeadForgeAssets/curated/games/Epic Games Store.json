@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "-1"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_-1.icon.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/34ffeb359a192eb8174b6854643cc046/32/256x256.png"
+        },
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_-1.hero.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/164fbf608021ece8933758ee2b28dd7d.png"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_-1.logo.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/logo/8402e5776dfcbac2fe148bb2c35528fc.png",
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 75,
+                "width_pct": 75
+            }
+        },
+        "headerUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_-1.header.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/5acb9e2ab65eb34efc7eb047a22db057.png"
+        },
+        "capsuleUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_-1.capsule.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/a233a10d769bacf766437e5d588f823e.png"
+        }
+    }
+}
