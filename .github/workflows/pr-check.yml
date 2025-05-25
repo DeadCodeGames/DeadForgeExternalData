@@ -1,25 +1,21 @@
-name: Deploy Content to GitHub Pages
+name: PR Content Check
 on:
-  push:
+  pull_request:
     branches:
       - main
-  schedule:
-    - cron: '0 */6 * * *'  # Run every 6 hours (at minute 0 of hours 0, 6, 12, 18)
-  workflow_dispatch:
 permissions:
   contents: read
-  pages: write
   id-token: write
 concurrency:
-  group: "pages"
+  group: "pages-pr"
   cancel-in-progress: false
 jobs:
-  deploy:
+  pr-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-        
+      
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
@@ -31,11 +27,11 @@ jobs:
       - name: Check for violations
         run: |
           if [ -f "violations.json" ]; then
-            echo "::error::JSON schema violations found. See violations.json for details. GitHub will not deploy the changes."
+            echo "::error::JSON schema violations found. See violations.json for details."
             cat violations.json
             echo "violated=true" >> $GITHUB_OUTPUT
           fi
-          
+      
       - name: Download Images and Update Hashes
         id: download
         run: bun run predeploy
@@ -43,22 +39,11 @@ jobs:
       - name: Check for download failures
         run: |
           if [ -f "download_failures.txt" ]; then
-            echo "::error::Some images failed to download. See download_failures.txt for details. GitHub will deploy changes, but some assets may be missing."
+            echo "::error::Some images failed to download. See download_failures.txt for details."
             cat download_failures.txt
             echo "failed=true" >> $GITHUB_OUTPUT
           fi
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        if: steps.download.outputs.violated != 'true'
-        with:
-          path: ./DeadForgeAssets
-          
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        if: steps.download.outputs.violated != 'true'
-        
+      
       - name: Check for failures
         if: always() # Run even if previous steps fail
         run: |
@@ -73,4 +58,4 @@ jobs:
             exit 1
           else
             echo "All downloads and JSON validations were successful!"
-          fi
+          fi 

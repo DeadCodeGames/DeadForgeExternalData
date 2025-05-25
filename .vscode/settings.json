@@ -1,0 +1,16 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/DeadForgeAssets/notes/games/*.json"
+      ],
+      "url": "./DeadForgeAssets/$schema/note.schema.json"
+    },
+    {
+      "fileMatch": [
+        "/DeadForgeAssets/curated/games/*.json"
+      ],
+      "url": "./DeadForgeAssets/$schema/games.schema.json"
+    }
+  ]
+}

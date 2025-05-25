@@ -3,13 +3,11 @@
   "workspaces": {
     "": {
       "name": "deadforge-assets",
-      "dependencies": {
-        "eslint-plugin-jsonc": "^2.20.1",
-      },
       "devDependencies": {
         "@eslint/json": "^0.12.0",
         "eslint": "^9.27.0",
         "eslint-plugin-json": "^4.0.1",
+        "eslint-plugin-jsonc": "^2.20.1",
         "jsonc-eslint-parser": "^2.4.0",
       },
     },

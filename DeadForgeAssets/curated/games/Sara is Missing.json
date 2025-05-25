@@ -26,7 +26,7 @@
             "logo_position": {
                 "pinned_position": "BottomLeft",
                 "height_pct": 100,
-                "width_pct": 50
+                "width_pct": 100
             }
         },
         "headerUrl": {
