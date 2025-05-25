@@ -13,65 +13,105 @@ function processObject(game: any, currentlyIn: any, path = "", entryname: string
         return;
     }
 
-    let properties = Object.keys(game); const expected = Object.keys(currentlyIn)
+    let properties = Object.keys(game); const expected = Object.keys(currentlyIn);
 
-    // Step 1: Mark property types with their schema keys
+    // Step 1: Mark property types with schema keys
     for (let i = 0; i < properties.length; i++) {
         const enumMatch = expected.find(e => e.match(new RegExp(`^Enum\\(${properties[i]}\\)$`)));
         const propertyName = properties[i];
         const value = game[propertyName];
 
-        if (enumMatch && typeof game[propertyName] === currentlyIn?.[enumMatch]?.type) {
+        if (enumMatch && typeof value === currentlyIn?.[enumMatch]?.type) {
             properties[i] = enumMatch;
         } else if (typeof value === "object" && !Array.isArray(value)) {
-            properties[i] = `Object(${propertyName})`;
+            const matchingObjSchemaKey = expected.find(e => e.startsWith(`Object(${propertyName}`));
+            if (matchingObjSchemaKey) properties[i] = matchingObjSchemaKey;
+            else properties[i] = `Object(${propertyName})`;
         } else if (Array.isArray(value)) {
             properties[i] = `Array(${propertyName})`;
-        } else {
-            // leave as-is for flat values
         }
     }
 
-    // Step 2: Validate each property
+    // Step 2: Validate properties
     for (const property of properties) {
-        const detypedProperty = property.replace(/(Object|Array|Enum)\((.*)\)/, "$2");
+        const [_, type, rawName, meta] = property.match(/(Object|Array|Enum)?\(([^,()]+)(?:,([^()]+))?\)/) || [];
+        const detypedProperty = rawName || property;
         const value = game[detypedProperty];
         const schema = currentlyIn[property];
         const currentPath = path ? `${path}.${detypedProperty}` : detypedProperty;
 
-        if (property.startsWith("Object(")) {
+        if (type === "Object" && meta?.startsWith("identical=")) {
+            const propsToCheck = meta
+                .replace("identical=", "")
+                .split(";")
+                .map(p => p.trim());
+
+            const values = propsToCheck.map(p => value?.[p]);
+
+            const areAllStrings = values.every(v => typeof v === "string");
+            const areAllObjects = values.every(v => typeof v === "object" && !Array.isArray(v));
+
+            if (!(areAllStrings || areAllObjects)) {
+                console.error(`[${currentPath}] props ${propsToCheck.join(", ")} must be either all strings or all objects`);
+                violations.push({
+                    entryname,
+                    path: currentPath,
+                    expected: "matching types (string or object)",
+                    actual: propsToCheck.map(p => `${p}: ${typeof value?.[p]}`).join(", ")
+                });
+                continue;
+            }
+
+            if (areAllObjects) {
+                // Check same keys
+                const [first, ...rest] = values;
+                for (const [i, v] of rest.entries()) {
+                    const keysA = Object.keys(first).sort();
+                    const keysB = Object.keys(v).sort();
+                    if (JSON.stringify(keysA) !== JSON.stringify(keysB)) {
+                        console.error(`[${currentPath}] ${propsToCheck[0]} and ${propsToCheck[i + 1]} must have identical keys`);
+                        violations.push({
+                            entryname,
+                            path: currentPath,
+                            expected: `matching keys in ${propsToCheck[0]} and ${propsToCheck[i + 1]}`,
+                            actual: `keys mismatch`
+                        });
+                    }
+                }
+            }
+
+            // Continue to recurse into properties normally
             processObject(value, schema, currentPath, entryname);
-        } else if (property.startsWith("Array(")) {
+        } else if (type === "Object") {
+            processObject(value, schema, currentPath, entryname);
+        } else if (type === "Array") {
             for (let i = 0; i < value.length; i++) {
                 processObject(value[i], schema[0], `${currentPath}[${i}]`, entryname);
             }
-        } else if (property.startsWith("Enum(")) {
+        } else if (type === "Enum") {
             if (!schema.enum.includes(value)) {
-                console.log(path, entryname);
                 console.error(`[${currentPath}] has invalid value '${value}', expected one of: ${schema.enum.join(", ")}`);
                 violations.push({
                     entryname,
                     path: currentPath,
                     expected: schema.enum.join(", "),
                     actual: value
-                })
+                });
             }
         } else {
-            const expected = schema || currentlyIn["*"];
-            if (typeof value !== expected) {
-                console.log(path, entryname);
-                console.error(`[${currentPath}] is type ${typeof value}, expected ${expected}`);
+            const expectedType = schema || currentlyIn["*"];
+            if (typeof value !== expectedType) {
+                console.error(`[${currentPath}] is type ${typeof value}, expected ${expectedType}`);
                 violations.push({
                     entryname,
                     path: currentPath,
-                    expected: expected,
+                    expected: expectedType,
                     actual: typeof value
-                })
+                });
             }
         }
     }
 }
-
 
 
 for (const game of curatedGames) {

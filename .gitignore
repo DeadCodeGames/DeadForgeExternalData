@@ -1,3 +1,5 @@
 node_modules/
 downloaded/
 DeadForgeAssets/curated/list.json
+download_failures.txt
+violations.json

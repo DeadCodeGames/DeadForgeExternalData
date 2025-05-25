@@ -50,11 +50,11 @@ export const CuratedGameExample = {
         }
     ],
     "Object(media)": {
-        "Object(iconUrl)": {
+        "Object(iconUrl,identical=filePath;remoteUrl)": {
             filePath: "string",
             remoteUrl: "string",
         },
-        "Object(heroUrl)": {
+        "Object(heroUrl,identical=filePath;remoteUrl)": {
             filePath: "string",
             remoteUrl: "string",
             "Object(filePath)": {
@@ -64,7 +64,7 @@ export const CuratedGameExample = {
                 "*": "string"
             },
         },
-        "Object(logoUrl)": {
+        "Object(logoUrl,identical=filePath;remoteUrl)": {
             filePath: "string",
             remoteUrl: "string",
             "Object(filePath)": {
@@ -82,7 +82,7 @@ export const CuratedGameExample = {
                 width_pct: "number",
             },
         },
-        "Object(headerUrl)": {
+        "Object(headerUrl,identical=filePath;remoteUrl)": {
             filePath: "string",
             remoteUrl: "string",
             "Object(filePath)": {
@@ -92,7 +92,7 @@ export const CuratedGameExample = {
                 "*": "string"
             },
         },
-        "Object(capsuleUrl)": {
+        "Object(capsuleUrl,identical=filePath;remoteUrl)": {
             filePath: "string",
             remoteUrl: "string",
             "Object(filePath)": {
