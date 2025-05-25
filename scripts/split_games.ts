@@ -4,17 +4,18 @@ if (!isGitHubActionsEnvironment()) {
     process.exit(1);
 }
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { CuratedGameObject, NoteJSON } from './JSONTypes.js';
 
 
-function processListFile(sourceFile, outputDir) {
+function processListFile(sourceFile: string, outputDir: string) {
     if (!fs.existsSync(sourceFile)) {
         console.log(`Source file ${sourceFile} does not exist, skipping...`);
         return 0;
     }
 
-    const sourceData = JSON.parse(fs.readFileSync(sourceFile, 'utf8'));
+    const sourceData = JSON.parse(fs.readFileSync(sourceFile, 'utf8')) as (CuratedGameObject[] | NoteJSON[]);
 
     // Create output directory if it doesn't exist
     if (!fs.existsSync(outputDir)) {
@@ -22,12 +23,12 @@ function processListFile(sourceFile, outputDir) {
     }
 
     // Process each item
-    sourceData.forEach((item) => {
+    sourceData.forEach((item: CuratedGameObject | NoteJSON) => {
         // Generate a filename based on the item's identifier
         const itemId = item.matches[0].source + '_' + item.matches[0].id;
         const outputPath = path.join(outputDir, `${itemId}.json`);
         
-        // Write the individual file
+        // Write the individual files
         fs.writeFileSync(outputPath, JSON.stringify(item, null, 2));
     });
 

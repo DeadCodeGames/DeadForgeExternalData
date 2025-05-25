@@ -8,12 +8,12 @@ const DOWNLOAD_DIR = path.join(__dirname, '../downloaded');
 const MAX_RETRIES = 5;
 const RETRY_DELAY = 1000; // 1 second delay between retries
 
-const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // Track failed downloads
-let downloadFailures = [];
+let downloadFailures: string[] = [];
 
-async function downloadFile(url, retries = 0) {
+async function downloadFile(url: string, retries = 0) {
     try {
         const response = await fetch(url);
         
@@ -44,24 +44,24 @@ async function downloadFile(url, retries = 0) {
 }
 
 // Helper function to calculate MD5 hash of a buffer
-function calculateHash(buffer) {
+function calculateHash(buffer: Buffer | null) {
     if (!buffer) return "404"; // Return "404" for failed downloads
     return crypto.createHash('md5').update(buffer).digest('hex');
 }
 
 // Helper function to extract filename from URL
-function getFilenameFromUrl(url) {
+function getFilenameFromUrl(url: string) {
     return path.basename(new URL(url).pathname);
 }
 
 // Process a single URL entry
-async function processUrlEntry(urlEntry) {
+async function processUrlEntry(urlEntry: any) {
     if (!urlEntry || !urlEntry.remoteUrl) return urlEntry;
     
     // Handle localized entries (objects with language keys)
     if (typeof urlEntry.remoteUrl === 'object') {
         const result = { ...urlEntry };
-        for (const [lang, url] of Object.entries(urlEntry.remoteUrl)) {
+        for (const [lang, url] of Object.entries(urlEntry.remoteUrl as Record<string, string>)) {
             try {
                 console.log(`Downloading ${url}...`);
                 const buffer = await downloadFile(url);

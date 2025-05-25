@@ -3,8 +3,8 @@ if (!isGitHubActionsEnvironment()) {
     console.log('This script is of destructive nature, and should not be run outside of a CI environment.');
     console.log('All destructive functions have been disabled.');
 }
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 
 const gamesDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
@@ -13,7 +13,7 @@ const outputGameFile = path.join(__dirname, '../DeadForgeAssets/curated/list.jso
 const outputNotesFile = path.join(__dirname, '../DeadForgeAssets/notes/list.json');
 
 
-function processDirectory(dir) {
+function processDirectory(dir: string) {
     if (!fs.existsSync(dir)) {
         return [];
     }
@@ -27,7 +27,7 @@ const gameFiles = processDirectory(gamesDir);
 const noteFiles = processDirectory(notesDir);
 
 
-function combineFiles(files) {
+function combineFiles(files: string[]) {
     return files.flatMap(file => {
         const content = JSON.parse(fs.readFileSync(file, 'utf8'));
         return Array.isArray(content) ? content : [content];
