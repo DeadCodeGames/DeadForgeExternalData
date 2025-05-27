@@ -6,7 +6,9 @@
     "@eslint/json": "^0.12.0",
     "eslint-plugin-json": "^4.0.1",
     "jsonc-eslint-parser": "^2.4.0",
-    "eslint-plugin-jsonc": "^2.20.1"
+    "eslint-plugin-jsonc": "^2.20.1",
+    "@types/node": "^20.11.24",
+    "@octokit/rest": "^20.0.2"
   },
   "description": "Assets for the DeadForge project",
   "engines": {

@@ -1,0 +1,43 @@
+name: Missing Assets Reporter
+
+on:
+  issues:
+    types: [opened, edited]
+  issue_comment:
+    types: [created]
+  push:
+    branches: [main]
+
+jobs:
+  refresh-assets:
+    if: |
+      github.event_name == 'push' ||
+      (github.event_name == 'issue_comment' && github.event.issue.pull_request == null) ||
+      github.event_name == 'issues'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Download Images and Update Hashes
+        id: download
+        run: bun run predeploy
+
+      - name: Run missing assets reporter
+        run: |
+          echo "Running entrypoint for missing assets reporter script"
+          bun run scripts/issuesMissingAssets/index.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: |
+          github.event_name == 'push' ||
+          (github.event_name == 'issue_comment' &&
+           github.event.comment.body == '/refresh assets' &&
+           github.event.issue.pull_request == null) ||
+          github.event_name == 'issues'
