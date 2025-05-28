@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "Fortnite"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/9425be43ba92c2b4454ca7bf602efad8.png",
+            "filePath": "%USERDATA%/game_assets/epic_Fortnite.icon.png"
+        },
+        "heroUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/41d7c0021fc06c2babb8d3bfc01badae.png",
+            "filePath": "%USERDATA%/game_assets/epic_Fortnite.hero.png"
+        },
+        "logoUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/logo/c182dc5c90dc87dfee9cd309c33f19b3.png",
+            "filePath": "%USERDATA%/game_assets/epic_Fortnite.logo.png",
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 50,
+                "width_pct": 40
+            }
+        },
+        "capsuleUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/5cd640a92e39656a944041ee615efbdc.png",
+            "filePath": "%USERDATA%/game_assets/epic_Fortnite.capsule.png"
+        },
+        "headerUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/ce10c10665db8687129b7c70fd1f6990.jpg",
+            "filePath": "%USERDATA%/game_assets/epic_Fortnite.header.png"
+        }
+    }
+}
