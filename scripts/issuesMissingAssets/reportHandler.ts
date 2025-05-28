@@ -4,20 +4,23 @@ const MISSING_ASSETS_LABEL = 'missing deadforge assets';
 const DEFAULT_ASSIGNEES = ['RichardKanshen'];
 
 export async function addMissingAssetsLabel(context: GitHubContext, issueNumber: number): Promise<void> {
+    await context.octokit.issues.addAssignees({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+        assignees: DEFAULT_ASSIGNEES
+    });
     await context.octokit.issues.addLabels({
         owner: context.owner,
         repo: context.repo,
         issue_number: issueNumber,
         labels: [MISSING_ASSETS_LABEL]
     });
-}
-
-export async function assignToAssetStaff(context: GitHubContext, issueNumber: number): Promise<void> {
-    await context.octokit.issues.addAssignees({
+    await context.octokit.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
         owner: context.owner,
         repo: context.repo,
         issue_number: issueNumber,
-        assignees: DEFAULT_ASSIGNEES
+        type: "Assets"
     });
 }
 
@@ -52,7 +55,7 @@ export async function findBotComment(context: GitHubContext, issueNumber: number
     const botComment = comments
         .reverse()
         .find(comment => 
-            comment.user.type === 'Bot' && 
+            comment.user?.type === 'Bot' && 
             (comment.body as string).includes(`<!-- ${BOT_COMMENT_IDENTIFIER} -->`)
         );
 

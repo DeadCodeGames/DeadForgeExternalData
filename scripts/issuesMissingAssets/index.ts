@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest';
 import { GitHubContext } from './types';
-import { findReportSection, updateOrCreateReportComment, addMissingAssetsLabel, assignToAssetStaff } from './reportHandler';
+import { findReportSection, updateOrCreateReportComment, addMissingAssetsLabel } from './reportHandler';
 import generateMarkdownReport from './reportParser';
 
 async function main() {
@@ -30,8 +30,7 @@ async function main() {
             if (reportSection) {
                 await Promise.all([
                     updateOrCreateReportComment(context, event.issue.number, generateMarkdownReport(reportSection.content)),
-                    addMissingAssetsLabel(context, event.issue.number),
-                    assignToAssetStaff(context, event.issue.number)
+                    addMissingAssetsLabel(context, event.issue.number)
                 ]);
             }
         }
@@ -44,8 +43,7 @@ async function main() {
             if (reportSection) {
                 await Promise.all([
                     updateOrCreateReportComment(context, event.issue.number, generateMarkdownReport(reportSection.content)),
-                    addMissingAssetsLabel(context, event.issue.number),
-                    assignToAssetStaff(context, event.issue.number)
+                    addMissingAssetsLabel(context, event.issue.number)
                 ]);
             }
         }
@@ -66,8 +64,7 @@ async function main() {
                 if (reportSection) {
                     await Promise.all([
                         updateOrCreateReportComment(context, issue.number, generateMarkdownReport(reportSection.content)),
-                        addMissingAssetsLabel(context, issue.number),
-                        assignToAssetStaff(context, issue.number)
+                        addMissingAssetsLabel(context, issue.number)
                     ]);
                 }
             }
