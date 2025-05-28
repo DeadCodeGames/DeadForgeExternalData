@@ -1,0 +1,15 @@
+{
+    "matches": [
+        {
+            "source": "steam",
+            "id": "379720"
+        }
+    ],
+    "media": {
+        "headerUrl": {
+            "filePath": "%USERDATA%/game_assets/steam_379720.header.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/26ddd45b02859e836d13d4b9fde34281.png"
+        }
+    }
+    
+}
