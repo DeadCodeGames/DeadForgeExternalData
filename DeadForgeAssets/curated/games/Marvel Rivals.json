@@ -1,0 +1,53 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "575efd0b5dd54429b035ffc8fe2d36d0"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.icon.ico",
+            "remoteUrl": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/2767030/bd22e45404f4ed4f3c549b575e23ce76fe03fb07.ico"
+        },
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.hero.jpg",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/a1a5bc35a8e96bf2a8fddb52247b42f4a6a6a475/library_hero_2x.jpg"
+        },
+        "logoUrl": {
+            "filePath": {
+                "english": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.logo_english.png",
+                "schinese": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.logo_schinese.png"
+            },
+            "remoteUrl": {
+                "english": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/b07d639a928fd67e33e467a21fe793b95aab75df/logo_2x.png",
+                "schinese": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/ab3f3891c1ccebe0d7d49dc66eac4449270220a6/logo_schinese_2x.png"
+            },
+            "logo_position": {
+                "pinned_position": "BottomLeft",
+                "height_pct": 67.28568071772912,
+                "width_pct": 100
+            }
+        },
+        "headerUrl": {
+            "filePath": {
+                "english": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.header_english.jpg",
+                "schinese": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.header_schinese.jpg"
+            },
+            "remoteUrl": {
+                "english": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/15bae4d173dc131df80b8e853fb5dc4c765872d6/header_2x.jpg",
+                "schinese": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/b7d64f801e1ca1812d0986bb9c3f5392b53ca01c/header_schinese_2x.jpg"
+            }
+        },
+        "capsuleUrl": {
+            "filePath": {
+                "english": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.capsule_english.jpg",
+                "schinese": "%USERDATA%/game_assets/epic_575efd0b5dd54429b035ffc8fe2d36d0.capsule_schinese.jpg"
+            },
+            "remoteUrl": {
+                "english": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/931f26484b8ee3b2d623c98ac318aa77e4e57835/library_600x900_2x.jpg",
+                "schinese": "https://shared.steamstatic.com/store_item_assets/steam/apps/2767030/44c43ad88fe85129be9f447430e0b51bcf0fd2f0/library_600x900_schinese_2x.jpg"
+            }
+        }
+    }
+}
