@@ -5,10 +5,12 @@ const DEFAULT_ASSIGNEES = ['RichardKanshen'];
 const THANK_YOU_MESSAGE = (username: string) => `
 Hey ${username}! 👋
 
-Thank you for reporting these missing assets! All the reported games have been resolved. 
+Thank you for reporting these missing assets! All the missing assets have been resolved. 
 Your contribution helps make DeadForge better for everyone. 🎮✨
 
-This issue will now be closed.`;
+This issue will now be closed.
+---
+-# If you want to report more missing assets, please create a new issue. Thank you ^^`;
 
 export async function addMissingAssetsLabel(context: GitHubContext, issueNumber: number): Promise<void> {
     await context.octokit.issues.addAssignees({
