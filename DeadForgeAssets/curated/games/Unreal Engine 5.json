@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "UE_5.5"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/6f0c1bb16491e573170058e03e7b75ed.png",
+            "filePath": "%USERDATA%/game_assets/epic_UE_5.5.icon.png"
+        },
+        "heroUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/d4de41709b3a0cea4632fc1c32f97443.png",
+            "filePath": "%USERDATA%/game_assets/epic_UE_5.5.hero.png"
+        },
+        "logoUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/logo/598fb37d8e3a1f127b3ba7700febc92e.png",
+            "filePath": "%USERDATA%/game_assets/epic_UE_5.5.logo.png",
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 75,
+                "width_pct": 25
+            }
+        },
+        "capsuleUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/cad64e6216646343f7e291015851b9c6.jpg",
+            "filePath": "%USERDATA%/game_assets/epic_UE_5.5.capsule.jpg"
+        },
+        "headerUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/a5f51604a563e7252182de414118f2bd.png",
+            "filePath": "%USERDATA%/game_assets/epic_UE_5.5.header.png"
+        }
+    }
+}
