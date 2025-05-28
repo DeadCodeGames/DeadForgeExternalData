@@ -44,7 +44,7 @@ export async function updateOrCreateReportComment(
 ): Promise<void> {
   const existingCommentId = await findBotComment(context, issueNumber);
 
-  const commentBody = `${BOT_COMMENT_IDENTIFIER}\n\n${reportContent}`;
+  const commentBody = `<!-- ${BOT_COMMENT_IDENTIFIER} -->\n${reportContent}`;
 
   if (existingCommentId) {
     // Update existing comment
