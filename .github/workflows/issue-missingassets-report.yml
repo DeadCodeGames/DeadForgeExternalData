@@ -35,6 +35,7 @@ jobs:
           bun run scripts/issuesMissingAssets/index.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SERVICE_BOT_PAT: ${{ secrets.SERVICE_BOT_PAT }}
         if: |
           github.event_name == 'push' ||
           (github.event_name == 'issue_comment' &&

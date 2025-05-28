@@ -16,7 +16,7 @@ async function main() {
     const [owner, repo] = githubRepo.split('/');
 
     const octokit = new Octokit({
-        auth: process.env.GITHUB_TOKEN,
+        auth: process.env.SERVICE_BOT_PAT
     });
 
     const context: GitHubContext = { owner, repo, octokit };
