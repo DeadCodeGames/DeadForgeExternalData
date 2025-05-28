@@ -1,0 +1,52 @@
+[
+    {
+        "matches": [
+            {
+                "source": "epic",
+                "id": "9d2d0eb64d5c44529cece33fe2a46482"
+            }
+        ],
+        "media": {
+            "iconUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_9d2d0eb64d5c44529cece33fe2a46482.icon.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/icon/7bc92f6201181058e1bcc262894c3d26/32/256x256.png"
+            },
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_9d2d0eb64d5c44529cece33fe2a46482.hero.jpg",
+                "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/271590/library_hero_2x.jpg"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_9d2d0eb64d5c44529cece33fe2a46482.logo.png",
+                "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/271590/fa0d042ab22aa9ea0628f77454f3df72b5f2d199/logo_2x.png",
+                "logo_position": {
+                    "pinned_position": "BottomLeft",
+                    "width_pct": 48.77479579929987,
+                    "height_pct": 100
+                }
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_9d2d0eb64d5c44529cece33fe2a46482.capsule.png",
+                "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/271590/library_600x900_2x.jpg"
+            },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/epic_9d2d0eb64d5c44529cece33fe2a46482.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/afcf01243665c381e90be716040eb3e3.png"
+            }
+        }
+    },
+    {
+        "matches": [
+            {
+                "source": "steam",
+                "id": "271590"
+            }
+        ],
+        "media": {
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_271590.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/afcf01243665c381e90be716040eb3e3.png"
+            }
+        }
+
+    }
+]
