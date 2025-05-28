@@ -1,0 +1,18 @@
+name: 📝 Create a new Missing Asset Report
+description: If you're sure you haven't created an issue here before, use this to request a new set of missing assets.
+title: "Missing Assets Report"
+labels: [missing deadforge assets]
+type: Assets
+
+body:
+  - type: textarea
+    id: assets
+    attributes:
+      label: Missing Assets List
+      description: The contents of the missing assets report file.
+      placeholder: |
+        ---MISSING_ASSETS_REPORT_BEGIN---
+        {"reports":[{"source":"steam","id":228980,"name":"Steamworks Common Redistributables","missingAssets":["header","capsule"]},{"source":"steam","id":296490,"name":"GemCraft - Chasing Shadows","missingAssets":["header"]},{"source":"steam","id":341800,"name":"Keep Talking and Nobody Explodes","missingAssets":["header"]},{"source":"steam","id":391540,"name":"Undertale","missingAssets":["header"]},{"source":"steam","id":531510,"name":"Just Shapes & Beats","missingAssets":["header"]},{"source":"steam","id":712730,"name":"SIMULACRA","missingAssets":["header"]},{"source":"steam","id":774181,"name":"Rhythm Doctor","missingAssets":["header"]},{"source":"steam","id":843380,"name":"Super Animal Royale","missingAssets":["header"]},{"source":"steam","id":878320,"name":"SIMULACRA: Pipe Dreams","missingAssets":["header"]},{"source":"steam","id":977950,"name":"A Dance of Fire and Ice","missingAssets":["header"]},{"source":"steam","id":980610,"name":"Quaver","missingAssets":["header"]},{"source":"steam","id":1011190,"name":"SIMULACRA 2","missingAssets":["header"]},{"source":"steam","id":1713610,"name":"Purrgatory","missingAssets":["header"]},{"source":"steam","id":1761390,"name":"Hatsune Miku: Project DIVA Mega Mix+","missingAssets":["header"]},{"source":"steam","id":1905180,"name":"OBS Studio","missingAssets":["header"]},{"source":"steam","id":1925970,"name":"SIMULACRA 3","missingAssets":["header"]},{"source":"epic","id":"525aa0efd70f4399b9f64bcd2a5b38c7","name":"Zenless Zone Zero","missingAssets":["header","capsule","icon","logo","hero"]},{"source":"epic","id":"8d3fd7a1c6034e799f04a2c8cce520a3","name":"Crosshair V2","missingAssets":["header","capsule","icon","logo","hero"]},{"source":"itch","id":569657,"name":"The Convenience Store | 夜勤事件","missingAssets":["header","capsule","icon","logo","hero"]},{"source":"itch","id":792778,"name":"Friday Night Funkin'","missingAssets":["header","capsule","icon","logo","hero"]},{"source":"itch","id":1365997,"name":"Shake Art DELUXE","missingAssets":["header","capsule","icon","logo","hero"]}]}
+        ---MISSING_ASSETS_REPORT_END--- 
+    validations:
+      required: true
