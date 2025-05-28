@@ -41,6 +41,15 @@ function checkAssetExists(asset: AssetData): boolean {
     return Object.values(asset.hash).every(hash => hash !== '404');
 }
 
+// Helper to check if an asset is missing due to a 404 hash
+function isAsset404(asset: AssetData): boolean {
+    if (typeof asset.hash === 'string') {
+        return asset.hash === '404';
+    }
+    // If hash is an object, check if any value is '404'
+    return Object.values(asset.hash).some(hash => hash === '404');
+}
+
 function findExistingAssets(report: { source: string; id: string | number; missingAssets: string[] }, currentAssetsData: CurrentAssetData[]): string[] {
     const matchingAssetData = currentAssetsData.find(assetData => 
         assetData.matches.some(match => 
@@ -117,11 +126,29 @@ export default function generateMarkdownReport(jsonData: string): string {
                     markdown += `### ${report.name} (ID: ${report.id})\n\n`;
                     markdown += "Missing assets:\n";
                     
+                    // Find the matching asset data for this report
+                    const matchingAssetData = currentAssetsData.find(assetData => 
+                        assetData.matches.some(match => 
+                            match.source === report.source && 
+                            match.id === String(report.id)
+                        )
+                    );
                     const existingAssets = findExistingAssets(report, currentAssetsData);
                     
                     report.missingAssets.forEach((asset) => {
                         const exists = existingAssets.includes(asset);
-                        markdown += `- ${exists ? '✅' : '❌'} ${asset}\n`;
+                        let symbol = '❌';
+                        if (exists) {
+                            symbol = '✅';
+                        } else if (matchingAssetData) {
+                            // Try to find the asset in media to check for 404
+                            const assetKey = `${asset}Url` as keyof typeof matchingAssetData.media;
+                            const assetData = matchingAssetData.media[assetKey];
+                            if (assetData && isAsset404(assetData)) {
+                                symbol = '⚠️';
+                            }
+                        }
+                        markdown += `- ${symbol} ${asset}\n`;
                     });
                     markdown += "\n";
                 });
