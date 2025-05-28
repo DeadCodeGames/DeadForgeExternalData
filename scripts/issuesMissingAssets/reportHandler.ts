@@ -2,8 +2,7 @@ import { REPORT_BEGIN_TAG, REPORT_END_TAG, BOT_COMMENT_IDENTIFIER, ReportSection
 
 const MISSING_ASSETS_LABEL = 'missing deadforge assets';
 const DEFAULT_ASSIGNEES = ['RichardKanshen'];
-const THANK_YOU_MESSAGE = (username: string) => `
-Hey ${username}! 👋
+const THANK_YOU_MESSAGE = (username: string) => `# Hey ${username}! 👋
 
 Thank you for reporting these missing assets! All the missing assets have been resolved. 
 Your contribution helps make DeadForge better for everyone. 🎮✨
@@ -42,7 +41,6 @@ export async function findReportSection(body: string): Promise<ReportSection | n
 
     if (endIndex < beginIndex) return null;
 
-    // Extract the content between the tags (not including the tags)
     const contentStart = beginIndex + REPORT_BEGIN_TAG.length;
     const contentEnd = endIndex;
   
@@ -60,7 +58,6 @@ export async function findBotComment(context: GitHubContext, issueNumber: number
         issue_number: issueNumber,
     });
 
-    // Find the most recent comment by the bot that starts with our identifier
     const botComment = comments
         .reverse()
         .find(comment => 
@@ -75,7 +72,6 @@ async function closeIssue(
     context: GitHubContext,
     issueNumber: number,
 ): Promise<void> {
-    // Get the issue data to find the creator
     const { data: issue } = await context.octokit.issues.get({
         owner: context.owner,
         repo: context.repo,
@@ -107,7 +103,6 @@ export async function updateOrCreateReportComment(
     const commentBody = `<!-- ${BOT_COMMENT_IDENTIFIER} -->\n${reportContent}`;
 
     if (existingCommentId) {
-        // Update existing comment
         await context.octokit.issues.updateComment({
             owner: context.owner,
             repo: context.repo,
@@ -115,7 +110,6 @@ export async function updateOrCreateReportComment(
             body: commentBody,
         });
     } else {
-        // Create new comment
         await context.octokit.issues.createComment({
             owner: context.owner,
             repo: context.repo,
@@ -124,7 +118,6 @@ export async function updateOrCreateReportComment(
         });
     }
 
-    // Check if all games are resolved by looking for the "✨RESOLVED✨" indicator in the report
     if (reportContent.includes('(✨RESOLVED✨)')) {
         await closeIssue(context, issueNumber);
     }

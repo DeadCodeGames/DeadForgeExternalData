@@ -165,8 +165,8 @@ export default function generateMarkdownReport(jsonData: string): string {
         if (hasResolvedCases) {
             if (hasUnresolvedCases) {
                 markdown += "---\n\n";
+                markdown += "## ✨ Resolved Assets\n\n";
             }
-            markdown += "## ✨ Resolved Assets\n\n";
             markdown += "The following games have had all their missing assets resolved:\n\n";
 
             for (const source in groupedResolvedReports) {
