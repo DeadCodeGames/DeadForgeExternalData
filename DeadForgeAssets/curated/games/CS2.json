@@ -1,0 +1,14 @@
+{
+    "matches": [
+        {
+            "source": "steam",
+            "id": "730"
+        }
+    ],
+    "media": {
+        "headerUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/542fa8c2ab8eba16e9badd36fa9c2459.png",
+            "filePath": "%USERDATA%/game_assets/steam_730.header.png"
+        }
+    }
+}
