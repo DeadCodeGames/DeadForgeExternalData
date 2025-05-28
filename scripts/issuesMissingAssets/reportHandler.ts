@@ -62,7 +62,7 @@ export async function findBotComment(context: GitHubContext, issueNumber: number
     const botComment = comments
         .reverse()
         .find(comment => 
-            comment.user?.type === 'Bot' && 
+            comment.user?.login === 'deadcodebot' && 
             (comment.body as string).includes(`<!-- ${BOT_COMMENT_IDENTIFIER} -->`)
         );
 
