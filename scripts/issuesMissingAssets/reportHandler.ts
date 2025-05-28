@@ -1,11 +1,34 @@
 import { REPORT_BEGIN_TAG, REPORT_END_TAG, BOT_COMMENT_IDENTIFIER, ReportSection, GitHubContext } from './types';
 
+const MISSING_ASSETS_LABEL = 'missing deadforge assets';
+const DEFAULT_ASSIGNEES = ['RichardKanshen'];
+
+export async function addMissingAssetsLabel(context: GitHubContext, issueNumber: number): Promise<void> {
+    await context.octokit.issues.addLabels({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+        labels: [MISSING_ASSETS_LABEL]
+    });
+}
+
+export async function assignToAssetStaff(context: GitHubContext, issueNumber: number): Promise<void> {
+    await context.octokit.issues.addAssignees({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+        assignees: DEFAULT_ASSIGNEES
+    });
+}
+
 export async function findReportSection(body: string): Promise<ReportSection | null> {
     const beginIndex = body.indexOf(REPORT_BEGIN_TAG);
     if (beginIndex === -1) return null;
 
     const endIndex = body.indexOf(REPORT_END_TAG, beginIndex);
     if (endIndex === -1) return null;
+
+    if (endIndex < beginIndex) return null;
 
     // Extract the content between the tags (not including the tags)
     const contentStart = beginIndex + REPORT_BEGIN_TAG.length;

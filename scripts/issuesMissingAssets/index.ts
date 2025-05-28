@@ -1,6 +1,6 @@
 import { Octokit } from '@octokit/rest';
 import { GitHubContext } from './types';
-import { findReportSection, updateOrCreateReportComment } from './reportHandler';
+import { findReportSection, updateOrCreateReportComment, addMissingAssetsLabel, assignToAssetStaff } from './reportHandler';
 import generateMarkdownReport from './reportParser';
 
 async function main() {
@@ -28,7 +28,11 @@ async function main() {
         if (event.issue.body) {
             const reportSection = await findReportSection(event.issue.body);
             if (reportSection) {
-                await updateOrCreateReportComment(context, event.issue.number, generateMarkdownReport(reportSection.content)); // You'll need to generate the actual report content
+                await Promise.all([
+                    updateOrCreateReportComment(context, event.issue.number, generateMarkdownReport(reportSection.content)),
+                    addMissingAssetsLabel(context, event.issue.number),
+                    assignToAssetStaff(context, event.issue.number)
+                ]);
             }
         }
     } else if (eventName === 'issues') {
@@ -38,7 +42,11 @@ async function main() {
         if (event.issue.body) {
             const reportSection = await findReportSection(event.issue.body);
             if (reportSection) {
-                await updateOrCreateReportComment(context, event.issue.number, generateMarkdownReport(reportSection.content)); // You'll need to generate the actual report content
+                await Promise.all([
+                    updateOrCreateReportComment(context, event.issue.number, generateMarkdownReport(reportSection.content)),
+                    addMissingAssetsLabel(context, event.issue.number),
+                    assignToAssetStaff(context, event.issue.number)
+                ]);
             }
         }
     } else if (eventName === 'push') {
@@ -56,7 +64,11 @@ async function main() {
             if (issue.body) {
                 const reportSection = await findReportSection(issue.body);
                 if (reportSection) {
-                    await updateOrCreateReportComment(context, issue.number, generateMarkdownReport(reportSection.content)); // You'll need to generate the actual report content
+                    await Promise.all([
+                        updateOrCreateReportComment(context, issue.number, generateMarkdownReport(reportSection.content)),
+                        addMissingAssetsLabel(context, issue.number),
+                        assignToAssetStaff(context, issue.number)
+                    ]);
                 }
             }
         }
