@@ -2,6 +2,13 @@ import { REPORT_BEGIN_TAG, REPORT_END_TAG, BOT_COMMENT_IDENTIFIER, ReportSection
 
 const MISSING_ASSETS_LABEL = 'missing deadforge assets';
 const DEFAULT_ASSIGNEES = ['RichardKanshen'];
+const THANK_YOU_MESSAGE = (username: string) => `
+Hey ${username}! 👋
+
+Thank you for reporting these missing assets! All the reported games have been resolved. 
+Your contribution helps make DeadForge better for everyone. 🎮✨
+
+This issue will now be closed.`;
 
 export async function addMissingAssetsLabel(context: GitHubContext, issueNumber: number): Promise<void> {
     await context.octokit.issues.addAssignees({
@@ -62,17 +69,43 @@ export async function findBotComment(context: GitHubContext, issueNumber: number
     return botComment ? botComment.id : null;
 }
 
+async function closeIssue(
+    context: GitHubContext,
+    issueNumber: number,
+): Promise<void> {
+    // Get the issue data to find the creator
+    const { data: issue } = await context.octokit.issues.get({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+    });
+
+    const creatorUsername = issue.user?.login ? `@${issue.user.login}` : 'contributor';
+
+    await context.octokit.issues.createComment({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+        body: THANK_YOU_MESSAGE(creatorUsername),
+    });
+    await context.octokit.issues.update({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+        state: 'closed'
+    });
+}
+
 export async function updateOrCreateReportComment(
     context: GitHubContext,
     issueNumber: number,
     reportContent: string
 ): Promise<void> {
     const existingCommentId = await findBotComment(context, issueNumber);
-
     const commentBody = `<!-- ${BOT_COMMENT_IDENTIFIER} -->\n${reportContent}`;
 
     if (existingCommentId) {
-    // Update existing comment
+        // Update existing comment
         await context.octokit.issues.updateComment({
             owner: context.owner,
             repo: context.repo,
@@ -80,12 +113,17 @@ export async function updateOrCreateReportComment(
             body: commentBody,
         });
     } else {
-    // Create new comment
+        // Create new comment
         await context.octokit.issues.createComment({
             owner: context.owner,
             repo: context.repo,
             issue_number: issueNumber,
             body: commentBody,
         });
+    }
+
+    // Check if all games are resolved by looking for the "✨RESOLVED✨" indicator in the report
+    if (reportContent.includes('(✨RESOLVED✨)')) {
+        await closeIssue(context, issueNumber);
     }
 } 
