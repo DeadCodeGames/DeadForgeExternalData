@@ -1,0 +1,23 @@
+{
+    "matches": [
+        {
+            "source": "itch",
+            "id": "1365997"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_1365997.icon.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/66ecdaf13b215f190ca54824b935bcfc.png"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_1365997.logo.webp",
+            "remoteUrl": "https://cdn2.steamgriddb.com/logo/f7a37c889f1c8531460233651ec5acd9.webp",
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "width_pct": 80,
+                "height_pct": 80
+            }
+        }
+    }
+}
