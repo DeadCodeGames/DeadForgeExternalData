@@ -143,7 +143,7 @@ export async function updateOrCreateReportComment(
             owner: context.owner,
             repo: context.repo,
             issue_number: issueNumber,
-            body: "This issue has been reopened because there are still completely missing assets that need to be resolved. Assets marked with ❌ are missing, while assets marked with ⚠️ are returning 404 errors."
+            body: "This issue has been reopened because there are still completely missing assets that need to be resolved. Assets marked with ❌ are missing, and need to be resolved.\nAfter these issues are resolved, this issue will be closed automatically."
         });
     }
 } 
