@@ -23,13 +23,16 @@ The assets are stored similarly to how Steam does it, and should be of similar d
 - **Icon**: a square game icon
 - **Hero**: Library hero/background image
   - Ideal dimensions: 1920×620px ratio
+  - Can be an animated WebP (**We do, however, discourage it, because it may create lag on the client**)
 - **Logo**: Game logo with positioning metadata
   - No set ratio requirements, just make sure it looks good in practice
   - Can be an animated WebP (GIFs are not recommended due to low quality)
 - **Header**: Library header image
   - Ideal dimensions: 920×430px ratio
+  - Can be an animated WebP (GIFs are not recommended due to low quality)
 - **Capsule**: Library grid/capsule image
   - Ideal dimensions: 600×900px ratio
+  - Can be an animated WebP (GIFs are not recommended due to low quality)
 
 ### Logo Positioning
 
