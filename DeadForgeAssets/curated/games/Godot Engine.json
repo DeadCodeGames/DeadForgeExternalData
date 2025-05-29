@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "itch",
+            "id": "188955"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_188955.icon.ico",
+            "remoteUrl": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/apps/404790/6c1d7875d8d474a68c2abc12f0f5151aa45d5e2c.ico"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_188955.logo.png",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/404790/logo_2x.png",
+            "logo_position": {
+                "pinned_position": "BottomLeft",
+                "width_pct": 42.8904428904429,
+                "height_pct": 68.23708122104628
+            }
+        },
+        "capsuleUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_188955.capsule.jpg",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/404790/library_600x900_2x.jpg"
+        },
+        "headerUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_188955.header.jpg",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/404790/c729c37f6f294e20b5873a560a58e5164ab35a04/header_2x.jpg"
+        },
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/itch_188955.hero.jpg",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/404790/library_hero.jpg"
+        }
+    }
+}
