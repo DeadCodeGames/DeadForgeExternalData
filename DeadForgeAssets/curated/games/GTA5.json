@@ -33,20 +33,5 @@
                 "remoteUrl": "https://cdn2.steamgriddb.com/grid/afcf01243665c381e90be716040eb3e3.png"
             }
         }
-    },
-    {
-        "matches": [
-            {
-                "source": "steam",
-                "id": "271590"
-            }
-        ],
-        "media": {
-            "headerUrl": {
-                "filePath": "%USERDATA%/game_assets/steam_271590.header.png",
-                "remoteUrl": "https://cdn2.steamgriddb.com/grid/afcf01243665c381e90be716040eb3e3.png"
-            }
-        }
-
     }
 ]

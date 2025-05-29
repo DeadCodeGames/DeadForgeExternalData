@@ -51,10 +51,10 @@ async function main() {
         const { data: issues } = await octokit.issues.listForRepo({
             owner,
             repo,
-            state: 'open',
+            state: 'all',
         });
 
-        console.log('All open issues:');
+        console.log('All issues:');
         for (const issue of issues) {
             console.log(`\nIssue #${issue.number}:`);
             console.log(issue.body);

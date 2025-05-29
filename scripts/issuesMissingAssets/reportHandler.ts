@@ -1,4 +1,5 @@
 import { REPORT_BEGIN_TAG, REPORT_END_TAG, BOT_COMMENT_IDENTIFIER, ReportSection, GitHubContext } from './types';
+import generateMarkdownReport from './reportParser';
 
 const MISSING_ASSETS_LABEL = 'missing deadforge assets';
 const DEFAULT_ASSIGNEES = ['RichardKanshen'];
@@ -94,6 +95,10 @@ async function closeIssue(
     });
 }
 
+async function hasCompletelyMissingAssets(reportContent: string): Promise<boolean> {
+    return reportContent.includes('❌');
+}
+
 export async function updateOrCreateReportComment(
     context: GitHubContext,
     issueNumber: number,
@@ -101,6 +106,12 @@ export async function updateOrCreateReportComment(
 ): Promise<void> {
     const existingCommentId = await findBotComment(context, issueNumber);
     const commentBody = `<!-- ${BOT_COMMENT_IDENTIFIER} -->\n${reportContent}`;
+
+    const { data: issue } = await context.octokit.issues.get({
+        owner: context.owner,
+        repo: context.repo,
+        issue_number: issueNumber,
+    });
 
     if (existingCommentId) {
         await context.octokit.issues.updateComment({
@@ -120,5 +131,19 @@ export async function updateOrCreateReportComment(
 
     if (reportContent.includes('(✨RESOLVED✨)')) {
         await closeIssue(context, issueNumber);
+    } else if (issue.state === 'closed' && await hasCompletelyMissingAssets(reportContent)) {
+        await context.octokit.issues.update({
+            owner: context.owner,
+            repo: context.repo,
+            issue_number: issueNumber,
+            state: 'open'
+        });
+        
+        await context.octokit.issues.createComment({
+            owner: context.owner,
+            repo: context.repo,
+            issue_number: issueNumber,
+            body: "This issue has been reopened because there are still completely missing assets that need to be resolved. Assets marked with ❌ are missing, while assets marked with ⚠️ are returning 404 errors."
+        });
     }
 } 
