@@ -6,10 +6,6 @@
         }
     ],
     "media": {
-        "headerUrl": {
-            "filePath": "%USERDATA%/game_assets/steam_878320.header.png",
-            "remoteUrl": "https://cdn2.steamgriddb.com/grid/24e158e43a569dac9c4f1fbadb8ad4b9.png"
-        },
         "heroUrl": {
             "filePath": "%USERDATA%/game_assets/steam_878320.hero.jpg",
             "remoteUrl": "https://cdn2.steamgriddb.com/hero/629cbc850fdffd979db78d9d37b2bab1.jpg"
