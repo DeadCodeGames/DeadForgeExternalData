@@ -51,10 +51,10 @@ if (isGitHubActionsEnvironment()) {
 
     // Remove both directories
     if (fs.existsSync(gamesDir)) {
-        fs.rmdirSync(gamesDir);
+        fs.rmSync(gamesDir, { recursive: true, force: true });
     }
     if (fs.existsSync(notesDir)) {
-        fs.rmdirSync(notesDir);
+        fs.rmSync(notesDir, { recursive: true, force: true });
     }
 } else {
     console.log('Deleting the directories is of destructive nature, and should not be run outside of a CI environment during the build step. Skipping.');
