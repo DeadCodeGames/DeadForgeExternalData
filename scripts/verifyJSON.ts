@@ -1,6 +1,7 @@
 import { readdirSync, readFileSync, writeFileSync } from "fs";
 import path from "path";
 import { CuratedGameJSON, CuratedGameObject, NoteJSON, NoteObject, CuratedGameExample, NoteExample } from "./JSONTypes";
+import { parse } from 'jsonc-parser';
 
 const curatedGames = readdirSync(path.join(__dirname, "../DeadForgeAssets/curated/games"));
 const curatedNotes = readdirSync(path.join(__dirname, "../DeadForgeAssets/notes/games"));
@@ -116,7 +117,7 @@ function processObject(game: any, currentlyIn: any, path = "", entryname: string
 
 for (const game of curatedGames) {
     console.log(`Checking game ${game}`);
-    const gameDataArray = JSON.parse(readFileSync(`./DeadForgeAssets/curated/games/${game}`, "utf-8"));
+    const gameDataArray = parse(readFileSync(`./DeadForgeAssets/curated/games/${game}`, "utf-8"));
     if (Array.isArray(gameDataArray)) {
         for (const gameData of gameDataArray) {
             processObject(gameData, CuratedGameExample, undefined, game);
@@ -128,7 +129,7 @@ for (const game of curatedGames) {
 
 for (const note of curatedNotes) {
     console.log(`Checking note ${note}`);
-    const noteData = JSON.parse(readFileSync(`./DeadForgeAssets/notes/games/${note}`, "utf-8"));
+    const noteData = parse(readFileSync(`./DeadForgeAssets/notes/games/${note}`, "utf-8"));
     processObject(noteData, NoteExample, undefined, note);
 }
 

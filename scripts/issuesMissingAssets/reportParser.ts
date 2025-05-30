@@ -1,4 +1,5 @@
 import fs from "fs";
+import { parse } from "jsonc-parser";
 import path from "path";
 
 interface Report {
@@ -81,14 +82,14 @@ function findExistingAssets(report: { source: string; id: string | number; missi
 
 export default function generateMarkdownReport(jsonData: string): string {
     try {
-        const data: ReportData = JSON.parse(jsonData);
+        const data: ReportData = parse(jsonData);
         const reports = data.reports;
 
         if (!reports || reports.length === 0) {
             return "# Missing Asset Report\n\nNo missing assets found.";
         }
 
-        const currentAssetsData = JSON.parse(
+        const currentAssetsData = parse(
             fs.readFileSync(path.join(__dirname, "..", "..", "DeadForgeAssets", "curated", "list.json"), "utf-8")
         );
 

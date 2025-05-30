@@ -1,3 +1,4 @@
+import { parse } from 'jsonc-parser';
 import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
 const fs = require('fs').promises;
 const path = require('path');
@@ -145,7 +146,7 @@ async function main() {
 
         // Read and parse the JSON file
         const data = await fs.readFile(LIST_JSON_PATH, 'utf8');
-        const list = JSON.parse(data);
+        const list = parse(data);
 
         // Process each entry
         for (let i = 0; i < list.length; i++) {

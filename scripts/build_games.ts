@@ -1,4 +1,5 @@
 import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
+import { parse } from 'jsonc-parser';
 if (!isGitHubActionsEnvironment()) {
     console.log('This script is of destructive nature, and should not be run outside of a CI environment.');
     console.log('All destructive functions have been disabled.');
@@ -29,7 +30,7 @@ const noteFiles = processDirectory(notesDir);
 
 function combineFiles(files: string[]) {
     return files.flatMap(file => {
-        const content = JSON.parse(fs.readFileSync(file, 'utf8'));
+        const content = parse(fs.readFileSync(file, 'utf8'));
         return Array.isArray(content) ? content : [content];
     });
 }

@@ -7,7 +7,7 @@ if (!isGitHubActionsEnvironment()) {
 import fs from 'fs';
 import path from 'path';
 import { CuratedGameObject, NoteJSON } from './JSONTypes.js';
-
+import { parse } from 'jsonc-parser';
 
 function processListFile(sourceFile: string, outputDir: string) {
     if (!fs.existsSync(sourceFile)) {
@@ -15,7 +15,7 @@ function processListFile(sourceFile: string, outputDir: string) {
         return 0;
     }
 
-    const sourceData = JSON.parse(fs.readFileSync(sourceFile, 'utf8')) as (CuratedGameObject[] | NoteJSON[]);
+    const sourceData = parse(fs.readFileSync(sourceFile, 'utf8')) as (CuratedGameObject[] | NoteJSON[]);
 
     // Create output directory if it doesn't exist
     if (!fs.existsSync(outputDir)) {

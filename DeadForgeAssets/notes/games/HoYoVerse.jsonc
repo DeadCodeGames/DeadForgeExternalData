@@ -1,0 +1,30 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "525aa0efd70f4399b9f64bcd2a5b38c7" // Zenless Zone Zero
+        },
+        {
+            "source": "epic",
+            "id": "86ae9acccf8443e18fca6950e0181288" // Honkai: Star Rail
+        },
+        {
+            "source": "epic",
+            "id": "41869934302e4b8cafac2d3c0e7c293d" // Genshin Impact
+        },
+        {
+            "source": "epic",
+            "id": "0dc22b543a40440fab5a98d1e40c02c1" // Honkai Impact 3rd
+        }
+        
+    ],
+    "notes": [
+        {
+            "type": "compatibility_warning",
+            "severity": "medium",
+            "title": "Epic Games Store Version Issues",
+            "description": "The Epic Games Store version of this game may exhibit buggy behavior, particularly with launching, as it downloads the HoYoLauncher instead of the game itself. It is recommended to download and use the HoYoPlay launcher directly from the official [HoYoPlay website](https://hoyoplay.hoyoverse.com/) for a smoother experience. Official HoYoPlay import support for this application is planned for a future update.",
+            "recommendation": "Download the game client directly from the official [HoYoPlay website](https://hoyoplay.hoyoverse.com/)."
+        }
+    ]
+}
