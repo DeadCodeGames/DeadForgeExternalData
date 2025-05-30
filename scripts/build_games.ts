@@ -19,7 +19,7 @@ function processDirectory(dir: string) {
         return [];
     }
     return fs.readdirSync(dir)
-        .filter(file => file.endsWith('.json'))
+        .filter(file => file.endsWith('.jsonc'))
         .map(file => path.join(dir, file));
 }
 
