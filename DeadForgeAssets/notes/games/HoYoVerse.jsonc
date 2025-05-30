@@ -23,7 +23,7 @@
             "type": "compatibility_warning",
             "severity": "medium",
             "title": "Epic Games Store Version Issues",
-            "description": "The Epic Games Store version of this game may exhibit buggy behavior, particularly with launching, as it downloads the HoYoLauncher instead of the game itself. It is recommended to download and use the HoYoPlay launcher directly from the official [HoYoPlay website](https://hoyoplay.hoyoverse.com/) for a smoother experience. Official HoYoPlay import support for this application is planned for a future update.",
+            "description": "The Epic Games Store version of this game may exhibit buggy behavior, particularly with launching, as it downloads the HoYoPlay Launcher instead of the game itself.\nWe recommended using the HoYoPlay launcher downloaded directly from the official [HoYoPlay website](https://hoyoplay.hoyoverse.com/) for a smoother experience.\n_**Official HoYoPlay import support for this application is planned for a future update.** However, its implementation is unclear at the moment, and we are investigating the best way to implement it.\nIt could be automatically finding installed HoYoVerse games, or it could be a completely manual process.\nWe will update this note as we learn more about HoYoPlay._",
             "recommendation": "Download the game client directly from the official [HoYoPlay website](https://hoyoplay.hoyoverse.com/)."
         }
     ]
