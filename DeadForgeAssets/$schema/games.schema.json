@@ -148,8 +148,7 @@
             "additionalProperties": false,
             "required": [
                 "filePath",
-                "remoteUrl",
-                "logo_position"
+                "remoteUrl"
             ]
         }
     }

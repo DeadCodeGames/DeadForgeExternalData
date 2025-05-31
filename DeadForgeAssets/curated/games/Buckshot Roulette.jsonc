@@ -1,0 +1,18 @@
+{
+    "matches": [
+        {
+            "source": "steam",
+            "id": "2835570"
+        }
+    ],
+    "media": {
+        "logoUrl": { // Unofficial Japanese Logo
+            "filePath": {
+                "japanese": "%USERDATA%/game_assets/steam_2835570.logo_japanese.png"
+            },
+            "remoteUrl": {
+                "japanese": "https://cdn2.steamgriddb.com/logo/e53284f6555cd8331b5f9354f8442777.png"
+            }
+        }
+    }
+}
