@@ -42,6 +42,27 @@ export interface NoteJSON extends GameJSON {
     notes: NoteObject[];
 }
 
+export interface AuthorObject {
+    name: string;
+    link: string;
+    profilePicture: MediaObject;
+}
+
+export interface ArticleObject {
+    title: string;
+    authors: AuthorObject[];
+    bannerImage?: MediaObject;
+    content: string;
+    publishDate: string;
+    lastModified: string;
+    tags: string[];
+    slug: string;
+}
+
+export interface ArticleJSON {
+    articles: ArticleObject[];
+}
+
 export const CuratedGameExample = {
     "Array(matches)": [
         {
@@ -119,6 +140,33 @@ export const NoteExample = {
             title: "string",
             description: "string",
             recommendation: "string"
+        }
+    ]
+}
+
+export const ArticleExample = {
+    "Array(articles)": [
+        {
+            title: "string",
+            "Array(authors)": [
+                {
+                    name: "string",
+                    link: "string",
+                    "Object(profilePicture)": {
+                        filePath: "string",
+                        remoteUrl: "string"
+                    }
+                }
+            ],
+            "Object(bannerImage)": {
+                filePath: "string",
+                remoteUrl: "string"
+            },
+            content: "string",
+            publishDate: "string",
+            lastModified: "string",
+            "Array(tags)": ["string"],
+            slug: "string"
         }
     ]
 }
