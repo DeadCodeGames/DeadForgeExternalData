@@ -10,8 +10,15 @@ Your contribution helps make DeadForge better for everyone. 🎮✨
 
 This issue will now be closed.
 ---
-###### If you want to report more missing assets, please create a new issue. Thank you ^^`;
+###### If you want to report more missing assets, please you can create a comment with the following format:
 
+\`\`\`
+${REPORT_BEGIN_TAG}
+<report JSON here>
+${REPORT_END_TAG}
+\`\`\`
+
+This will automatically update the report and reopen the issue if there are new missing assets. Thank you for your contribution, and helping us stay organized! ^^`;
 export async function addMissingAssetsLabel(context: GitHubContext, issueNumber: number): Promise<void> {
     await context.octokit.issues.addAssignees({
         owner: context.owner,

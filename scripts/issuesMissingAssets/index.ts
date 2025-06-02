@@ -2,6 +2,7 @@ import { Octokit } from '@octokit/rest';
 import { GitHubContext } from './types';
 import { findReportSection, updateOrCreateReportComment, addMissingAssetsLabel } from './reportHandler';
 import generateMarkdownReport from './reportParser';
+import { handleUpdateCommand } from './updateHandler';
 
 async function main() {
     const eventName = process.env.GITHUB_EVENT_NAME;
@@ -22,8 +23,17 @@ async function main() {
     const context: GitHubContext = { owner, repo, octokit };
 
     if (eventName === 'issue_comment') {
-        console.log(`Issue #${event.issue.number} body:`);
-        console.log(event.issue.body);
+        console.log(`Issue #${event.issue.number} comment by ${event.comment.user.login}:`);
+        console.log(event.comment.body);
+
+        // Handle update command if present
+        await handleUpdateCommand(
+            context,
+            event.issue.number,
+            event.comment.body,
+            event.comment.user.login,
+            event.issue.user.login
+        );
     
         if (event.issue.body) {
             const reportSection = await findReportSection(event.issue.body);
