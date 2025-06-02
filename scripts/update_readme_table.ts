@@ -124,7 +124,7 @@ function getFormattedFileLink(file: string): string {
 }
 
 function findGameFilename(source: string, id: string): string {
-    const files = glob.sync(path.join('DeadForgeAssets', 'curated', '**', '*.json*'));
+    const files = glob.sync(path.join('DeadForgeAssets', 'curated', 'games', '*.json*'));
     
     for (const file of files) {
         const fileContents = parse(fs.readFileSync(file, 'utf-8'));
@@ -283,6 +283,60 @@ async function generateAssetTable(): Promise<string> {
     return table + rows.join('\n') + '\n';
 }
 
+async function commitChanges(readmePath: string): Promise<void> {
+    const octokit = new Octokit({
+        auth: process.env.SERVICE_BOT_PAT
+    });
+
+    const [owner, repo] = ["DeadCodeGames", "DeadForgeExternalData"];
+    const eventName = process.env.GITHUB_EVENT_NAME;
+    const sha = process.env.GITHUB_SHA;
+
+    // Get the current commit's tree
+    const { data: currentCommit } = await octokit.git.getCommit({
+        owner,
+        repo,
+        commit_sha: sha!
+    });
+
+    // Create a new blob with the updated README content
+    const content = fs.readFileSync(readmePath, 'utf-8');
+    const { data: blob } = await octokit.git.createBlob({
+        owner,
+        repo,
+        content,
+        encoding: 'utf-8'
+    });
+
+    // Create a new tree with the updated README
+    const { data: tree } = await octokit.git.createTree({
+        owner,
+        repo,
+        base_tree: currentCommit.tree.sha,
+        tree: [{
+            path: 'README.md',
+            mode: '100644',
+            type: 'blob',
+            sha: blob.sha
+        }]
+    });
+
+    const { data: newCommit } = await octokit.git.createCommit({
+        owner,
+        repo,
+        message: 'Update README.md asset table\n\nAutomatically updated by @deadcodebot',
+        tree: tree.sha,
+        parents: [sha!]
+    });
+
+    await octokit.git.updateRef({
+        owner,
+        repo,
+        ref: `heads/${process.env.GITHUB_REF_NAME}`,
+        sha: newCommit.sha
+    });
+}
+
 async function updateReadmeTable(): Promise<void> {
     const readmePath = 'README.md';
     const readme = fs.readFileSync(readmePath, 'utf-8');
@@ -291,9 +345,15 @@ async function updateReadmeTable(): Promise<void> {
     const updatedReadme = readme.replace(
         /<!------------------------------- ASSETS_LIST_START -------------------------------->([\s\S]*?)<!-------------------------------- ASSETS_LIST_END --------------------------------->/,
         `<!------------------------------- ASSETS_LIST_START -------------------------------->\n\n${table}\n<!-------------------------------- ASSETS_LIST_END --------------------------------->`
+    ).replace(
+        /<!-- TABLE_UPDATE_TIME_START -->([\s\S]*?)<!-- TABLE_UPDATE_TIME_END -->/,
+        `<!-- TABLE_UPDATE_TIME_START -->Last updated on <strong>${new Date().toLocaleString("en-GB", {timeZone: "UTC", weekday: "long", day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit", timeZoneName: "short"})}</strong>.<!-- TABLE_UPDATE_TIME_END -->`
     );
 
     fs.writeFileSync(readmePath, updatedReadme);
+
+    // Commit the changes
+    await commitChanges(readmePath);
 }
 
 // Run the script
