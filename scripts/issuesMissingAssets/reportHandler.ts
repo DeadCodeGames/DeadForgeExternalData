@@ -129,7 +129,7 @@ export async function updateOrCreateReportComment(
         });
     }
 
-    if (reportContent.includes('(✨RESOLVED✨)')) {
+    if (reportContent.includes('(✨RESOLVED✨)') && issue.state === 'open') {
         await closeIssue(context, issueNumber);
     } else if (issue.state === 'closed' && await hasCompletelyMissingAssets(reportContent)) {
         await context.octokit.issues.update({
