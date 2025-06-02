@@ -124,7 +124,8 @@ function getFormattedFileLink(file: string): string {
 }
 
 function findGameFilename(source: string, id: string): string {
-    const files = glob.sync(path.join('DeadForgeAssets', 'curated', '**', '*.json*'));
+    const files = glob.sync(path.join('DeadForgeAssets', 'curated', 'games', '*.json*'));
+    console.log(files);
     
     for (const file of files) {
         const fileContents = parse(fs.readFileSync(file, 'utf-8'));
@@ -298,7 +299,7 @@ async function commitChanges(readmePath: string): Promise<void> {
         repo,
         commit_sha: sha!
     });
-    
+
     // Create a new blob with the updated README content
     const content = fs.readFileSync(readmePath, 'utf-8');
     const { data: blob } = await octokit.git.createBlob({
