@@ -144,7 +144,7 @@ function findGameFilename(source: string, id: string): string {
 function formatGameId(source: string, id: string): string {
     const filename = findGameFilename(source, id);
     const formattedSource = source.charAt(0).toUpperCase() + source.slice(1);
-    return `${getFormattedFileLink(filename)}<br>${formattedSource}<br><span style="font-size: 10px; font-weight: bold;">${id}</span>`;
+    return `${getFormattedFileLink(filename)}<br>${formattedSource}<br>${id}`;
 }
 
 async function checkAssetStatus(asset: any, missingAssets: string[] | undefined, assetType: string): Promise<AssetStatus> {
@@ -211,7 +211,7 @@ async function generateAssetTable(): Promise<string> {
         allGameIds.add(gameId);
     });
 
-    let table = '| File name / Game name<br>Game Source<br><span style="font-size: 10px;">Game ID</span> | iconUrl | logoUrl | heroUrl | headerUrl | capsuleUrl |\n';
+    let table = '| File name / Game name<br>Game Source<br>Game ID | iconUrl | logoUrl | heroUrl | headerUrl | capsuleUrl |\n';
     table += '|:---------:|:------:|:------:|:------:|:--------:|:----------:|\n';
 
     // Process all games and store them in an array for sorting
