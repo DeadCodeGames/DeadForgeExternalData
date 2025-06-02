@@ -7,8 +7,8 @@
     ],
     "media": {
         "iconUrl": {
-            "filePath": "%USERDATA%/game_assets/itch_792778.icon.ico",
-            "remoteUrl": "https://cdn2.steamgriddb.com/icon/c7410e5d6aa6b2f78ea7d9267b7908c2.ico"
+            "filePath": "%USERDATA%/game_assets/itch_792778.icon.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/c7410e5d6aa6b2f78ea7d9267b7908c2/32/512x512.png"
         },
         "logoUrl": {
             "filePath": "%USERDATA%/game_assets/itch_792778.logo.png",

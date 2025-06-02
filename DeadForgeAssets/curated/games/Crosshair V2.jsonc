@@ -7,8 +7,8 @@
     ],
     "media": {
         "iconUrl": {
-            "filePath": "%USERDATA%/game_assets/epic_8d3fd7a1c6034e799f04a2c8cce520a3.icon.ico",
-            "remoteUrl": "https://cdn2.steamgriddb.com/icon/8ef4b75ddaf01b662dadbe15cc6115c7.ico"
+            "filePath": "%USERDATA%/game_assets/epic_8d3fd7a1c6034e799f04a2c8cce520a3.icon.png",
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/8ef4b75ddaf01b662dadbe15cc6115c7/32/256x256.png"
         },
         "logoUrl": {
             "filePath": "%USERDATA%/game_assets/epic_8d3fd7a1c6034e799f04a2c8cce520a3.logo.png",
