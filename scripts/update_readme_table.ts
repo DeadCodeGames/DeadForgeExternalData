@@ -124,7 +124,7 @@ function getFormattedFileLink(file: string): string {
 }
 
 function findGameFilename(source: string, id: string): string {
-    const files = glob.sync(path.join('DeadForgeAssets', 'curated', 'games', '*.json*'));
+    const files = glob.sync(path.join('DeadForgeAssets', 'curated', '**', '*.json*'));
     
     for (const file of files) {
         const fileContents = parse(fs.readFileSync(file, 'utf-8'));
@@ -298,7 +298,7 @@ async function commitChanges(readmePath: string): Promise<void> {
         repo,
         commit_sha: sha!
     });
-
+    
     // Create a new blob with the updated README content
     const content = fs.readFileSync(readmePath, 'utf-8');
     const { data: blob } = await octokit.git.createBlob({
@@ -321,20 +321,38 @@ async function commitChanges(readmePath: string): Promise<void> {
         }]
     });
 
-    const { data: newCommit } = await octokit.git.createCommit({
-        owner,
-        repo,
-        message: 'Update README.md asset table\n\nAutomatically updated by @deadcodebot',
-        tree: tree.sha,
-        parents: [sha!]
-    });
+    if (currentCommit.committer.name === 'deadcodebot') {
+        const { data: updatedCommit } = await octokit.git.createCommit({
+            owner,
+            repo,
+            message: currentCommit.message,
+            tree: tree.sha,
+            parents: [currentCommit.parents[0].sha] // Use the parent of the current commit
+        });
 
-    await octokit.git.updateRef({
-        owner,
-        repo,
-        ref: `heads/${process.env.GITHUB_REF_NAME}`,
-        sha: newCommit.sha
-    });
+        await octokit.git.updateRef({
+            owner,
+            repo,
+            ref: `heads/${process.env.GITHUB_REF_NAME}`,
+            sha: updatedCommit.sha,
+            force: true
+        });
+    } else {
+        const { data: newCommit } = await octokit.git.createCommit({
+            owner,
+            repo,
+            message: 'Update README.md asset table\n\nAutomatically updated by @deadcodebot',
+            tree: tree.sha,
+            parents: [sha!]
+        });
+
+        await octokit.git.updateRef({
+            owner,
+            repo,
+            ref: `heads/${process.env.GITHUB_REF_NAME}`,
+            sha: newCommit.sha
+        });
+    }
 }
 
 async function updateReadmeTable(): Promise<void> {
@@ -360,4 +378,4 @@ async function updateReadmeTable(): Promise<void> {
 updateReadmeTable().catch(error => {
     console.error('Error updating README table:', error);
     process.exit(1);
-}); 
+});
