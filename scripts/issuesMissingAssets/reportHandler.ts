@@ -1,5 +1,4 @@
 import { REPORT_BEGIN_TAG, REPORT_END_TAG, BOT_COMMENT_IDENTIFIER, ReportSection, GitHubContext } from './types';
-import generateMarkdownReport from './reportParser';
 
 const MISSING_ASSETS_LABEL = 'missing deadforge assets';
 const DEFAULT_ASSIGNEES = ['RichardKanshen'];
