@@ -211,7 +211,7 @@ async function generateAssetTable(): Promise<string> {
         allGameIds.add(gameId);
     });
 
-    let table = '| Filename<br>Game Source<br>Game ID | iconUrl | logoUrl | heroUrl | headerUrl | capsuleUrl |\n';
+    let table = '| File name / Game name<br>Game Source<br>Game ID | iconUrl | logoUrl | heroUrl | headerUrl | capsuleUrl |\n';
     table += '|:---------:|:------:|:------:|:------:|:--------:|:----------:|\n';
 
     // Process all games and store them in an array for sorting

@@ -22,6 +22,7 @@
     "build": "bun run scripts/build_games.js",
     "download-and-hash": "bun run scripts/download-and-hash.js",
     "predeploy": "bun run build && bun run download-and-hash",
+    "postdeploy": "bun run scripts/clean_dir.ts",
     "verify": "bun run scripts/verifyJSON.ts",
     "lint": "eslint",
     "update-readme": "bun run scripts/update_readme_table.ts"

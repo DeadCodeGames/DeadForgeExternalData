@@ -43,11 +43,6 @@ jobs:
         id: download
         run: bun run predeploy
 
-      - name: Update README Asset Table
-        run: bun run scripts/update_readme_table.ts
-        env:
-          SERVICE_BOT_PAT: ${{ secrets.SERVICE_BOT_PAT }}
-
       - name: Check for download failures
         run: |
           if [ -f "download_failures.txt" ]; then
@@ -55,6 +50,14 @@ jobs:
             cat download_failures.txt
             echo "failed=true" >> $GITHUB_OUTPUT
           fi
+
+      - name: Update README Asset Table
+        run: bun run scripts/update_readme_table.ts
+        env:
+          SERVICE_BOT_PAT: ${{ secrets.SERVICE_BOT_PAT }}
+
+      - name: Clean up
+        run: bun run scripts/clean_dir.ts
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
