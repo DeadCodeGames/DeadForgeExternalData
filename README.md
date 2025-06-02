@@ -7,8 +7,16 @@ This repository contains:
 ## External Assets
 
 ### Assets List
+<spoiler>
+<summary>You can find the full asset list here (updated on every push to DeadForgeAssets and periodically every 6 hours)</summary>
+<details>
+<!-- This list is not made to be edited manually, and is handled by @deadcodebot --->
+<!------------ That's why we have these cool comments in the README :3 ------------->
+<!------------------------------- ASSETS_LIST_START -------------------------------->
 
-We... do not have an official list of all games with listed assets i am just way too lazy lmao
+<!-------------------------------- ASSETS_LIST_END --------------------------------->
+</details>
+</spoiler>
 
 ### Asset Structure
 

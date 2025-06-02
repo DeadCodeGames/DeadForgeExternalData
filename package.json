@@ -23,6 +23,7 @@
     "download-and-hash": "bun run scripts/download-and-hash.js",
     "predeploy": "bun run build && bun run download-and-hash",
     "verify": "bun run scripts/verifyJSON.ts",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update-readme": "bun run scripts/update_readme_table.ts"
   }
 }
