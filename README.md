@@ -14,6 +14,30 @@ This repository contains:
 <!------------ That's why we have these cool comments in the README :3 ------------->
 <!------------------------------- ASSETS_LIST_START -------------------------------->
 
+| Filename<br>Game Source<br>Game ID | iconUrl | logoUrl | heroUrl | headerUrl | capsuleUrl |
+|:---------:|:------:|:------:|:------:|:--------:|:----------:|
+| [BTD6.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/BTD6.jsonc)<br>Epic<br>7786b355a13b47a6b3915335117cd0b2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Buckshot Roulette.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Buckshot%20Roulette.jsonc)<br>Steam<br>2835570 |  | 🇯🇵 ✅ |  |  |  |
+| [Crosshair V2.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Crosshair%20V2.jsonc)<br>Epic<br>8d3fd7a1c6034e799f04a2c8cce520a3 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [DDLC+.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/DDLC%2B.jsonc)<br>Epic<br>c5109bdceb3a453bb38c2fdc964ddee8 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Epic Games Store.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Epic%20Games%20Store.jsonc)<br>Epic<br>-1 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [FNF.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/FNF.jsonc)<br>Itch<br>792778 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Fortnite.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Fortnite.jsonc)<br>Epic<br>Fortnite | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Godot Engine.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Godot%20Engine.jsonc)<br>Itch<br>188955 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [GTA5.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/GTA5.jsonc)<br>Epic<br>9d2d0eb64d5c44529cece33fe2a46482 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [itch.io.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/itch.io.jsonc)<br>Itch<br>-1 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Marvel Rivals.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Marvel%20Rivals.jsonc)<br>Epic<br>575efd0b5dd54429b035ffc8fe2d36d0 | ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ | ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ |
+| [RUNONCE (remember_me).jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/RUNONCE%20(remember_me).jsonc)<br>Itch<br>377841 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Sara is Missing.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Sara%20is%20Missing.jsonc)<br>Itch<br>89457 | ✅ | 🇬🇧 ✅<br>🇷🇺 ✅ | ✅ | 🇬🇧 ✅<br>🇷🇺 ✅ | 🇬🇧 ✅<br>🇷🇺 ✅ |
+| [Shake Art DELUXE.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Shake%20Art%20DELUXE.jsonc)<br>Itch<br>1365997 | ✅ | ✅ |  |  |  |
+| [Simulacra Pipe Dreams.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Simulacra%20Pipe%20Dreams.jsonc)<br>Steam<br>878320 |  | ✅ | ✅ |  | ✅ |
+| [Steam.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Steam.jsonc)<br>Steam<br>-1 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [Steamworks Common Redistributables.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Steamworks%20Common%20Redistributables.jsonc)<br>Steam<br>228980 |  |  |  |  | ✅ |
+| [The WereCleaner.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/The%20WereCleaner.jsonc)<br>Epic<br>88814f1dc3aa4b7f810821e03edebb81 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [The WereCleaner.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/The%20WereCleaner.jsonc)<br>Steam<br>2795000 |  |  |  | ✅ |  |
+| [Unreal Engine 5.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Unreal%20Engine%205.jsonc)<br>Epic<br>UE_5.5 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| [ZZZ.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/ZZZ.jsonc)<br>Epic<br>525aa0efd70f4399b9f64bcd2a5b38c7 | ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ | ✅ | ✅ | ✅ |
+
 <!-------------------------------- ASSETS_LIST_END --------------------------------->
 </details>
 </spoiler>
