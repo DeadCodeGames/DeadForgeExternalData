@@ -209,7 +209,7 @@ function formatObjectValue(obj: any, prefix: string = ''): string {
     return result;
 }
 
-function formatTreeNode(node: TreeNode, prefix: string = '', isLast: boolean = true, depth: number = 0): string {
+function formatTreeNode(node: TreeNode, prefix: string = ' ', isLast: boolean = true, depth: number = 0): string {
     let result = '';
     const entries = Object.entries(node).filter(([key]) => key !== '_changes');
     const changes = node._changes as AssetChange[] || [];
@@ -255,12 +255,12 @@ function formatAddedNode(value: any, prefix: string, path: string[] = []): strin
                 result += formatAddedNode(val, nextPrefix, newPath);
             } else {
                 const linePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                result += `+${linePrefix}└── "${val}"\n`;
+                result += `+${linePrefix.slice(1)}└── "${val}"\n`;
             }
         });
     } else {
         const linePrefix = prefix.replace(/[└├]──\s*$/, '');
-        result += `+${linePrefix}└── "${value}"\n`;
+        result += `+${linePrefix.slice(1)}└── "${value}"\n`;
     }
     
     return result;
@@ -281,12 +281,12 @@ function formatRemovedNode(value: any, prefix: string, path: string[] = []): str
                 result += formatRemovedNode(val, nextPrefix, newPath);
             } else {
                 const linePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                result += `-${linePrefix}└── "${val}"\n`;
+                result += `-${linePrefix.slice(1)}└── "${val}"\n`;
             }
         });
     } else {
         const linePrefix = prefix.replace(/[└├]──\s*$/, '');
-        result += `-${linePrefix}└── "${value}"\n`;
+        result += `-${linePrefix.slice(1)}└── "${value}"\n`;
     }
     
     return result;
