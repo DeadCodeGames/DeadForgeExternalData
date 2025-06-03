@@ -1,0 +1,42 @@
+name: PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'DeadForgeAssets/**'
+
+jobs:
+  review-pr:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: read
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: Download Images and Update Hashes
+        id: download
+        run: bun run predeploy
+
+      - name: Check for download failures
+        run: |
+          if [ -f "download_failures.txt" ]; then
+            echo "::error::Some images failed to download. See download_failures.txt for details."
+            cat download_failures.txt
+            echo "failed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run PR Review
+        run: bun run scripts/prReview/index.ts
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SERVICE_BOT_PAT: ${{ secrets.SERVICE_BOT_PAT }}
+          PR_NUMBER: ${{ github.event.pull_request.number }} 
