@@ -9,7 +9,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/**'
-      - 'DeadForgeAssets/**'
+      - 'DeadForgeAssets/games/**'
 
 jobs:
   refresh-assets:
