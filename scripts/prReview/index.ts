@@ -218,13 +218,23 @@ function formatTreeNode(node: TreeNode, prefix: string = ' ', isLast: boolean = 
     if (changes.length > 0) {
         for (const change of changes) {
             if (change.type === 'added' && change.newValue) {
-                result += formatAddedNode(change.newValue, prefix);
+                // For added changes, we want to mark the entire subtree as new
+                const pathParts = change.path.split('/');
+                const fileName = pathParts[pathParts.length - 1];
+                const mediaType = change.mediaType;
+                
+                // Start building the tree from the file level with + markers
+                result += `+${prefix.slice(1)}└── ${fileName}\n`;
+                result += `+${prefix.slice(1)}    └── media\n`;
+                result += `+${prefix.slice(1)}        └── ${mediaType}\n`;
+                result += formatAddedNode(change.newValue, prefix + '            ', [fileName, 'media', mediaType]);
             } else if (change.type === 'removed' && change.oldValue) {
                 result += formatRemovedNode(change.oldValue, prefix);
             } else if (change.type === 'modified' && change.changes) {
                 result += formatModifiedNode(change.changes, prefix);
             }
         }
+        return result;
     }
     
     // Handle child nodes
@@ -248,14 +258,15 @@ function formatAddedNode(value: any, prefix: string, path: string[] = []): strin
             const isLast = index === arr.length - 1;
             const newPath = [...path, key];
             const connector = isLast ? '└──' : '├──';
-            result += `${prefix}${connector} ${key}\n`;
+            const linePrefix = prefix.replace(/[└├]──\s*$/, '');
+            result += `+${linePrefix.slice(1)}${connector} ${key}\n`;
             
             const nextPrefix = prefix + (isLast ? '    ' : '│   ');
             if (typeof val === 'object' && val !== null) {
                 result += formatAddedNode(val, nextPrefix, newPath);
             } else {
-                const linePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                result += `+${linePrefix.slice(1)}└── "${val}"\n`;
+                const valLinePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
+                result += `+${valLinePrefix.slice(1)}└── "${val}"\n`;
             }
         });
     } else {
