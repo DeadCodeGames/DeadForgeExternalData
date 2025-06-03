@@ -9,12 +9,29 @@ export interface GitHubContext {
     prNumber: number;
 }
 
+export interface MediaEntry {
+    remoteUrl: string | Record<string, string>;
+    filePath: string | Record<string, string>;
+    hash?: string | Record<string, string>;
+    logo_position?: {
+        x: number;
+        y: number;
+        width: number;
+        height: number;
+    };
+}
+
 export interface AssetChange {
     type: 'added' | 'modified' | 'removed';
     path: string;
     mediaType: string;
-    url: string | Record<string, string>;
-    hash?: string | Record<string, string>;
+    oldValue?: MediaEntry;
+    newValue?: MediaEntry;
+    changes?: {
+        field: string;
+        oldValue: any;
+        newValue: any;
+    }[];
 }
 
 export interface ReviewResult {
@@ -22,4 +39,10 @@ export interface ReviewResult {
     downloadFailures: string[];
     validationErrors: string[];
     hasIssues: boolean;
+    relatedIssues?: Array<{
+        number: number;
+        title: string;
+        url: string;
+        labels: string[];
+    }>;
 } 
