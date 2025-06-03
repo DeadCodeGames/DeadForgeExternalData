@@ -62,7 +62,7 @@ This repository contains:
 | ❌ | This asset is not provided in the DeadForge Curated Assets list, and has been request in a [GitHub Issue](https://github.com/DeadCodeGames/DeadForgeExternalData/issues). |
 | ⚠️ | This asset is provided in the DeadForge Curated Assets list, but its availability check has failed (most likely, its link has expired, or the file has been removed from the server it is hosted on). This link should be replaced ASAP. |
 | ✅ | This asset is provided in the DeadForge Curated Assets list, and it is available for use. |
-| 🇬🇧 ✅<br>🇯🇵 ⚠️ | This asset's **localized English variant** is provided in the DeadForge Curated Assets list, and is available for usE.<br>However, its **localized Japanese variant** is failing its availability check, and is not available for use.
+| 🇬🇧 ✅<br>🇯🇵 ⚠️ | This asset's **localized English variant** is provided in the DeadForge Curated Assets list, and is available for use.<br>However, its **localized Japanese variant** is failing its availability check, and is not available for use.
 
 </details>
 <hr>
