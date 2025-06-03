@@ -20,8 +20,8 @@
                 "japanese": "https://cdn2.steamgriddb.com/logo/3b8592aa617b0299e2269ed032a13773.png"
             },
             "filePath": {
-                "english": "%USERDATA%/game_assets/hoyo_genshinimpact.logo.english.png",
-                "japanese": "%USERDATA%/game_assets/hoyo_genshinimpact.logo.japanese.png"
+                "english": "%USERDATA%/game_assets/hoyo_genshinimpact.logo_english.png",
+                "japanese": "%USERDATA%/game_assets/hoyo_genshinimpact.logo_japanese.png"
             },
             "logo_position": {
                 "pinned_position": "CenterCenter",
