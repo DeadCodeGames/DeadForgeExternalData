@@ -17,13 +17,18 @@ This repository contains:
 
 | File name / Game name<br>Game Source<br>Game ID | iconUrl | logoUrl | heroUrl | headerUrl | capsuleUrl |
 |:---------:|:------:|:------:|:------:|:--------:|:----------:|
+| Arctic Combat<br>Steam<br>212370 |  | ❌ | ❌ |  | ❌ |
+| Battle for Graxia<br>Steam<br>90530 |  | ❌ | ❌ |  | ❌ |
 | Bloodwash<br>Itch<br>1199082 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [BTD6.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/BTD6.jsonc)<br>Epic<br>7786b355a13b47a6b3915335117cd0b2 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Brawl Busters<br>Steam<br>109410 |  | ❌ | ❌ |  | ❌ |
 | [Buckshot Roulette.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Buckshot%20Roulette.jsonc)<br>Steam<br>2835570 |  | 🇯🇵 ✅ |  |  |  |
+| Codename Gordon<br>Steam<br>92 |  | ❌ | ❌ |  | ❌ |
 | Cold Call [Christmas Horror]<br>Itch<br>840022 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Crosshair V2.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Crosshair%20V2.jsonc)<br>Epic<br>8d3fd7a1c6034e799f04a2c8cce520a3 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | DELTARUNE (Chapter 1 & 2 DEMO)<br>Steam<br>1690940 |  | ❌ | ❌ |  | ❌ |
 | dire decks<br>Itch<br>1924109 | ❌ | ❌ | ❌ | ❌ | ❌ |
+| District 187<br>Steam<br>221080 |  | ❌ | ❌ |  | ❌ |
 | [DDLC+.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/DDLC%2B.jsonc)<br>Epic<br>c5109bdceb3a453bb38c2fdc964ddee8 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | DON'T FEED IT<br>Itch<br>3471790 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Epic Games Store.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Epic%20Games%20Store.jsonc)<br>Epic<br>-1 | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -37,6 +42,7 @@ This repository contains:
 | Genshin Impact<br>Epic<br>41869934302e4b8cafac2d3c0e7c293d | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Godot Engine.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Godot%20Engine.jsonc)<br>Itch<br>188955 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | [GTA5.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/GTA5.jsonc)<br>Epic<br>9d2d0eb64d5c44529cece33fe2a46482 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Haunted Memories<br>Steam<br>241640 |  | ❌ | ❌ |  | ❌ |
 | Hell is Others<br>Epic<br>0e70be0cea0446599acb4c26d2e925f9 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Honkai Impact 3rd<br>Epic<br>0dc22b543a40440fab5a98d1e40c02c1 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Honkai: Star Rail<br>Epic<br>86ae9acccf8443e18fca6950e0181288 | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -45,9 +51,12 @@ This repository contains:
 | [Marvel Rivals.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Marvel%20Rivals.jsonc)<br>Epic<br>575efd0b5dd54429b035ffc8fe2d36d0 | ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ | ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ |
 | Neon Abyss<br>Epic<br>a26f991a5e6c4e9c9572fc200cbea47f | ❌ | ❌ | ❌ | ❌ | ❌ |
 | ocean of eyes<br>Itch<br>3228009 | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Pandora Saga: Weapons of Balance<br>Steam<br>106010 | ❌ | ❌ | ❌ |  | ❌ |
 | RAWMEN: Food Fighter Arena 🍜<br>Epic<br>93228a1a7b2b4205811d8edf930a0c18 | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Renaissance Heroes<br>Steam<br>221790 |  | ❌ | ❌ |  | ❌ |
 | Rocket League®<br>Epic<br>Sugar | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [RUNONCE (remember_me).jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/RUNONCE%20(remember_me).jsonc)<br>Itch<br>377841 | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Rusty Hearts<br>Steam<br>36630 |  | ❌ | ❌ |  | ❌ |
 | [Sara is Missing.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Sara%20is%20Missing.jsonc)<br>Itch<br>89457 | ✅ | 🇬🇧 ✅<br>🇷🇺 ✅ | ✅ | 🇬🇧 ✅<br>🇷🇺 ✅ | 🇬🇧 ✅<br>🇷🇺 ✅ |
 | Scratchin' Melodii (Beta Demo)<br>Itch<br>1165696 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | Search Party (Director's Cut)<br>Itch<br>944469 | ❌ | ❌ | ❌ | ❌ | ❌ |
@@ -64,11 +73,12 @@ This repository contains:
 | Turnip Boy Commits Tax Evasion<br>Epic<br>3d34f303a68c44c2a9b44a3988533e90 | ❌ | ❌ | ❌ | ❌ | ❌ |
 | [Unreal Engine 5.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/Unreal%20Engine%205.jsonc)<br>Epic<br>UE_5.5 | ✅ | ✅ | ✅ | ✅ | ✅ |
 | VALORANT<br>Epic<br>602eb4abc8764c87b7f2607a1ef8c18e | ❌ | ❌ | ❌ | ❌ | ❌ |
+| Vanguard: Saga of Heroes F2P<br>Steam<br>218210 |  | ❌ | ❌ |  | ❌ |
 | [ZZZ.jsonc](https://github.com/DeadCodeGames/DeadForgeExternalData/blob/main/DeadForgeAssets/curated/games/ZZZ.jsonc)<br>Epic<br>525aa0efd70f4399b9f64bcd2a5b38c7 | ✅ | 🇬🇧 ✅<br>🇨🇳 ✅ | ✅ | ✅ | ✅ |
 
 <!-------------------------------- ASSETS_LIST_END --------------------------------->
 <!---------------------- Table generated by @deadcodebot uwu ----------------------->
-<!-- TABLE_UPDATE_TIME_START -->Last updated on <strong>Tuesday 03 June 2025 at 16:19:28 UTC</strong>.<!-- TABLE_UPDATE_TIME_END -->
+<!-- TABLE_UPDATE_TIME_START -->Last updated on <strong>Tuesday 03 June 2025 at 16:51:09 UTC</strong>.<!-- TABLE_UPDATE_TIME_END -->
 <hr>
 
 #### What does this table mean?
