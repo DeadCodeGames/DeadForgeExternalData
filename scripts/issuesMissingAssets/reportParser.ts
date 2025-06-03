@@ -168,7 +168,7 @@ export default function generateMarkdownReport(jsonData: string): string {
                 markdown += "---\n\n";
                 markdown += "## ✨ Resolved Assets\n\n";
             }
-            markdown += "The following games have had all their missing assets resolved:\n\n";
+            markdown += "The following games have had all their missing assets resolved:\n<details><summary>To prevent cluttering the report, the resolved assets are hidden by default. Click here to expand.</summary>\n\n";
 
             for (const source in groupedResolvedReports) {
                 markdown += `### ${source.toUpperCase()}\n\n`;
@@ -185,6 +185,8 @@ export default function generateMarkdownReport(jsonData: string): string {
                     markdown += "\n";
                 });
             }
+
+            markdown += "</details>\n\n";
         }
 
         // If no cases at all, show a message
