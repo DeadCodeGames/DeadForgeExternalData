@@ -1,0 +1,17 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "602eb4abc8764c87b7f2607a1ef8c18e" // VALORANT
+        }
+    ],
+    "notes": [
+        {
+            "type": "compatibility_warning",
+            "severity": "medium",
+            "title": "Epic Games Store Version Issues",
+            "description": "The Epic Games Store version of this game may exhibit unnecessary complexity in the launch process, as it downloads the Riot Client instead of the game itself, as well as buggy behavior inside of DeadForge because of it.\nWe recommend downloading and installing the Riot Client directly from the official [Riot Games website](https://www.riotgames.com/) for a more streamlined experience.\n_**Official Riot Client import support for this application is planned for a future update.** However, its implementation is still being investigated to determine the best approach.\nIt could involve automatically detecting installed Riot Games titles, or it might require manual configuration.\nWe will update this note as we make progress on Riot Client integration._",
+            "recommendation": "Download and install games directly through the Riot Client from the official [Riot Games website](https://www.riotgames.com/)."
+        }
+    ]
+} 
