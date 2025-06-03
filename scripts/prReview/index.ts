@@ -157,245 +157,234 @@ async function getAssetChanges(context: GitHubContext): Promise<AssetChange[]> {
     return changes;
 }
 
-interface TreeNode {
-    [key: string]: TreeNode | AssetChange[];
+interface SimpleTreeNode {
+    type: 'directory' | 'file' | 'value';
+    name: string;
+    children?: SimpleTreeNode[];
+    value?: string;
 }
 
-function buildChangeTree(changes: AssetChange[]): TreeNode {
-    const tree: TreeNode = {};
+function buildSimpleTree(changes: AssetChange[]): { oldTree: SimpleTreeNode, newTree: SimpleTreeNode } {
+    const oldTree: SimpleTreeNode = { type: 'directory', name: '.', children: [] };
+    const newTree: SimpleTreeNode = { type: 'directory', name: '.', children: [] };
     
     for (const change of changes) {
         const pathParts = change.path.split('/');
         const fileName = pathParts[pathParts.length - 1];
-        
-        // Navigate/create the tree structure
-        let current = tree;
         const treePath = ['DeadForgeAssets', 'curated', 'games', fileName, 'media', change.mediaType];
         
-        for (const part of treePath) {
-            if (!current[part]) {
-                current[part] = {};
-            }
-            current = current[part] as TreeNode;
+        if (change.type === 'added' || change.type === 'modified') {
+            addToTree(newTree, treePath, change.newValue);
         }
-        
-        // Store the change at the leaf
-        if (!current._changes) {
-            current._changes = [];
+        if (change.type === 'removed' || change.type === 'modified') {
+            addToTree(oldTree, treePath, change.oldValue);
         }
-        (current._changes as AssetChange[]).push(change);
     }
     
-    return tree;
+    return { oldTree, newTree };
 }
 
-function formatObjectValue(obj: any, prefix: string = ''): string {
-    if (typeof obj !== 'object' || obj === null) {
-        return `"${obj}"`;
+function addToTree(root: SimpleTreeNode, path: string[], value: any) {
+    let current = root;
+    
+    // Create path
+    for (const part of path) {
+        let child = current.children?.find(c => c.name === part);
+        if (!child) {
+            child = { type: 'directory', name: part, children: [] };
+            current.children = current.children || [];
+            current.children.push(child);
+        }
+        current = child;
     }
     
-    const entries = Object.entries(obj);
-    if (entries.length === 0) return '{}';
-    
-    let result = '{\n';
-    entries.forEach(([key, value], index) => {
-        const isLast = index === entries.length - 1;
-        const formattedValue = typeof value === 'object' 
-            ? formatObjectValue(value, prefix + '  ')
-            : `"${value}"`;
-        result += `${prefix}  "${key}": ${formattedValue}${isLast ? '' : ','}\n`;
-    });
-    result += `${prefix}}`;
-    return result;
-}
-
-function formatTreeNode(node: TreeNode, prefix: string = ' ', isLast: boolean = true, depth: number = 0): string {
-    let result = '';
-    const entries = Object.entries(node).filter(([key]) => key !== '_changes');
-    const changes = node._changes as AssetChange[] || [];
-    
-    // Handle changes at this node
-    if (changes.length > 0) {
-        for (const change of changes) {
-            if (change.type === 'added' && change.newValue) {
-                // For added changes, we want to mark the entire subtree as new
-                const pathParts = change.path.split('/');
-                const fileName = pathParts[pathParts.length - 1];
-                const mediaType = change.mediaType;
-                
-                // Start building the tree from the file level with + markers
-                result += `+${prefix.slice(1)}└── ${fileName}\n`;
-                result += `+${prefix.slice(1)}    └── media\n`;
-                result += `+${prefix.slice(1)}        └── ${mediaType}\n`;
-                result += formatAddedNode(change.newValue, prefix + '            ', [fileName, 'media', mediaType]);
-            } else if (change.type === 'removed' && change.oldValue) {
-                result += formatRemovedNode(change.oldValue, prefix);
-            } else if (change.type === 'modified' && change.changes) {
-                result += formatModifiedNode(change.changes, prefix);
-            }
-        }
-        return result;
-    }
-    
-    // Handle child nodes
-    entries.forEach(([key, childNode], index) => {
-        const isLastEntry = index === entries.length - 1;
-        const connector = isLastEntry ? '└──' : '├──';
-        result += `${prefix}${connector} ${key}\n`;
-        
-        const nextPrefix = prefix + (isLastEntry ? '    ' : '│   ');
-        result += formatTreeNode(childNode as TreeNode, nextPrefix, isLastEntry, depth + 1);
-    });
-    
-    return result;
-}
-
-function formatAddedNode(value: any, prefix: string, path: string[] = []): string {
-    let result = '';
-    
-    if (typeof value === 'object' && value !== null) {
-        Object.entries(value).forEach(([key, val], index, arr) => {
-            const isLast = index === arr.length - 1;
-            const newPath = [...path, key];
-            const connector = isLast ? '└──' : '├──';
-            const linePrefix = prefix.replace(/[└├]──\s*$/, '');
-            result += `+${linePrefix.slice(1)}${connector} ${key}\n`;
-            
-            const nextPrefix = prefix + (isLast ? '    ' : '│   ');
-            if (typeof val === 'object' && val !== null) {
-                result += formatAddedNode(val, nextPrefix, newPath);
-            } else {
-                const valLinePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                result += `+${valLinePrefix.slice(1)}└── "${val}"\n`;
-            }
-        });
-    } else {
-        const linePrefix = prefix.replace(/[└├]──\s*$/, '');
-        result += `+${linePrefix.slice(1)}└── "${value}"\n`;
-    }
-    
-    return result;
-}
-
-function formatRemovedNode(value: any, prefix: string, path: string[] = []): string {
-    let result = '';
-    
-    if (typeof value === 'object' && value !== null) {
-        Object.entries(value).forEach(([key, val], index, arr) => {
-            const isLast = index === arr.length - 1;
-            const newPath = [...path, key];
-            const connector = isLast ? '└──' : '├──';
-            result += `${prefix}${connector} ${key}\n`;
-            
-            const nextPrefix = prefix + (isLast ? '    ' : '│   ');
-            if (typeof val === 'object' && val !== null) {
-                result += formatRemovedNode(val, nextPrefix, newPath);
-            } else {
-                const linePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                result += `-${linePrefix.slice(1)}└── "${val}"\n`;
-            }
-        });
-    } else {
-        const linePrefix = prefix.replace(/[└├]──\s*$/, '');
-        result += `-${linePrefix.slice(1)}└── "${value}"\n`;
-    }
-    
-    return result;
-}
-
-function formatModifiedNode(changes: { field: string; oldValue: any; newValue: any; }[], prefix: string): string {
-    let result = '';
-    const changesByPath = new Map<string, { oldValue: any; newValue: any; }>();
-    
-    // Group changes by their parent path
-    changes.forEach(change => {
-        const parts = change.field.split('.');
-        const fieldName = parts.pop()!;
-        const parentPath = parts.join('.');
-        
-        if (!changesByPath.has(parentPath)) {
-            changesByPath.set(parentPath, { oldValue: {}, newValue: {} });
-        }
-        const entry = changesByPath.get(parentPath)!;
-        
-        if (change.oldValue !== undefined) {
-            entry.oldValue[fieldName] = change.oldValue;
-        }
-        if (change.newValue !== undefined) {
-            entry.newValue[fieldName] = change.newValue;
-        }
-    });
-    
-    // Format each group of changes
-    changesByPath.forEach((values, path) => {
-        if (path) {
-            const pathParts = path.split('.');
-            let currentPrefix = prefix;
-            pathParts.forEach((part, index) => {
-                const isLast = index === pathParts.length - 1;
-                const connector = isLast ? '└──' : '├──';
-                result += `${currentPrefix}${connector} ${part}\n`;
-                currentPrefix += isLast ? '    ' : '│   ';
+    // Add values
+    if (value && typeof value === 'object') {
+        for (const [key, val] of Object.entries(value)) {
+            current.children = current.children || [];
+            current.children.push({
+                type: 'value',
+                name: key,
+                value: typeof val === 'object' ? JSON.stringify(val) : String(val)
             });
-            prefix = currentPrefix;
         }
+    }
+}
 
-        const allKeys = new Set([...Object.keys(values.oldValue), ...Object.keys(values.newValue)]);
-        const sortedKeys = Array.from(allKeys).sort();
-        
-        sortedKeys.forEach((key, index) => {
-            const isLast = index === sortedKeys.length - 1;
-            const connector = isLast ? '└──' : '├──';
-            const oldVal = values.oldValue[key];
-            const newVal = values.newValue[key];
-            
-            if (typeof oldVal === 'object' || typeof newVal === 'object') {
-                result += `${prefix}${connector} ${key}\n`;
-                const nextPrefix = prefix + (isLast ? '    ' : '│   ');
-                
-                if (oldVal && newVal) {
-                    // Both objects exist, compare their properties
-                    const subChanges = Object.keys({ ...oldVal, ...newVal }).map(subKey => ({
-                        field: subKey,
-                        oldValue: oldVal[subKey],
-                        newValue: newVal[subKey]
-                    }));
-                    result += formatModifiedNode(subChanges, nextPrefix);
-                } else {
-                    // One object is missing, show full add/remove
-                    if (newVal) {
-                        Object.entries(newVal).forEach(([subKey, value], idx, arr) => {
-                            const isLastItem = idx === arr.length - 1;
-                            const linePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                            result += `+${linePrefix}${isLastItem ? '└' : '├'}── "${value}"\n`;
-                        });
-                    }
-                    if (oldVal) {
-                        Object.entries(oldVal).forEach(([subKey, value], idx, arr) => {
-                            const isLastItem = idx === arr.length - 1;
-                            const linePrefix = nextPrefix.replace(/[└├]──\s*$/, '');
-                            result += `-${linePrefix}${isLastItem ? '└' : '├'}── "${value}"\n`;
-                        });
-                    }
-                }
-            } else {
-                if (oldVal === undefined) {
-                    result += `${prefix}${connector} ${key}\n`;
-                    const linePrefix = prefix + (isLast ? '    ' : '│   ');
-                    result += `+${linePrefix.slice(1)}└── "${newVal}"\n`;
-                } else if (newVal === undefined) {
-                    result += `${prefix}${connector} ${key}\n`;
-                    const linePrefix = prefix + (isLast ? '    ' : '│   ');
-                    result += `-${linePrefix.slice(1)}└── "${oldVal}"\n`;
-                } else if (oldVal !== newVal) {
-                    result += `${prefix}${connector} ${key}\n`;
-                    const linePrefix = prefix + (isLast ? '    ' : '│   ');
-                    result += `-${linePrefix.slice(1)}├── "${oldVal}"\n`;
-                    result += `+${linePrefix.slice(1)}└── "${newVal}"\n`;
-                }
+function formatTree(node: SimpleTreeNode, prefix: string = '', isLast: boolean = true): string[] {
+    const lines: string[] = [];
+    const connector = isLast ? '└──' : '├──';
+    const childPrefix = prefix + (isLast ? '    ' : '│   ');
+    
+    if (node.type === 'value') {
+        // Handle object values specially
+        if (node.value?.startsWith('{') && node.value?.endsWith('}')) {
+            try {
+                const obj = JSON.parse(node.value);
+                lines.push(`${prefix}${connector} ${node.name}/`);
+                Object.entries(obj).forEach(([key, val], idx, arr) => {
+                    const isLastProp = idx === arr.length - 1;
+                    const propConnector = isLastProp ? '└──' : '├──';
+                    lines.push(`${childPrefix}${propConnector} ${key}: ${JSON.stringify(val)}`);
+                });
+            } catch {
+                // If not valid JSON, treat as regular value
+                lines.push(`${prefix}${connector} ${node.name}: ${node.value}`);
             }
-        });
-    });
+        } else {
+            lines.push(`${prefix}${connector} ${node.name}: ${node.value}`);
+        }
+    } else {
+        if (node.name !== '.') {
+            lines.push(`${prefix}${connector} ${node.name}`);
+        }
+        if (node.children) {
+            const sortedChildren = node.children.sort((a, b) => {
+                // Sort directories before values, then alphabetically
+                if (a.type !== b.type) {
+                    return a.type === 'directory' ? -1 : 1;
+                }
+                return a.name.localeCompare(b.name);
+            });
+            
+            sortedChildren.forEach((child, index) => {
+                const isLastChild = index === sortedChildren.length - 1;
+                lines.push(...formatTree(
+                    child,
+                    node.name === '.' ? prefix : childPrefix,
+                    isLastChild
+                ));
+            });
+        }
+    }
+    
+    return lines;
+}
+
+interface TreeGroup {
+    path: string;
+    lines: string[];
+    indent: number;
+}
+
+function groupLines(lines: string[]): TreeGroup[] {
+    const groups: TreeGroup[] = [];
+    let currentGroup: TreeGroup | null = null;
+    let rootIndent = -1;
+    
+    for (const line of lines) {
+        const indent = line.search(/\S/);
+        const content = line.trim();
+        
+        // Find the game file name level (e.g. "ZZZ.jsonc" or "Genshin Impact.jsonc")
+        if (content.endsWith('.jsonc')) {
+            if (currentGroup) {
+                groups.push(currentGroup);
+            }
+            currentGroup = {
+                path: content,
+                lines: [line],
+                indent: indent
+            };
+            rootIndent = indent;
+        } else if (currentGroup && indent > rootIndent) {
+            currentGroup.lines.push(line);
+        } else {
+            // Lines before any .jsonc files (like DeadForgeAssets, curated, games)
+            if (!currentGroup) {
+                currentGroup = {
+                    path: 'root',
+                    lines: [],
+                    indent: 0
+                };
+                groups.push(currentGroup);
+            }
+            currentGroup.lines.push(line);
+        }
+    }
+    
+    if (currentGroup && currentGroup.path !== 'root') {
+        groups.push(currentGroup);
+    }
+    
+    return groups;
+}
+
+function diffTrees(oldLines: string[], newLines: string[]): string {
+    const oldGroups = groupLines(oldLines);
+    const newGroups = groupLines(newLines);
+    
+    let result = '';
+    
+    // First, find the root group and output it
+    const oldRoot = oldGroups.find(g => g.path === 'root');
+    const newRoot = newGroups.find(g => g.path === 'root');
+    
+    if (oldRoot && newRoot && oldRoot.lines.join('\n') === newRoot.lines.join('\n')) {
+        result += oldRoot.lines.map(line => ` ${line}`).join('\n') + '\n';
+    }
+    
+    // Get non-root groups
+    const oldFileGroups = oldGroups.filter(g => g.path !== 'root');
+    const newFileGroups = newGroups.filter(g => g.path !== 'root');
+    
+    // Find added files (in new but not in old)
+    const addedFiles = newFileGroups.filter(newGroup => 
+        !oldFileGroups.some(oldGroup => oldGroup.path === newGroup.path)
+    );
+    
+    // Find removed files (in old but not in new)
+    const removedFiles = oldFileGroups.filter(oldGroup => 
+        !newFileGroups.some(newGroup => newGroup.path === oldGroup.path)
+    );
+    
+    // Find modified files (in both)
+    const modifiedFiles = newFileGroups.filter(newGroup => 
+        oldFileGroups.some(oldGroup => oldGroup.path === newGroup.path)
+    );
+    
+    // Output added files first
+    for (const group of addedFiles) {
+        result += group.lines.map(line => `+${line}`).join('\n') + '\n';
+    }
+    
+    // Output removed files
+    for (const group of removedFiles) {
+        result += group.lines.map(line => `-${line}`).join('\n') + '\n';
+    }
+    
+    // Output modified files
+    for (const newGroup of modifiedFiles) {
+        const oldGroup = oldFileGroups.find(g => g.path === newGroup.path)!;
+        if (oldGroup.lines.join('\n') !== newGroup.lines.join('\n')) {
+            // If the content is different, show the diff
+            result += diffLinesWithContext(oldGroup.lines, newGroup.lines);
+        } else {
+            // If the content is the same, show it unchanged
+            result += oldGroup.lines.map(line => ` ${line}`).join('\n') + '\n';
+        }
+    }
+    
+    return result.trim();
+}
+
+function diffLinesWithContext(oldLines: string[], newLines: string[]): string {
+    let result = '';
+    let i = 0, j = 0;
+    
+    while (i < oldLines.length || j < newLines.length) {
+        if (i < oldLines.length && j < newLines.length && oldLines[i] === newLines[j]) {
+            result += ` ${oldLines[i]}\n`;
+            i++;
+            j++;
+        } else if (j < newLines.length && (i >= oldLines.length || oldLines[i] > newLines[j])) {
+            result += `+${newLines[j]}\n`;
+            j++;
+        } else if (i < oldLines.length && (j >= newLines.length || oldLines[i] < newLines[j])) {
+            result += `-${oldLines[i]}\n`;
+            i++;
+        }
+    }
     
     return result;
 }
@@ -403,11 +392,11 @@ function formatModifiedNode(changes: { field: string; oldValue: any; newValue: a
 function formatAllChangesTree(changes: AssetChange[]): string {
     if (changes.length === 0) return '';
     
-    const tree = buildChangeTree(changes);
-    let result = '.\n';
-    result += formatTreeNode(tree);
+    const { oldTree, newTree } = buildSimpleTree(changes);
+    const oldLines = formatTree(oldTree);
+    const newLines = formatTree(newTree);
     
-    return result;
+    return diffTrees(oldLines, newLines);
 }
 
 interface Report {
@@ -522,7 +511,7 @@ async function generateReviewComment(result: ReviewResult): Promise<string> {
     if (treeOutput) {
         comment += '```diff\n';
         comment += treeOutput;
-        comment += '```\n\n';
+        comment += '\n```\n';
     }
 
     if (result.relatedIssues && result.relatedIssues.length > 0) {
