@@ -10,6 +10,14 @@
                         "filePath": "%USERDATA%/app_assets/authors/deadforge-team/RichardKanshen.png",
                         "remoteUrl": "https://github.com/RichardKanshen.png"
                     }
+                },
+                {
+                    "name": "Hoshty",
+                    "link": "https://github.com/Hoshty",
+                    "profilePicture": {
+                        "filePath": "%USERDATA%/app_assets/authors/deadforge-team/Hoshty.png",
+                        "remoteUrl": "https://github.com/Hoshty.png"
+                    }
                 }
             ],
             "bannerImage": {
@@ -21,7 +29,7 @@
             },
             "content": "deadforge-v2-beta-release/content.md",
             "publishDate": "2025-06-01T20:00:00Z",
-            "lastModified": "2025-06-01T20:00:00Z",
+            "lastModified": "2025-06-04T14:45:00Z",
             "tags": ["news", "release", "deadforge"],
             "slug": "deadforge-v2-beta-release"
         }
