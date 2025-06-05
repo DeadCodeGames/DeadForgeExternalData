@@ -10,7 +10,7 @@ DeadForge is a **multi-purpose software launching tool.** Currently, as of relea
 - [Epic Games](https://www.epicgames.com/)
 - [itch.io](https://www.itch.io/)
 
-More storefront support is currently on our backlog, and you can request more storefronts to be supported, as well as make any other suggestions regarding DeadForge, see the _“How can I contribute?”_ section.
+More storefront support is currently on our backlog, and you can request more storefronts to be supported, as well as make any other suggestions regarding DeadForge. To learn how, see the _“How can I contribute?”_ section.
 
 ### “How does this work?”
 If you are interested in knowing how this works, here is a very quick overview:
