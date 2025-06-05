@@ -55,5 +55,5 @@ For now, that is all.
 
 With ❤️, [Richard](https://github.com/RichardKanshen), the lead developer of DeadForge, and [Hoshty](https://github.com/Hoshty), lead DeadCodeGames developer.
 
-P.S. Happy Pride Month!
+P.S. Happy Pride Month! 🏳️‍🌈
 ![DeadCodeGames & DeadForge Logo](https://avatars.githubusercontent.com/u/147710300?v=4)

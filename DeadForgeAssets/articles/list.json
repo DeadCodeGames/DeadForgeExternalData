@@ -1,7 +1,7 @@
 {
     "articles": [
         {
-            "title": "DEADFORGE v2 BETA RELEASE",
+            "title": "DEADFORGE v2 BETA RELEASE - v2.0.0-beta.1 is Finally OUT",
             "authors": [
                 {
                     "name": "Richard Kanshen",
@@ -29,7 +29,7 @@
             },
             "content": "deadforge-v2-beta-release/content.md",
             "publishDate": "2025-06-01T20:00:00Z",
-            "lastModified": "2025-06-04T14:45:00Z",
+            "lastModified": "2025-06-05T07:13:00Z",
             "tags": ["news", "release", "deadforge"],
             "slug": "deadforge-v2-beta-release"
         }
