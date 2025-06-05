@@ -33,7 +33,8 @@ As of release 2.0.0-Beta-1, we have implemented:
 - gradual localization updates (see the _“How can I contribute?”_ section)
 - **DeadForge Store** - one stop place for all software from DeadCode, directly from DeadForge
 - game stats display, similar to Steam's
-- more storefronts support - currently, on our backlog is:
+- more storefronts and games support - currently, on our backlog is:
+  - [osu!](https://osu.ppy.sh/) and [osu!lazer](https://github.com/ppy/osu/)
   - [HoYoPlay](https://hoyoplay.hoyoverse.com/)
   - [Riot Client](https://www.riotgames.com/)
   - [GameJolt](https://gamejolt.com/app)
