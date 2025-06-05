@@ -16,7 +16,7 @@ More storefront support is currently on our backlog, and you can request more st
 If you are interested in knowing how this works, here is a very quick overview:
 1. During the initial setup, you can tell DeadForge where you Steam, Epic, and itch clients are installed.
 2. DeadForge will use those paths to find your installed games, and import them into DeadForge.
-  - If a storefront required DRM, DeadForge will prompt you to open the storefront's client before opening the game.
+  - If a storefront required **DRM** (**D**igital **R**ights **M**anagement), DeadForge will prompt you to open the storefront's client before opening the game.
 3. Voilà, your games are now all in one place.
 
 ## “What is currently in DeadForge?”
