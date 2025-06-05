@@ -47,7 +47,7 @@ As of release 2.0.0-Beta-1, we have implemented:
 
 ## “How can I contribute?”
 You can:
-- submit feature request on [DeadForge's GitHub Issues](https://github.com/DeadCodeGames/DeadForge/issues), or start a [Discussion](https://github.com/DeadCodeGames/DeadForge/discussions);
+- submit feature requests on [DeadForge's GitHub Issues](https://github.com/DeadCodeGames/DeadForge/issues), or start a [Discussion](https://github.com/DeadCodeGames/DeadForge/discussions);
 - submit game notes and feature Requests on the [DeadForge External Data](https://github.com/DeadCodeGames/DeadForgeExternalData/issues);
 - contribute to the [localization progress of DeadForge](https://crowdin.com/project/deadforge);
 
