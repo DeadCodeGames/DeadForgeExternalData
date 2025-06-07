@@ -24,9 +24,6 @@
                 "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release/banner.png",
                 "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release/banner.png"
             },
-            "assetsMap": {
-                "https://avatars.githubusercontent.com/u/147710300?v=4": "%USERDATA%/app_assets/authors/deadforge-team/DeadCodeGames.png"
-            },
             "content": "deadforge-v2-beta-release/content.md",
             "publishDate": "2025-06-01T20:00:00Z",
             "lastModified": "2025-06-05T17:03:00Z",

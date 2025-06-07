@@ -52,9 +52,8 @@ You can:
 - submit game notes and feature Requests on the [DeadForge External Data](https://github.com/DeadCodeGames/DeadForgeExternalData/issues);
 - contribute to the [localization progress of DeadForge](https://crowdin.com/project/deadforge);
 
-For now, that is all.
+For now, **that is all.**
 
-With ❤️, [Richard](https://github.com/RichardKanshen), the lead developer of DeadForge, and [Hoshty](https://github.com/Hoshty), lead DeadCodeGames developer.
+With ❤️, [Richard](https://github.com/RichardKanshen), the **lead developer of DeadForge**, and [Hoshty](https://github.com/Hoshty), **lead DeadCodeGames developer**.
 
 P.S. Happy Pride Month! 🏳️‍🌈
-![DeadCodeGames & DeadForge Logo](https://avatars.githubusercontent.com/u/147710300?v=4)
