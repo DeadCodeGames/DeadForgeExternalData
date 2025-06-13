@@ -8,11 +8,11 @@
     "media": {
         "iconUrl": {
             "filePath": "%USERDATA%/game_assets/deadforge_conrpg.logo.png",
-            "remoteUrl": "https://placehold.co/512x512/0F0F0F/F0F0F0?text=%3E_"
+            "remoteUrl": "https://placehold.co/512x512/0F0F0F/F0F0F0/png?text=%3E_"
         },
         "logoUrl": {
             "filePath": "%USERDATA%/game_assets/deadforge_conrpg.logo.png",
-            "remoteUrl": "https://placehold.co/800x300/transparent/F0F0F0?text=ConRPG&font=source-sans-pro",
+            "remoteUrl": "https://placehold.co/800x300/transparent/F0F0F0/png?text=ConRPG&font=source-sans-pro",
             "logo_position": {
                 "width_pct": 75,
                 "height_pct": 80,
@@ -21,11 +21,11 @@
         },
         "headerUrl": {
             "filePath": "%USERDATA%/game_assets/deadforge_conrpg.header.png",
-            "remoteUrl": "https://placehold.co/920x430/0F0F0F/F0F0F0?text=ConRPG&font=source-sans-pro"
+            "remoteUrl": "https://placehold.co/920x430/0F0F0F/F0F0F0/png?text=ConRPG&font=source-sans-pro"
         },
         "capsuleUrl": {
             "filePath": "%USERDATA%/game_assets/deadforge_conrpg.capsule.png",
-            "remoteUrl": "https://placehold.co/600x900/0F0F0F/F0F0F0?text=ConRPG&font=source-sans-pro"
+            "remoteUrl": "https://placehold.co/600x900/0F0F0F/F0F0F0/png?text=ConRPG&font=source-sans-pro"
         }
     }
 }
