@@ -163,6 +163,8 @@ async function main() {
             }
         }
 
+        console.log(curatedList)
+
         // Write updated JSON back to file
         await fs.writeFile(CURATED_LIST_JSON_PATH, JSON.stringify(curatedList, null, 4), 'utf8');
         console.log('Done! Updated Curated List JSON with hash information.');
@@ -179,6 +181,7 @@ async function main() {
                 }
             }
         }
+        console.log(officialList)
 
         // Write updated JSON back to file
         await fs.writeFile(OFFICIAL_LIST_JSON_PATH, JSON.stringify(officialList, null, 4), 'utf8');
