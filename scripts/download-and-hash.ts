@@ -4,7 +4,8 @@ const fs = require('fs').promises;
 const path = require('path');
 const crypto = require('crypto');
 
-const LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+const OFFICIAL_LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/official/list.json');
+const CURATED_LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
 const DOWNLOAD_DIR = path.join(__dirname, '../downloaded');
 const MAX_RETRIES = 5;
 const RETRY_DELAY = 1000; // 1 second delay between retries
@@ -145,14 +146,14 @@ async function main() {
         await fs.mkdir(DOWNLOAD_DIR, { recursive: true });
 
         // Read and parse the JSON file
-        const data = await fs.readFile(LIST_JSON_PATH, 'utf8');
-        const list = parse(data);
+        const curatedData = await fs.readFile(CURATED_LIST_JSON_PATH, 'utf8'), officialData = await fs.readFile(OFFICIAL_LIST_JSON_PATH, 'utf8');
+        const curatedList = parse(curatedData), officialList = parse(officialData);
 
         // Process each entry
-        for (let i = 0; i < list.length; i++) {
-            const entry = list[i];
+        for (let i = 0; i < curatedList.length; i++) {
+            const entry = curatedList[i];
             if (entry.media) {
-                console.log(`Processing entry ${i + 1}/${list.length}...`);
+                console.log(`Processing entry ${i + 1}/${curatedList.length}...`);
 
                 // Process each media type
                 for (const [mediaType, urlEntry] of Object.entries(entry.media)) {
@@ -162,8 +163,25 @@ async function main() {
         }
 
         // Write updated JSON back to file
-        await fs.writeFile(LIST_JSON_PATH, JSON.stringify(list, null, 4), 'utf8');
-        console.log('Done! Updated JSON with hash information.');
+        await fs.writeFile(CURATED_LIST_JSON_PATH, JSON.stringify(curatedList, null, 4), 'utf8');
+        console.log('Done! Updated Curated List JSON with hash information.');
+
+        // Process each entry
+        for (let i = 0; i < officialList.length; i++) {
+            const entry = officialList[i];
+            if (entry.media) {
+                console.log(`Processing entry ${i + 1}/${officialList.length}...`);
+
+                // Process each media type
+                for (const [mediaType, urlEntry] of Object.entries(entry.media)) {
+                    entry.media[mediaType] = await processUrlEntry(urlEntry);
+                }
+            }
+        }
+
+        // Write updated JSON back to file
+        await fs.writeFile(OFFICIAL_LIST_JSON_PATH, JSON.stringify(officialList, null, 4), 'utf8');
+        console.log('Done! Updated Official List JSON with hash information.');
         
         // Clean up the download directory
         await fs.rmdir(DOWNLOAD_DIR, { recursive: true });
