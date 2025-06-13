@@ -166,7 +166,7 @@ async function main() {
         console.log(JSON.stringify(curatedList, null, 4))
 
         // Write updated JSON back to file
-        await fs.writeFile(CURATED_LIST_JSON_PATH, JSON.stringify(curatedList, null, 4), 'utf8');
+        fs.writeFileSync(CURATED_LIST_JSON_PATH, JSON.stringify(curatedList, null, 4), 'utf8');
         console.log('Done! Updated Curated List JSON with hash information.');
 
         // Process each entry
@@ -184,7 +184,7 @@ async function main() {
         console.log(JSON.stringify(officialList, null, 2))
 
         // Write updated JSON back to file
-        await fs.writeFile(OFFICIAL_LIST_JSON_PATH, JSON.stringify(officialList, null, 4), 'utf8');
+        fs.writeFileSync(OFFICIAL_LIST_JSON_PATH, JSON.stringify(officialList, null, 4), 'utf8');
         console.log('Done! Updated Official List JSON with hash information.');
         
         // Clean up the download directory
