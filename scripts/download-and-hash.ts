@@ -80,8 +80,8 @@ async function processUrlEntry(urlEntry: any) {
                 if (buffer) {
                     const filename = getFilenameFromUrl(url);
                     const outputPath = path.join(DOWNLOAD_DIR, `${lang}_${filename}`);
-                    await fs.mkdir(path.dirname(outputPath), { recursive: true });
-                    await fs.writeFile(outputPath, buffer);
+                    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+                    fs.writeFileSync(outputPath, buffer);
                     console.log(`Downloaded and hashed ${url} -> ${hash}`);
                 } else {
                     console.log(`Recording hash as "404" for ${url}`);
@@ -109,8 +109,8 @@ async function processUrlEntry(urlEntry: any) {
             if (buffer) {
                 const filename = getFilenameFromUrl(urlEntry.remoteUrl);
                 const outputPath = path.join(DOWNLOAD_DIR, filename);
-                await fs.mkdir(path.dirname(outputPath), { recursive: true });
-                await fs.writeFile(outputPath, buffer);
+                fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+                fs.writeFileSync(outputPath, buffer);
                 console.log(`Downloaded and hashed ${urlEntry.remoteUrl} -> ${hash}`);
             } else {
                 console.log(`Recording hash as "404" for ${urlEntry.remoteUrl}`);
@@ -144,10 +144,10 @@ async function main() {
         downloadFailures = [];
         
         // Create download directory if it doesn't exist
-        await fs.mkdir(DOWNLOAD_DIR, { recursive: true });
+        fs.mkdirSync(DOWNLOAD_DIR, { recursive: true });
 
         // Read and parse the JSON file
-        const curatedData = await fs.readFile(CURATED_LIST_JSON_PATH, 'utf8'), officialData = await fs.readFile(OFFICIAL_LIST_JSON_PATH, 'utf8');
+        const curatedData = fs.readFileSync(CURATED_LIST_JSON_PATH, 'utf8'), officialData = fs.readFileSync(OFFICIAL_LIST_JSON_PATH, 'utf8');
         const curatedList = parse(curatedData), officialList = parse(officialData);
 
         // Process each entry
@@ -188,7 +188,7 @@ async function main() {
         console.log('Done! Updated Official List JSON with hash information.');
         
         // Clean up the download directory
-        await fs.rmdir(DOWNLOAD_DIR, { recursive: true });
+        fs.rmdirSync(DOWNLOAD_DIR, { recursive: true });
         
         // Write out the failure status for GitHub Actions to read
         if (downloadFailures.length > 0) {
@@ -197,7 +197,7 @@ async function main() {
             
             // Write out the list of failures to a file for reference
             const failuresReport = downloadFailures.join('\n');
-            await fs.writeFile('download_failures.txt', failuresReport);
+            fs.writeFileSync('download_failures.txt', failuresReport);
             console.log(`Failed URLs written to download_failures.txt`);
             
             // Exit with success (we want the deployment to continue)
