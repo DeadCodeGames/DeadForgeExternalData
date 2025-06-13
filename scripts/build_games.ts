@@ -26,7 +26,7 @@ export function processDirectory(dir: string) {
 }
 
 const curatedFiles = processDirectory(curatedDir);
-const officialFiles = processDirectory(curatedDir)
+const officialFiles = processDirectory(officialDir)
 const noteFiles = processDirectory(notesDir);
 
 function combineFiles(files: string[]) {
