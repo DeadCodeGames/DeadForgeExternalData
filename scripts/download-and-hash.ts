@@ -115,6 +115,7 @@ async function processUrlEntry(urlEntry: any) {
             } else {
                 console.log(`Recording hash as "404" for ${urlEntry.remoteUrl}`);
             }
+            console.log({...urlEntry, hash})
             if (isGitHubActionsEnvironment()) {
                 return { ...urlEntry, hash };
             } else {
