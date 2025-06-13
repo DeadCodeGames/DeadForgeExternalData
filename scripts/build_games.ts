@@ -8,9 +8,11 @@ import fs from 'fs';
 import path from 'path';
 
 
-export const gamesDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
+export const curatedDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
+export const officialDir = path.join(__dirname, '../DeadForgeAssets/official/games');
 export const notesDir = path.join(__dirname, '../DeadForgeAssets/notes/games');
-export const outputGameFile = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+export const outputCuratedFile = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+export const outputOfficialFile = path.join(__dirname, '../DeadForgeAssets/official/list.json');
 export const outputNotesFile = path.join(__dirname, '../DeadForgeAssets/notes/list.json');
 
 
@@ -23,7 +25,8 @@ export function processDirectory(dir: string) {
         .map(file => path.join(dir, file));
 }
 
-const gameFiles = processDirectory(gamesDir);
+const curatedFiles = processDirectory(curatedDir);
+const officialFiles = processDirectory(curatedDir)
 const noteFiles = processDirectory(notesDir);
 
 function combineFiles(files: string[]) {
@@ -33,12 +36,14 @@ function combineFiles(files: string[]) {
     });
 }
 
-
-const combinedGames = combineFiles(gameFiles);
+const combinedOfficial = combineFiles(officialFiles);
+const combinedCurated = combineFiles(curatedFiles);
 const combinedNotes = combineFiles(noteFiles);
 
-fs.writeFileSync(outputGameFile, JSON.stringify(combinedGames, null, 2));
+fs.writeFileSync(outputOfficialFile, JSON.stringify(combinedOfficial, null, 2));
+fs.writeFileSync(outputCuratedFile, JSON.stringify(combinedCurated, null, 2));
 fs.writeFileSync(outputNotesFile, JSON.stringify(combinedNotes, null, 2));
 
-console.log(`Combined ${combinedGames.length} games into ${outputGameFile}`);
+console.log(`Combined ${combinedOfficial.length} official game assets into ${outputOfficialFile}`)
+console.log(`Combined ${combinedCurated.length} curated game assets into ${outputCuratedFile}`);
 console.log(`Combined ${combinedNotes.length} notes into ${outputNotesFile}`);

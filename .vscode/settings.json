@@ -2,13 +2,14 @@
   "json.schemas": [
     {
       "fileMatch": [
-        "/DeadForgeAssets/notes/games/*.json"
+        "/DeadForgeAssets/notes/games/*.jsonc"
       ],
       "url": "./DeadForgeAssets/$schema/note.schema.json"
     },
     {
       "fileMatch": [
-        "/DeadForgeAssets/curated/games/*.json"
+        "/DeadForgeAssets/curated/games/*.jsonc",
+        "/DeadForgeAssets/official/games/*.jsonc"
       ],
       "url": "./DeadForgeAssets/$schema/games.schema.json"
     }

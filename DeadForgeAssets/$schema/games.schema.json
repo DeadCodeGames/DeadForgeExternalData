@@ -23,7 +23,7 @@
                         "type": "object",
                         "properties": {
                             "source": {
-                                "enum": ["steam", "epic", "itch"]
+                                "enum": ["steam", "epic", "itch", "deadforge"]
                             },
                             "id": {
                                 "type": "string"

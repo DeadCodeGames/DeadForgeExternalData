@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "deadforge",
+            "id": "die"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/deadforge_die.logo.png",
+            "remoteUrl": "https://placehold.co/512x512/fdff8c/bd4b13?text=%C2%B7"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/deadforge_die.logo.png",
+            "remoteUrl": "https://placehold.co/800x300/transparent/bd4b13?text=Project%20DIE&font=source-sans-pro",
+            "logo_position": {
+                "width_pct": 75,
+                "height_pct": 80,
+                "pinned_position": "CenterCenter"
+            }
+        },
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/deadforge_die.hero.png",
+            "remoteUrl": "https://placehold.co/1920x620/fdff8c/fdff8c?text=Project%20DIE"
+        },
+        "headerUrl": {
+            "filePath": "%USERDATA%/game_assets/deadforge_die.header.png",
+            "remoteUrl": "https://placehold.co/920x430/fdff8c/bd4b13?text=Project%20DIE&font=source-sans-pro"
+        },
+        "capsuleUrl": {
+            "filePath": "%USERDATA%/game_assets/deadforge_die.capsule.png",
+            "remoteUrl": "https://placehold.co/600x900/fdff8c/bd4b13?text=Project%20DIE&font=source-sans-pro"
+        }
+    }
+}
