@@ -163,7 +163,7 @@ async function main() {
             }
         }
 
-        console.log(curatedList)
+        console.log(JSON.stringify(curatedList, null, 4))
 
         // Write updated JSON back to file
         await fs.writeFile(CURATED_LIST_JSON_PATH, JSON.stringify(curatedList, null, 4), 'utf8');
@@ -181,7 +181,7 @@ async function main() {
                 }
             }
         }
-        console.log(officialList)
+        console.log(JSON.stringify(officialList, null, 2))
 
         // Write updated JSON back to file
         await fs.writeFile(OFFICIAL_LIST_JSON_PATH, JSON.stringify(officialList, null, 4), 'utf8');
