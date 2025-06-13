@@ -1,6 +1,6 @@
 import { parse } from 'jsonc-parser';
 import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
-const fs = require('fs').promises;
+const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
