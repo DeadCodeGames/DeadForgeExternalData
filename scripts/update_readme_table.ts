@@ -378,5 +378,4 @@ async function updateReadmeTable(): Promise<void> {
 // Run the script
 updateReadmeTable().catch(error => {
     console.error('Error updating README table:', error);
-    process.exit(1);
 });

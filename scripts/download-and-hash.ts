@@ -135,16 +135,6 @@ async function processUrlEntry(urlEntry: any) {
 
 // Main function
 async function main() {
-    console.log('GitHub Actions Environment Check:');
-    console.log('GITHUB_ACTIONS:', process.env.GITHUB_ACTIONS);
-    console.log('GITHUB_WORKFLOW:', process.env.GITHUB_WORKFLOW);
-    console.log('GITHUB_RUN_ID:', process.env.GITHUB_RUN_ID);
-    console.log('GITHUB_JOB:', process.env.GITHUB_JOB);
-    console.log('GITHUB_REF:', process.env.GITHUB_REF);
-    console.log('GITHUB_SHA:', process.env.GITHUB_SHA);
-    console.log('RUNNER_OS:', process.env.RUNNER_OS);
-    console.log('Is GitHub Actions Environment:', isGitHubActionsEnvironment());
-
     if (!isGitHubActionsEnvironment()) {
         console.log('This script is of destructive nature, and should not be run outside of a CI environment.');
         console.log('All destructive functions have been disabled.')
