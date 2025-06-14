@@ -26,5 +26,8 @@
     "verify": "bun run scripts/verifyJSON.ts",
     "lint": "eslint",
     "update-readme": "bun run scripts/update_readme_table.ts"
+  },
+  "dependencies": {
+    "@types/glob": "^8.1.0"
   }
 }
