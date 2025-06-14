@@ -7,7 +7,7 @@
     ],
     "media": {
         "iconUrl": {
-            "filePath": "%USERDATA%/game_assets/deadforge_die.logo.png",
+            "filePath": "%USERDATA%/game_assets/deadforge_die.icon.png",
             "remoteUrl": "https://placehold.co/512x512/fdff8c/bd4b13/png?text=%C2%B7"
         },
         "logoUrl": {
