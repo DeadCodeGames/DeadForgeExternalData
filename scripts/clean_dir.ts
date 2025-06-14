@@ -1,4 +1,4 @@
-import { notesDir, processDirectory } from './build_games.js';
+import { notesDir, outputCuratedFile, outputOfficialFile, processDirectory } from './build_games.js';
 import { curatedDir, officialDir } from './build_games.js';
 import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
 import fs from 'fs';
@@ -21,6 +21,9 @@ if (isGitHubActionsEnvironment()) {
     if (fs.existsSync(notesDir)) {
         fs.rmSync(notesDir, { recursive: true, force: true });
     }
+
+    console.log(fs.readFileSync(outputOfficialFile));
+    console.log(fs.readFileSync(outputCuratedFile));
 
     console.log(`Cleaned up ${officialDir}, ${curatedDir}, and ${notesDir} directories`); 
     
