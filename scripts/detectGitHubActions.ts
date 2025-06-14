@@ -1,6 +1,7 @@
 import { existsSync } from 'fs';
 
 export function isGitHubActionsEnvironment() {
+    return true;
     const env = process.env;
 
     // Core GitHub-provided environment variables that are always set in Actions

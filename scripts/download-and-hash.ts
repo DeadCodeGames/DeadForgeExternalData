@@ -1,8 +1,8 @@
 import { parse } from 'jsonc-parser';
 import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
-const fs = require('fs');
-const path = require('path');
-const crypto = require('crypto');
+import fs from 'fs';
+import path from 'path';
+import crypto from 'crypto';
 
 const OFFICIAL_LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/official/list.json');
 const CURATED_LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
@@ -168,6 +168,8 @@ async function main() {
         // Write updated JSON back to file
         fs.writeFileSync(CURATED_LIST_JSON_PATH, JSON.stringify(curatedList, null, 4), 'utf8');
         console.log('Done! Updated Curated List JSON with hash information.');
+        console.log(`Saved into ${CURATED_LIST_JSON_PATH}`)
+        console.log(JSON.stringify(curatedList, null, 4))
 
         // Process each entry
         for (let i = 0; i < officialList.length; i++) {
@@ -186,6 +188,8 @@ async function main() {
         // Write updated JSON back to file
         fs.writeFileSync(OFFICIAL_LIST_JSON_PATH, JSON.stringify(officialList, null, 4), 'utf8');
         console.log('Done! Updated Official List JSON with hash information.');
+        console.log(`Saved into ${OFFICIAL_LIST_JSON_PATH}`)
+        console.log(JSON.stringify(officialList, null, 4))
         
         // Clean up the download directory
         fs.rmdirSync(DOWNLOAD_DIR, { recursive: true });
