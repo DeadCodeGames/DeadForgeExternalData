@@ -1,7 +1,22 @@
-import { notesDir, outputCuratedFile, outputOfficialFile, processDirectory } from './build_games.js';
-import { curatedDir, officialDir } from './build_games.js';
 import { isGitHubActionsEnvironment } from './detectGitHubActions.js';
 import fs from 'fs';
+import path from 'path';
+
+const curatedDir = path.join(__dirname, '../DeadForgeAssets/curated/games');
+const officialDir = path.join(__dirname, '../DeadForgeAssets/official/games');
+const notesDir = path.join(__dirname, '../DeadForgeAssets/notes/games');
+const outputCuratedFile = path.join(__dirname, '../DeadForgeAssets/curated/list.json');
+const outputOfficialFile = path.join(__dirname, '../DeadForgeAssets/official/list.json');
+const outputNotesFile = path.join(__dirname, '../DeadForgeAssets/notes/list.json');
+
+function processDirectory(dir: string) {
+    if (!fs.existsSync(dir)) {
+        return [];
+    }
+    return fs.readdirSync(dir)
+        .filter(file => file.endsWith('.jsonc'))
+        .map(file => path.join(dir, file));
+}
 
 const officialFiles = processDirectory(officialDir);
 const curatedFiles = processDirectory(curatedDir);

@@ -40,9 +40,9 @@ const combinedOfficial = combineFiles(officialFiles);
 const combinedCurated = combineFiles(curatedFiles);
 const combinedNotes = combineFiles(noteFiles);
 
-fs.writeFileSync(outputOfficialFile, JSON.stringify(combinedOfficial, null, 2));
-fs.writeFileSync(outputCuratedFile, JSON.stringify(combinedCurated, null, 2));
-fs.writeFileSync(outputNotesFile, JSON.stringify(combinedNotes, null, 2));
+fs.writeFileSync(outputOfficialFile, JSON.stringify(combinedOfficial, null, 4));
+fs.writeFileSync(outputCuratedFile, JSON.stringify(combinedCurated, null, 4));
+fs.writeFileSync(outputNotesFile, JSON.stringify(combinedNotes, null, 4));
 
 console.log(`Combined ${combinedOfficial.length} official game assets into ${outputOfficialFile}`)
 console.log(`Combined ${combinedCurated.length} curated game assets into ${outputCuratedFile}`);
