@@ -22,8 +22,8 @@ if (isGitHubActionsEnvironment()) {
         fs.rmSync(notesDir, { recursive: true, force: true });
     }
 
-    console.log(fs.readFileSync(outputOfficialFile));
-    console.log(fs.readFileSync(outputCuratedFile));
+    console.log(fs.readFileSync(outputOfficialFile, 'utf8'));
+    console.log(fs.readFileSync(outputCuratedFile, 'utf8'));
 
     console.log(`Cleaned up ${officialDir}, ${curatedDir}, and ${notesDir} directories`); 
     
