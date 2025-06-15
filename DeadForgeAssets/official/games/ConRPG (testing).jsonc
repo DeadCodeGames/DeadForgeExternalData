@@ -12,7 +12,7 @@
         },
         "logoUrl": {
             "filePath": "%USERDATA%/game_assets/deadforge_conrpg.logo.png",
-            "remoteUrl": "https://placehold.co/800x300/transparent/F0F0F0/png?text=ConRPG&font=source-sans-pro",
+            "remoteUrl": "https://deadcode.is-a.dev/DeadForge/store/assets/ConRPG_logo.png",
             "logo_position": {
                 "width_pct": 75,
                 "height_pct": 80,
