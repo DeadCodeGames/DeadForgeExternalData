@@ -8,7 +8,7 @@ As always, please remember that **this is still an experimental Beta release**, 
 
 The feature you've been waiting for is finally here! The **DEADFORGE Store** is now live and ready to use. This is your one-stop destination for all DEADCODE software, accessible directly from DEADFORGE.
 
-To celebrate this launch, we're proud to present our first available game: **[Project DIE](https://deadcode.is-a.dev/DEADFORGE/store/soft/die)** - the very game that served as our main school project and drove us to complete this release on such a tight timeline.
+To celebrate this launch, we're proud to present our first available game: **[Project DIE](https://deadcode.is-a.dev/DeadForge/store/soft/die)** - the very game that served as our main school project and drove us to complete this release on such a tight timeline.
 
 **Game installs are now fully functional** through the DEADFORGE Store, making it easier than ever to discover and install DEADCODE games directly within DEADFORGE.
 
@@ -84,4 +84,4 @@ With ❤️ and a bit of caffeine-fueled urgency,
 
 ---
 
-_P.S. - Don't forget to check out [Project DIE](https://deadcode.is-a.dev/DEADFORGE/store/soft/die) in the DEADFORGE Store! 🎮_
+_P.S. - Don't forget to check out [Project DIE](https://deadcode.is-a.dev/DeadForge/store/soft/die) in the DEADFORGE Store! 🎮_
