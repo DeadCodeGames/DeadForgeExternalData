@@ -12,6 +12,8 @@ To celebrate this launch, we're proud to present our first available game: **[Pr
 
 **Game installs are now fully functional** through the DEADFORGE Store, making it easier than ever to discover and install DEADCODE games directly within DEADFORGE.
 
+Due to time constraints, game updates and uninstalls are not yet handled within DEADFORGE. These will be our top priority in the next DEADFORGE update.
+
 ### A Quick Reality Check About the DEADFORGE Store
 
 Let's be completely honest here - the DEADFORGE Store currently doesn't function as a software distribution platform for everyone like Steam or itch. Let's be real, who in their right mind would want to use this _**abomination**_ as a way to distribute their software? Hell, there isn't even a backend or payment system or dedicated storage server or accounts - this is just a frontend website running on free GitHub Pages hosting with games hosted via GitHub Releases lol.
