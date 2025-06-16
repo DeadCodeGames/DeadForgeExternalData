@@ -56,6 +56,7 @@ Since this release was developed under tight time constraints, **game update fun
 ## 🔮 What's Still Coming
 
 All the features we mentioned in our previous roadmap remain on track:
+- The extended tray functionality (launching games from the tray) is in works, but not quite ready for this release
 - Full autoupdate implementation
 - Notification system improvements
 - Additional storefront support (osu!, HoYoPlay, Riot Client, and more)
