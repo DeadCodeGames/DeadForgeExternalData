@@ -7,6 +7,7 @@ However, first and foremost, we would like to highlight, that **this is an exper
 ## “What is DeadForge?”
 DeadForge is a **multi-purpose software launching tool.** Currently, as of release 2.0.0-Beta-1, DeadForge supports semi-automatic imports from:
 - [Steam](https://www.steampowered.com/)
+  - Steam support requires an installation of the .NET v8.0.16 Runtime, downloadable from [the official Microsoft .NET website](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-8.0.16-windows-x64-installer)
 - [Epic Games](https://www.epicgames.com/)
 - [itch.io](https://www.itch.io/)
 
