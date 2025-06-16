@@ -81,4 +81,4 @@ With ❤️ and a bit of caffeine-fueled urgency,
 
 ---
 
-*P.S. - Don't forget to check out [Project DIE](https://deadcode.is-a.dev/DEADFORGE/store/soft/die) in the DEADFORGE Store! 🎮*
+_P.S. - Don't forget to check out [Project DIE](https://deadcode.is-a.dev/DEADFORGE/store/soft/die) in the DEADFORGE Store! 🎮_
