@@ -22,6 +22,7 @@ However, if you're an IRL person we know (like someone from our school), feel fr
 
 ### Enhanced Markdown Support
 We've significantly improved our markdown rendering capabilities! DEADFORGE now properly supports headings and lists
+![Markdown Difference Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-2/markdowndiff.png)
 
 ### Critical Performance Fixes
 We've addressed a major performance bottleneck that was affecting the entire system during Steam library parsing. Previously, our approach was causing significant resource usage spikes across the whole machine due to an inefficient process spawning strategy. More info in the following spoiler.
