@@ -1,6 +1,28 @@
 {
     "articles": [
         {
+            "title": "DEADFORGE v2.0.0-Beta-2-Patch-1 (whoopsies :3)",
+            "authors": [
+                {
+                    "name": "Richard Kanshen",
+                    "link": "https://github.com/RichardKanshen/",
+                    "profilePicture": {
+                        "filePath": "%USERDATA%/app_assets/authors/deadforge-team/RichardKanshen.png",
+                        "remoteUrl": "https://github.com/RichardKanshen.png"
+                    }
+                }
+            ],
+            "bannerImage": {
+                "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-2-patch-1/banner.png",
+                "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-2-patch-1/banner.png"
+            },
+            "content": "deadforge-v2-beta-release-2-patch-1/content.md",
+            "publishDate": "2025-06-17T15:00:00Z",
+            "lastModified": "2025-06-17T15:00:00Z",
+            "tags": ["DEADFORGE Update", "Beta", "Patch"],
+            "slug": "deadforge-v2-beta-release-2-patch-1"
+        },
+        {
             "title": "DEADFORGE v2.0.0-Beta-2 Release - The DeadForge Store is Here!",
             "authors": [
                 {
