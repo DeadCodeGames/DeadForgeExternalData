@@ -69,4 +69,4 @@ With ❤️ and slightly less caffeine this time,
 
 ---
 
-_P.S. - If you're fluent in German and want to save us from having "<1%" completion, please consider helping out on Crowdin! 🇩🇪_
+_P.S. - If you're fluent in German and want to save us from having even less than 1% language completion, please consider helping out on Crowdin! 🇩🇪_
