@@ -13,8 +13,8 @@ We've added several new translatable strings to improve the overall user experie
 ### Bug Fixes
 
 Fixed a slightly annoying typo in library.install.noReleaseinfo (I just now noticed that the i is lowercase uuuggghhhhh)
-From: Software {{id}} is missing release information
-To: Software with ID {{id}} is missing release information
+**From**: Software {{id}} is missing release information
+**To**: Software with ID {{id}} is missing release information
 
 ### Current Translation Progress
 
