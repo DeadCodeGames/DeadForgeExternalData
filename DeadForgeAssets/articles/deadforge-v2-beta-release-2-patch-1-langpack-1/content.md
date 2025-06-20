@@ -4,6 +4,10 @@ This is primarily a **language pack update** with some small fixes thrown in. No
 
 **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2-Patch-1-LangPack-1)**.
 
+## ❓ Other stuff
+
+We added Twemoji to the Markdown processor, and fixed up the fonts, no more broken flag emojis!
+
 ## 🌍 Localization Updates
 
 ### New Strings Added
