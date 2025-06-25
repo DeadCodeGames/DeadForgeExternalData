@@ -9,6 +9,9 @@ const CURATED_LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/curated/
 const DOWNLOAD_DIR = path.join(__dirname, '../downloaded');
 const MAX_RETRIES = 5;
 const RETRY_DELAY = 1000; // 1 second delay between retries
+const ARTICLES_LIST_JSON_PATH = path.join(__dirname, '../DeadForgeAssets/articles/list.json');
+const DEADFORGE_ASSETS_PATH = path.join(__dirname, '../DeadForgeAssets');
+const LOCAL_ASSET_PREFIX = 'https://deadcode.is-a.dev/DeadForgeExternalData/';
 
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -54,6 +57,21 @@ function calculateHash(buffer: Buffer | null) {
 // Helper function to extract filename from URL
 function getFilenameFromUrl(url: string) {
     return path.basename(new URL(url).pathname);
+}
+
+function getLocalAssetPathFromUrl(url) {
+    // Remove the prefix and treat as relative to DeadForgeAssets
+    return path.join(DEADFORGE_ASSETS_PATH, url.replace(LOCAL_ASSET_PREFIX, ''));
+}
+
+function hashLocalFile(filePath) {
+    try {
+        const buffer = fs.readFileSync(filePath);
+        return calculateHash(buffer);
+    } catch (e) {
+        console.error(`Failed to hash local file: ${filePath}`);
+        return '404';
+    }
 }
 
 // Process a single URL entry
@@ -133,6 +151,55 @@ async function processUrlEntry(urlEntry: any) {
     }
 }
 
+async function processArticleAssets(articlesList) {
+    for (const article of articlesList.articles) {
+        // Authors' profile pictures
+        if (Array.isArray(article.authors)) {
+            for (const author of article.authors) {
+                if (author.profilePicture && author.profilePicture.remoteUrl) {
+                    const url = author.profilePicture.remoteUrl;
+                    if (url.startsWith(LOCAL_ASSET_PREFIX)) {
+                        const localPath = getLocalAssetPathFromUrl(url);
+                        author.profilePicture.hash = hashLocalFile(localPath);
+                    } else {
+                        const buffer = await downloadFile(url);
+                        author.profilePicture.hash = calculateHash(buffer);
+                    }
+                }
+            }
+        }
+        // Banner image
+        if (article.bannerImage && article.bannerImage.remoteUrl) {
+            const url = article.bannerImage.remoteUrl;
+            if (url.startsWith(LOCAL_ASSET_PREFIX)) {
+                const localPath = getLocalAssetPathFromUrl(url);
+                article.bannerImage.hash = hashLocalFile(localPath);
+            } else {
+                const buffer = await downloadFile(url);
+                article.bannerImage.hash = calculateHash(buffer);
+            }
+        }
+        // Content file (always local)
+        if (article.content) {
+            const contentPath = path.join(DEADFORGE_ASSETS_PATH, 'articles', article.content);
+            article.contentHash = hashLocalFile(contentPath);
+        }
+        // assetsMap (optional)
+        if (article.assetsMap && typeof article.assetsMap === 'object') {
+            article.assetsMapHashes = {};
+            for (const [url, localPathRel] of Object.entries(article.assetsMap)) {
+                if (url.startsWith(LOCAL_ASSET_PREFIX)) {
+                    const localPath = getLocalAssetPathFromUrl(url);
+                    article.assetsMapHashes[url] = hashLocalFile(localPath);
+                } else {
+                    const buffer = await downloadFile(url);
+                    article.assetsMapHashes[url] = calculateHash(buffer);
+                }
+            }
+        }
+    }
+}
+
 // Main function
 async function main() {
     if (!isGitHubActionsEnvironment()) {
@@ -149,6 +216,13 @@ async function main() {
         // Read and parse the JSON file
         const curatedData = fs.readFileSync(CURATED_LIST_JSON_PATH, 'utf8'), officialData = fs.readFileSync(OFFICIAL_LIST_JSON_PATH, 'utf8');
         const curatedList = parse(curatedData), officialList = parse(officialData);
+        // Process articles
+        const articlesData = fs.readFileSync(ARTICLES_LIST_JSON_PATH, 'utf8');
+        const articlesList = parse(articlesData);
+        await processArticleAssets(articlesList);
+        fs.writeFileSync(ARTICLES_LIST_JSON_PATH, JSON.stringify(articlesList, null, 4), 'utf8');
+        console.log('Done! Updated Articles List JSON with hash information.');
+        console.log(`Saved into ${ARTICLES_LIST_JSON_PATH}`);
 
         // Process each entry
         for (let i = 0; i < curatedList.length; i++) {
