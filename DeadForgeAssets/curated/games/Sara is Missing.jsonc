@@ -5,6 +5,9 @@
             "id": "89457"
         }
     ],
+    "executablesToWatch": [
+        "%GAMEROOT%/jre/bin/javaw.exe"
+    ],
     "media": {
         "iconUrl": {
             "filePath": "%USERDATA%/game_assets/itch_89457.icon.png",

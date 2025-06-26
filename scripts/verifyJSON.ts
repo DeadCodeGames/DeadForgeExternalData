@@ -88,7 +88,20 @@ function processObject(game: any, currentlyIn: any, path = "", entryname: string
             processObject(value, schema, currentPath, entryname);
         } else if (type === "Array") {
             for (let i = 0; i < value.length; i++) {
-                processObject(value[i], schema[0], `${currentPath}[${i}]`, entryname);
+                // If the schema for array items is a primitive type, check directly
+                if (typeof schema[0] === "string" && ["string", "number", "boolean"].includes(schema[0])) {
+                    if (typeof value[i] !== schema[0]) {
+                        console.error(`[${currentPath}[${i}]] is type ${typeof value[i]}, expected ${schema[0]}`);
+                        violations.push({
+                            entryname,
+                            path: `${currentPath}[${i}]`,
+                            expected: schema[0],
+                            actual: typeof value[i]
+                        });
+                    }
+                } else {
+                    processObject(value[i], schema[0], `${currentPath}[${i}]`, entryname);
+                }
             }
         } else if (type === "Enum") {
             if (!schema.enum.includes(value)) {

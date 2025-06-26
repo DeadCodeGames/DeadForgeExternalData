@@ -70,6 +70,9 @@ export const CuratedGameExample = {
             id: "string"
         }
     ],
+    "Array(executablesToWatch)": [
+        "string"
+    ],
     "Object(media)": {
         "Object(iconUrl,identical=filePath;remoteUrl)": {
             filePath: "string",

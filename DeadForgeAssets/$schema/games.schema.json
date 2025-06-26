@@ -37,6 +37,12 @@
                     "additionalProperties": false,
                     "minItems": 1
                 },
+                "executablesToWatch": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "media": {
                     "type": "object",
                     "properties": {
@@ -58,9 +64,14 @@
                     }
                 }
             },
-            "required": [
-                "matches",
-                "media"
+            "allOf": [
+                { "required": ["matches"] },
+                {
+                    "anyOf": [
+                        { "required": ["media"] },
+                        { "required": ["executablesToWatch"] }
+                    ]
+                }
             ],
             "additionalProperties": false
         },
