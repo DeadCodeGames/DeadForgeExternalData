@@ -4,6 +4,9 @@ We'll be honest with you - **this release is a bit rushed** as we're working aga
 
 As always, please remember that **this is still an experimental Beta release**, and **autoupdate is not yet implemented**.
 
+> [!IMPORTANT]
+> **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2)**.
+
 **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2)**.
 
 ## 🎉 Major New Feature: DEADFORGE Store Launch!
