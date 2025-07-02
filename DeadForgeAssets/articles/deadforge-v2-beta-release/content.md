@@ -4,7 +4,8 @@ In this article, we'd like to share more information about the Beta release, its
 
 However, first and foremost...
 > [!WARNING]
-> We would like to highlight, that **this is an experimental Beta release**, and things are not fully stable yet. We would also like to mention, that **autoupdate is not yet implemented. Once an update releases, we will release an article with a downloading link.** Thank you for your patience.
+> We would like to highlight, that **this is an experimental Beta release**, and things are not fully stable yet.
+> We would also like to mention, that **autoupdate is not yet implemented. Once an update releases, we will release an article with a downloading link.** Thank you for your patience.
 Now, let's get into it...
 
 ## “What is DeadForge?”

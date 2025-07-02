@@ -1,6 +1,28 @@
 {
     "articles": [
         {
+            "title": "DEADFORGE v2.0.0-Beta-3-Patch-1 Release (told ya)",
+            "authors": [
+                {
+                    "name": "Richard Kanshen",
+                    "link": "https://github.com/RichardKanshen/",
+                    "profilePicture": {
+                        "filePath": "%USERDATA%/app_assets/authors/deadforge-team/RichardKanshen.png",
+                        "remoteUrl": "https://github.com/RichardKanshen.png"
+                    }
+                }
+            ],
+            "bannerImage": {
+                "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-1/banner.png",
+                "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-1/banner.png"
+            },
+            "content": "deadforge-v2-beta-release-3-patch-1/content.md",
+            "publishDate": "2025-07-01T11:00:00Z",
+            "lastModified": "2025-07-02T11:00:00Z",
+            "tags": ["DEADFORGE Update", "Beta", "Patch"],
+            "slug": "deadforge-v2-beta-release-3-patch-1"
+        },
+        {
             "title": "DEADFORGE v2.0.0-Beta-3 Release - The SuperDuper Rushed Update",
             "authors": [
                 {
