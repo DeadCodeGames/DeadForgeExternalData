@@ -2,7 +2,10 @@ After 2 months of work, DeadForge is finally ready for its first Beta release, a
 
 In this article, we'd like to share more information about the Beta release, its features, and what is coming in the foreseeable future.
 
-However, first and foremost, we would like to highlight, that **this is an experimental Beta release**, and things are not fully stable yet. We would also like to mention, that **autoupdate is not yet implemented. Once an update releases, we will release an article with a downloading link.** Thank you for your patience. Now, let's get into it...
+However, first and foremost...
+> [!WARNING]
+> We would like to highlight, that **this is an experimental Beta release**, and things are not fully stable yet. We would also like to mention, that **autoupdate is not yet implemented. Once an update releases, we will release an article with a downloading link.** Thank you for your patience.
+Now, let's get into it...
 
 ## “What is DeadForge?”
 DeadForge is a **multi-purpose software launching tool.** Currently, as of release 2.0.0-Beta-1, DeadForge supports semi-automatic imports from:

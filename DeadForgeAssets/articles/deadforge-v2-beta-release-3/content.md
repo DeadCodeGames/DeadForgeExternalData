@@ -1,6 +1,7 @@
 We're back! 🎉 And boy oh boy, do we have some goodies for you. Fresh off our school trip and with school finally over, we're diving headfirst into **DEADFORGE v2.0.0-Beta-3**, i did promise an update for the 1st and I sure did deliver.
 
-**You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3)**.
+> [!NOTE]
+> **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3)**.
 
 ## 🎮 The Big One: Game Updates Are Here!
 

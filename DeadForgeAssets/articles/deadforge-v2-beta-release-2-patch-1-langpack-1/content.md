@@ -2,7 +2,8 @@ We're back with another quick update! This time it's **DEADFORGE v2.0.0-Beta-2-P
 
 This is primarily a **language pack update** with some small fixes thrown in. Nothing too groundbreaking, but hey - progress is progress, right?
 
-**You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2-Patch-1-LangPack-1)**.
+> [!NOTE]
+> **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2-Patch-1-LangPack-1)**.
 
 ## ❓ Other stuff
 
