@@ -29,7 +29,7 @@ Here's where we stand with our localization efforts:
 - 🏴‍☠️ Pirate English - 7%
 - 🇰🇷 한국어, 🇨🇳 简体中文, 🇹🇼 繁體中文 - 5%
 - 🇫🇷 Français, 🇮🇹 Italiano - 3%
-- 😹 LOLCAT - 1%
+- 🏳️‍🇱‍🇴‍🇱‍‍ LOLCAT - 1%
 - 🇩🇪 Deutsch - <1%
 
 #### 🤝 Help Us Translate!
