@@ -30,6 +30,7 @@ Here's where we stand with our localization efforts:
 - 🇰🇷 한국어, 🇨🇳 简体中文, 🇹🇼 繁體中文 - 5%
 - 🇫🇷 Français, 🇮🇹 Italiano - 3%
 - 🏳️‍🇱‍🇴‍🇱‍‍ LOLCAT - 1%
+- **^^** if the emoji above does not look right, make sure to update to the latest version :3
 - 🇩🇪 Deutsch - <1%
 
 #### 🤝 Help Us Translate!

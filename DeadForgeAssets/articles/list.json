@@ -126,6 +126,9 @@
                 "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-2/banner.png",
                 "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-2/banner.png"
             },
+            "assetsMap": {
+                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-2/markdowndiff.png": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-2/markdowndiff.png"
+            },
             "content": "deadforge-v2-beta-release-2/content.md",
             "publishDate": "2025-06-16T09:00:00Z",
             "lastModified": "2025-06-16T11:30:00Z",
@@ -155,9 +158,6 @@
             "bannerImage": {
                 "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release/banner.png",
                 "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release/banner.png"
-            },
-            "assetsMap": {
-                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-2/markdowndiff.png": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-2/markdowndiff.png"
             },
             "content": "deadforge-v2-beta-release/content.md",
             "publishDate": "2025-06-01T20:00:00Z",
