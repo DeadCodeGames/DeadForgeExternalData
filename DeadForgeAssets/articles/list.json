@@ -16,9 +16,12 @@
                 "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3/banner.png",
                 "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3/banner.png"
             },
+            "assetsMap": {
+                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3/homescreen.png": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3/homescreen.png"
+            },
             "content": "deadforge-v2-beta-release-3/content.md",
             "publishDate": "2025-07-01T19:48:00Z",
-            "lastModified": "2025-07-01T19:48:00Z",
+            "lastModified": "2025-07-02T08:03:00Z",
             "tags": ["DEADFORGE Update", "Beta"],
             "slug": "deadforge-v2-beta-release-3"
         },
