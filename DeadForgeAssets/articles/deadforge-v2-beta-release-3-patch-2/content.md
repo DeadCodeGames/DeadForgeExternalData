@@ -3,6 +3,7 @@ Another quick update coming your way! Yet again, I've noticed some bugs RIGHT AF
 > [!IMPORTANT]
 > **This update is still a work-in-progress.** This article is being used to test new features - some things might not render as expected, including new video tags that are coming in this update.
 > If something does not seem right with this article, and you are on version Beta-3-Patch-1, this is probably normal. However, if you aren't... plz update thank you :3
+> **Edit (9:46PM CET):** This update is currently being finalized. I will update this article with an update link, and a complete list of changes shortly.
 
 ## 🔧 What's Being Fixed
 
