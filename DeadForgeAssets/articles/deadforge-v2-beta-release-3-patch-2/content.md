@@ -10,7 +10,7 @@ Another quick update coming your way! We're making steady progress on Beta-3-Pat
 We've identified and are addressing several bugs related to game state detection that were causing DEADFORGE to sometimes miss when games were launched or closed. This should make play time tracking much more reliable.
 
 ### Language Selector Flag Bug
-Fixed an annoying issue where the flag in the language selector wouldn't update immediately when you changed languages. Previously, you had to navigate away from settings and back again to see the correct flag. This patch will address this issue.
+Fixed an annoying issue where the flag in the language selector wouldn't update immediately when you changed languages. Previously, you had to navigate away from settings and back again to see the correct flag. This patch will address this issue. (A fix has already been found :3)
 
 ![video:A showcase of the flag bug.](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-2/languageselectorflagstuck.mp4)
 ![On the not so low chance that the video above is not rendering for you because you are on Beta-3-Patch-1 or lower, here is how it looks like](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-2/languageselectorflagstuckframe.jpg)
