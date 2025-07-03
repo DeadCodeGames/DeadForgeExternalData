@@ -15,6 +15,12 @@ We've noticed an annoying issue where the flag in the language selector wouldn't
 ![On the not so low chance that the video above is not rendering for you because you are on Beta-3-Patch-1 or lower, here is how it looks like](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-2/languageselectorflagstuckframe.jpg)
 This patch will address this issue. (A fix has already been found :3)
 
+### Some weird link issues
+There are actually _**two**_ issues with links in DeadForge.
+1. **Within the sidebar** - CTRL-clicking or Shift-clicking any of the links in the sidebar opens them in the browser.
+2. **From the Store page** - CTRL-clicking or Shift-clicking any of the links on the Store page opens them in a new DEADFORGE window.
+Good news - **A fix for both of these issues has been found!** All in this new update.
+
 ## 🎬 New Features in Testing
 
 This work-in-progress build includes experimental **video, audio, and embed support** for articles. Once Beta-3-Patch-2 is released, you’ll start seeing some new video elements integrated into updates like this — though they’re still being refined and tested on our end.
