@@ -16,7 +16,7 @@ We've noticed an annoying issue where the flag in the language selector wouldn't
 This patch will address this issue. (A fix has already been found :3)
 
 ### Some weird link issues
-There are actually _**two**_ issues with links in DeadForge.
+There are actually _**two**_ issues with links in DEADFORGE.
 1. **Within the sidebar** - CTRL-clicking or Shift-clicking any of the links in the sidebar opens them in the browser.
 2. **From the Store page** - CTRL-clicking or Shift-clicking any of the links on the Store page opens them in a new DEADFORGE window.
 Good news - **A fix for both of these issues has been found!** All coming in this new update.
