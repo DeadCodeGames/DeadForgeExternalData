@@ -12,6 +12,7 @@ This issue will now be closed.
 ###### If you want to report more missing assets, please you can create a comment with the following format:
 
 \`\`\`
+/update assets
 ${REPORT_BEGIN_TAG}
 <report JSON here>
 ${REPORT_END_TAG}
