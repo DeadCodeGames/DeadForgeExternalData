@@ -1,0 +1,35 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "3d34f303a68c44c2a9b44a3988533e90"
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_3d34f303a68c44c2a9b44a3988533e90.icon.jpg",
+            "remoteUrl": "https://cdn.fastly.steamstatic.com/steamcommunity/public/images/apps/1205450/0dedfb75aad3b5c10ff5f0b091db64b9b4b9ffc7.jpg"
+        },
+        "heroUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_3d34f303a68c44c2a9b44a3988533e90.hero.jpg",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/1205450/library_hero.jpg"
+        },
+        "logoUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_3d34f303a68c44c2a9b44a3988533e90.logo.png",
+            "remoteUrl": "https://shared.steamstatic.com/store_item_assets/steam/apps/1205450/logo_2x.png",
+            "logo_position": {
+                "pinned_position": "BottomLeft",
+                "width_pct": 34.65116279069768,
+                "height_pct": 100
+            }
+        },
+        "headerUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_3d34f303a68c44c2a9b44a3988533e90.header.jpg",
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/0cccfc4b516565813b253a91c4db11aa.jpg"
+        },
+        "capsuleUrl": {
+            "filePath": "%USERDATA%/game_assets/epic_3d34f303a68c44c2a9b44a3988533e90.capsule.jpg",
+            "remoteUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1205450/library_600x900_2x.jpg"
+        }
+    }
+}
