@@ -1,6 +1,32 @@
 {
     "articles": [
         {
+            "title": "DEADFORGE v2.0.0-Beta-3-Patch-3 (Work In Progress)",
+            "authors": [
+                {
+                    "name": "Richard Kanshen",
+                    "link": "https://github.com/RichardKanshen/",
+                    "profilePicture": {
+                        "filePath": "%USERDATA%/app_assets/authors/deadforge-team/RichardKanshen.png",
+                        "remoteUrl": "https://github.com/RichardKanshen.png"
+                    }
+                }
+            ],
+            "bannerImage": {
+                "filePath": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/banner.png",
+                "remoteUrl": "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/banner.png"
+            },
+            "assetsMap": {
+                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm",
+                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbugcomparison.webp": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/gamecardbugcomparison.webp"
+            },
+            "content": "deadforge-v2-beta-release-3-patch-3/content.md",
+            "publishDate": "2025-07-05T20:10:00Z",
+            "lastModified": "2025-07-05T20:10:00Z",
+            "tags": ["DEADFORGE Update", "Beta", "Patch", "Work In Progress"],
+            "slug": "deadforge-v2-beta-release-3-patch-3"
+        },
+        {
             "title": "DEADFORGE v2.0.0-Beta-3-Patch-2",
             "authors": [
                 {
