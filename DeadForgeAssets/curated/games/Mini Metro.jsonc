@@ -1,0 +1,18 @@
+{
+    "matches": [
+        {
+            "source": "steam",
+            "id": "287980"
+        }
+    ],
+    "media": {
+        "headerUrl": {
+            "filePath": {
+                "czech": "%USERDATA%/game_assets/steam_287980.header.czech.jpg"
+            },
+            "remoteUrl": {
+                "czech": "https://cdn2.steamgriddb.com/grid/86c29284ed4721455a8bfd00094cb4be.jpg"
+            }
+        }
+    }
+}
