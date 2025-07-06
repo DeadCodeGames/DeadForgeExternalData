@@ -9,13 +9,14 @@ hihi new patch in da works this is the last one for this update i promise
 ### More Homepage Layout Tweaks
 I could try to explain this, but... I'll just let the clip speak for itself.
 ![video:MY CHILD! IT'S ALIVE!!!](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm)
-YES, THE LAST PLAYED ROW SHRINKS WHEN YOU SCROLL THROUGH THE ARTICLES LIST. I am very, very happy with how this turned out, and while it might not look just as impressive in the low FPS screen recording, it will look fabulous in practice. Trust.
+YES, THE LAST PLAYED ROW SHRINKS WHEN YOU SCROLL THROUGH THE ARTICLES LIST. I am very, very happy with how this turned out, and while it might not look just as impressive on video, it will look fabulous in practice. Trust.
 
 ### Fixed a bug with 
 I haven't noticed this until now, but there were _two_ small bugs with the `GameCard`s sprinkled in throughout the Library and Homepage.
-1. A single missing image would result into a fallback state, even though there were more possible allowed images present. (Video showcase coming)
+1. A single missing image would result into a fallback state, even though there were more possible allowed images present.
+![video:Bug #1 Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug1showcase.webm)
 2. The algorithm for choosing the right image would not handle different locale options correctly, as shown in the following side-by-side showcase:
-![Bug #2 Side-By-Side comparison](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbugcomparison.webp)
+![Bug #2 Side-By-Side comparison](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug2comparison.webp)
 Both of these bugs have been fixed.
 
 ### Language updates

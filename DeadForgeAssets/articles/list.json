@@ -18,11 +18,12 @@
             },
             "assetsMap": {
                 "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm",
-                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbugcomparison.webp": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/gamecardbugcomparison.webp"
+                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug1showcase.webp": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug1showcase.webm",
+                "https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug2comparison.webm": "%USERDATA%/app_assets/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug2comparison.webp"
             },
             "content": "deadforge-v2-beta-release-3-patch-3/content.md",
             "publishDate": "2025-07-05T20:10:00Z",
-            "lastModified": "2025-07-05T20:10:00Z",
+            "lastModified": "2025-07-06T09:15:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch", "Work In Progress"],
             "slug": "deadforge-v2-beta-release-3-patch-3"
         },
