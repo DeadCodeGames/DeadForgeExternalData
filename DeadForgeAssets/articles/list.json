@@ -1,7 +1,7 @@
 {
     "articles": [
         {
-            "title": "DEADFORGE v2.0.0-Beta-3-Patch-3 (Work In Progress)",
+            "title": "DEADFORGE v2.0.0-Beta-3-Patch-3",
             "authors": [
                 {
                     "name": "Richard Kanshen",
@@ -25,8 +25,8 @@
             },
             "content": "deadforge-v2-beta-release-3-patch-3/content.md",
             "publishDate": "2025-07-05T20:10:00Z",
-            "lastModified": "2025-07-06T15:55:00Z",
-            "tags": ["DEADFORGE Update", "Beta", "Patch", "Work In Progress"],
+            "lastModified": "2025-07-06T18:15:00Z",
+            "tags": ["DEADFORGE Update", "Beta", "Patch"],
             "slug": "deadforge-v2-beta-release-3-patch-3"
         },
         {

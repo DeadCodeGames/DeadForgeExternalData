@@ -1,15 +1,14 @@
-hihi new patch in da works this is the last one for this update i promise
+hihi new patch this is the last one for this update i promise
 
-> [!IMPORTANT]
-> **This update is going to be released soon.** This article is being just being publicly fine-tuned.
-> If something does not seem right with this article, and you are on version Beta-3-Patch-1, plz update 2 Patch-2 thank you :3
+> [!NOTE]
+> **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3-Patch-3)**.
 
 ## 🔧 What's Changed?
 
 ### More Homepage Layout Tweaks
 I could try to explain this, but... I'll just let the clip speak for itself.
 ![video:MY CHILD! IT'S ALIVE!!!](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm)
-YES, THE LAST PLAYED ROW SHRINKS WHEN YOU SCROLL THROUGH THE ARTICLES LIST. I am very, very happy with how this turned out, and while it might not look just as impressive on video, it will look fabulous in practice. Trust.
+YES, THE LAST PLAYED ROW SHRINKS WHEN YOU SCROLL THROUGH THE ARTICLES LIST. I am very, very happy with how this turned out.
 The error handling for the articles list has also been improved. The error states for loading and updating articles are now separated from each other, allowing for a much cleaner and more user-friendly experience.
 ![Error Handling Comparison. Both loading and updating errors grouped together before, only updating error after.](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articleserrorhandlingshowcase.webp)
 ![Empty Articles List (Loading Error) Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/emptyarticleslistshowcase.png)
@@ -23,16 +22,14 @@ I haven't noticed this until now, but there were _two_ small bugs with the `Game
 Both of these bugs have been fixed.
 
 ### Language updates
-**こんにちは～！** 100%クラブへようこそ、日本語ちゃん!! Japanese is, as of this update, at 100% completion!
+**こんにちは～！** 100%クラブへようこそ、日本語ちゃん！　Japanese is, as of this update, at 100% completion!
 - 🇸🇰 Slovenčina, 🇨🇿 Čeština, 🇯🇵 日本語 - 100%
 - 🏴‍☠️ Pirate English - 6%
 - 🇨🇳 简体中文 - 5%
 - 🇰🇷 한국어, 🇹🇼 繁體中文 - 4%
 - 🇫🇷 Français, 🇮🇹 Italiano - 3%
 - 🏳️‍🇱‍🇴‍🇱‍‍ LOLCAT, 🇺🇦 Українська мова, 🇩🇪 Deutsch - 1%
-
-> [!NOTE]
-> Remember, this is a work-in-progress, and this article is actively being edited and used as a testing ground. Thanks for understanding!
+We have also updated the 🇬🇧 emoji to use the more sleek 🏳️‍🇪‍🇳‍🇬‍‍ (it might render a bit wrong here in older versions, so make sure to update! ^^), and shortened the shown language title.
 
 ## Small note on DEADFORGE's update schedule
 After a bit of thought, I have decided, that a new ✨ BIG FEATURE UPDATE ✨ every 2 weeks would be the best idea, both to make sure DEADFORGE is alive, and that I am as well. This should give me enough time to work on features, localization, and touch grass from time to time as well.
