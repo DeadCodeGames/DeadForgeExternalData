@@ -10,10 +10,13 @@ hihi new patch in da works this is the last one for this update i promise
 I could try to explain this, but... I'll just let the clip speak for itself.
 ![video:MY CHILD! IT'S ALIVE!!!](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articlelistscrollshowcase.webm)
 YES, THE LAST PLAYED ROW SHRINKS WHEN YOU SCROLL THROUGH THE ARTICLES LIST. I am very, very happy with how this turned out, and while it might not look just as impressive on video, it will look fabulous in practice. Trust.
+The error handling for the articles list has also been improved. The error states for loading and updating articles are now separated from each other, allowing for a much cleaner and more user-friendly experience.
+![Error Handling Comparison. Both loading and updating errors grouped together before, only updating error after.](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articleserrorhandlingshowcase.webp)
+![Empty Articles List (Loading Error) Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/emptyarticleslistshowcase.png)
 
 ### Fixed a bug with 
 I haven't noticed this until now, but there were _two_ small bugs with the `GameCard`s sprinkled in throughout the Library and Homepage.
-1. A single missing image would result into a fallback state, even though there were more possible allowed images present.
+1. A single missing image would result into a fallback state, even though there were more possible allowed images present (and this fallback state even persists after a different image should be loaded).
 ![video:Bug #1 Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug1showcase.webm)
 2. The algorithm for choosing the right image would not handle different locale options correctly, as shown in the following side-by-side showcase:
 ![Bug #2 Side-By-Side comparison](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug2comparison.webp)
