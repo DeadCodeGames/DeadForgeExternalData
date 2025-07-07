@@ -20,7 +20,11 @@
             "publishDate": "2025-07-06T19:48:00Z",
             "lastModified": "2025-07-06T19:48:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch"],
-            "slug": "deadforge-v2-beta-release-3-patch-3b"
+            "slug": "deadforge-v2-beta-release-3-patch-3b",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-3-Patch-3B",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3-Patch-3B"
+            }
         },
         {
             "title": "DEADFORGE v2.0.0-Beta-3-Patch-3",
@@ -49,7 +53,11 @@
             "publishDate": "2025-07-05T20:10:00Z",
             "lastModified": "2025-07-06T18:15:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch"],
-            "slug": "deadforge-v2-beta-release-3-patch-3"
+            "slug": "deadforge-v2-beta-release-3-patch-3",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-3-Patch-3",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3-Patch-3"
+            }
         },
         {
             "title": "DEADFORGE v2.0.0-Beta-3-Patch-2",
@@ -76,7 +84,11 @@
             "publishDate": "2025-07-03T08:10:00Z",
             "lastModified": "2025-07-03T19:46:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch"],
-            "slug": "deadforge-v2-beta-release-3-patch-2"
+            "slug": "deadforge-v2-beta-release-3-patch-2",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-3-Patch-2",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3-Patch-2"
+            }
         },
         {
             "title": "DEADFORGE v2.0.0-Beta-3-Patch-1 Release (told ya)",
@@ -98,7 +110,11 @@
             "publishDate": "2025-07-02T11:00:00Z",
             "lastModified": "2025-07-02T11:00:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch"],
-            "slug": "deadforge-v2-beta-release-3-patch-1"
+            "slug": "deadforge-v2-beta-release-3-patch-1",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-3-Patch-1",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3-Patch-1"
+            }
         },
         {
             "title": "DEADFORGE v2.0.0-Beta-3 Release - The SuperDuper Rushed Update",
@@ -123,7 +139,11 @@
             "publishDate": "2025-07-01T19:48:00Z",
             "lastModified": "2025-07-02T08:03:00Z",
             "tags": ["DEADFORGE Update", "Beta"],
-            "slug": "deadforge-v2-beta-release-3"
+            "slug": "deadforge-v2-beta-release-3",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-3",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-3"
+            }
         },
         {
             "title": "meta update - 27th of June, 2025",
@@ -189,7 +209,11 @@
             "publishDate": "2025-06-20T18:42:00Z",
             "lastModified": "2025-06-20T19:30:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch", "Language Update"],
-            "slug": "deadforge-v2-beta-release-2-patch-1-langpack-1"
+            "slug": "deadforge-v2-beta-release-2-patch-1-langpack-1",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-2-Patch-1-LangPack-1",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2-Patch-1-LangPack-1"
+            }
         },
         {
             "title": "DEADFORGE v2.0.0-Beta-2-Patch-1 (whoopsies :3)",
@@ -211,7 +235,11 @@
             "publishDate": "2025-06-17T15:00:00Z",
             "lastModified": "2025-06-17T15:00:00Z",
             "tags": ["DEADFORGE Update", "Beta", "Patch"],
-            "slug": "deadforge-v2-beta-release-2-patch-1"
+            "slug": "deadforge-v2-beta-release-2-patch-1",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-2-Patch-1",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2-Patch-1"
+            }
         },
         {
             "title": "DEADFORGE v2.0.0-Beta-2 Release - The DeadForge Store is Here!",
@@ -236,7 +264,17 @@
             "publishDate": "2025-06-16T09:00:00Z",
             "lastModified": "2025-06-16T11:30:00Z",
             "tags": ["DEADFORGE Update", "Beta"],
-            "slug": "deadforge-v2-beta-release-2"
+            "slug": "deadforge-v2-beta-release-2",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-2",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-2"
+            },
+            "linkedSoftware": [
+                {
+                    "displayName": "Project DIE",
+                    "storeId": "die"
+                }
+            ]
         },
         {
             "title": "DEADFORGE v2 BETA RELEASE - v2.0.0-Beta-1 is Finally OUT",
@@ -266,7 +304,11 @@
             "publishDate": "2025-06-01T20:00:00Z",
             "lastModified": "2025-06-05T17:03:00Z",
             "tags": ["DEADFORGE Update", "Beta"],
-            "slug": "deadforge-v2-beta-release"
+            "slug": "deadforge-v2-beta-release",
+            "linkedRelease": {
+                "tag": "v2.0.0-Beta-1",
+                "url": "https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-1"
+            }
         }
     ]
 } 
