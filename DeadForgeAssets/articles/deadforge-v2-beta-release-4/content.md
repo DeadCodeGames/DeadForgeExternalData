@@ -1,5 +1,5 @@
 Yes. You read that right. No more Beta-3 patches.
-_aaand my computer bluescreened after writing that line. yum. what a great sign. oh well, roll the wip notice-_
+_aaand my computer bluescreened after writing that line. yum. what a great sign. oh well._
 
 > [!NOTE]
 > **You can download this release from [our GitHub Releases page](https://github.com/DeadCodeGames/DeadForge/releases/tag/v2.0.0-Beta-4)**. This article will be updated to contain more details soon.
