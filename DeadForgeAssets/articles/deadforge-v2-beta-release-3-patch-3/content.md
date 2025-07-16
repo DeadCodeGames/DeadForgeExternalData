@@ -13,7 +13,7 @@ The error handling for the articles list has also been improved. The error state
 ![Error Handling Comparison. Both loading and updating errors grouped together before, only updating error after.](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/articleserrorhandlingshowcase.webp)
 ![Empty Articles List (Loading Error) Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/emptyarticleslistshowcase.png)
 
-### Fixed a bug with 
+### Fixed a bug with GameCards
 I haven't noticed this until now, but there were _two_ small bugs with the `GameCard`s sprinkled in throughout the Library and Homepage.
 1. A single missing image would result into a fallback state, even though there were more possible allowed images present (and this fallback state even persists after a different image should be loaded).
 ![video:Bug #1 Showcase](https://deadcode.is-a.dev/DeadForgeExternalData/articles/deadforge-v2-beta-release-3-patch-3/gamecardbug1showcase.webm)
