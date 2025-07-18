@@ -41,7 +41,6 @@ The Library sidebar got a tiny change - games that are not installed are now gra
 - 🇫🇷 Français, 🇮🇹 Italiano, 🇺🇦 Українська мова - 7%
 - 🏴‍☠️ Pirate English - 6%
 - 🏳️‍🇱‍🇴‍🇱‍‍ LOLCAT - 1%
-We have also updated the 🇬🇧 emoji to use the more sleek 🏳️‍🇪‍🇳‍🇬‍‍ (it might render a bit wrong here in older versions, so make sure to update! ^^), and shortened the shown language title.
 
 ---
 
