@@ -1,0 +1,56 @@
+[
+    {
+        "matches": [
+            {
+                "source": "steam",
+                "id": "1948160" // Euro Truck Simulator 2 Dedicated Server
+            }
+        ],
+        "media": {
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_1948160.hero.jpg",
+                "remoteUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/library_hero_2x.jpg"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_1948160.logo.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/logo/8af47deb6fad1c02146354ef8087cfeb.png",
+                "logo_position": {
+                    "pinned_position": "BottomLeft",
+                    "height_pct": 100,
+                    "width_pct": 44.51406649616368
+                }
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_1948160.capsule.jpg",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/415b195559580c6cb806208b5f0818ec.jpg"
+            }
+        }
+    },
+    {
+        "matches": [
+            {
+                "source": "steam",
+                "id": "2239530" // American Truck Simulator Dedicated Server (ID: 2239530)
+            }
+        ],
+        "media": {
+            "heroUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_2239530.hero.jpg",
+                "remoteUrl": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/270880/library_hero_2x.jpg"
+            },
+            "logoUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_2239530.logo.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/logo/6234e5ecfc1464ffe40866f8f3f32a0a.png",
+                "logo_position": {
+                    "pinned_position": "BottomLeft",
+                    "height_pct": 59.75000000000001,
+                    "width_pct": 24.14066496163683
+                }
+            },
+            "capsuleUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_2239530.capsule.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/1fc2e59ea90af8063691f5130594e61a.png"
+            }
+        }
+    }
+]
