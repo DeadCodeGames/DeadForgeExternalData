@@ -14,8 +14,7 @@
             "type": "info",
             "severity": "none",
             "title": "Dedicated Server Setup Required",
-            "description": "This is a dedicated server application that requires additional setup and configuration before use. It is intended for hosting multiplayer sessions (AKA Convoys) and do not include the base game content.",
-            "recommendation": "Refer to the official setup documentation at [SCS Software's Dedicated Server Guide](https://modding.scssoft.com/wiki/Documentation/Tools/Dedicated_Server) for complete installation and configuration instructions."
+            "description": "This is a dedicated server application that requires additional setup and configuration before use. It is intended for hosting multiplayer sessions (AKA Convoys) and do not include the base game content.\nRefer to the official setup documentation at [SCS Software's Dedicated Server Guide](https://modding.scssoft.com/wiki/Documentation/Tools/Dedicated_Server) for complete installation and configuration instructions.",
         }
     ]
 }
