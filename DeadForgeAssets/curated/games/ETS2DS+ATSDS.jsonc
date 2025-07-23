@@ -20,6 +20,10 @@
                     "width_pct": 44.51406649616368
                 }
             },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_1948160.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/dc91094a11674fc9d3105f02081dc025.png"
+            },
             "capsuleUrl": {
                 "filePath": "%USERDATA%/game_assets/steam_1948160.capsule.jpg",
                 "remoteUrl": "https://cdn2.steamgriddb.com/grid/415b195559580c6cb806208b5f0818ec.jpg"
@@ -46,6 +50,10 @@
                     "height_pct": 59.75000000000001,
                     "width_pct": 24.14066496163683
                 }
+            },
+            "headerUrl": {
+                "filePath": "%USERDATA%/game_assets/steam_2239530.header.png",
+                "remoteUrl": "https://cdn2.steamgriddb.com/grid/41469d3ad3df81dcb18553c684c85654.png"
             },
             "capsuleUrl": {
                 "filePath": "%USERDATA%/game_assets/steam_2239530.capsule.png",
