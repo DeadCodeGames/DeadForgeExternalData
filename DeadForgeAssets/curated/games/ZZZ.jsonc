@@ -8,11 +8,11 @@
     "media": {
         "iconUrl": {
             "remoteUrl": "https://cdn2.steamgriddb.com/icon/0b8037a0540a830a2a5ef89aff144727.png",
-            "filePath": "%USERDATA%/game_assets/epic_525aa0efd70f4399b9f64bcd2a5b38c7.icon.png"
+            "filePath": "%USERDATA%/game_assets/hoyo_zzz.icon.png"
         },
         "heroUrl": {
             "remoteUrl": "https://cdn2.steamgriddb.com/hero/8f7ac69355e68ed28661180e31b62267.jpg",
-            "filePath": "%USERDATA%/game_assets/epic_525aa0efd70f4399b9f64bcd2a5b38c7.hero.jpg"
+            "filePath": "%USERDATA%/game_assets/hoyo_zzz.hero.jpg"
         },
         "logoUrl": {
             "remoteUrl": {
@@ -20,8 +20,8 @@
                 "schinese": "https://cdn2.steamgriddb.com/logo/54648c18afed2304f5d470943d72917d.png"
             },
             "filePath": {
-                "english": "%USERDATA%/game_assets/epic_525aa0efd70f4399b9f64bcd2a5b38c7.logo.english.png",
-                "schinese": "%USERDATA%/game_assets/epic_525aa0efd70f4399b9f64bcd2a5b38c7.logo.schinese.png"
+                "english": "%USERDATA%/game_assets/hoyo_zzz.logo_english.png",
+                "schinese": "%USERDATA%/game_assets/hoyo_zzz.logo_schinese.png"
             },
             "logo_position": {
                 "pinned_position": "CenterCenter",
@@ -31,11 +31,11 @@
         },
         "capsuleUrl": {
             "remoteUrl": "https://cdn2.steamgriddb.com/grid/ad47a060f41a3728e17c1e76f9cbd38d.jpg",
-            "filePath": "%USERDATA%/game_assets/epic_525aa0efd70f4399b9f64bcd2a5b38c7.capsule.jpg"
+            "filePath": "%USERDATA%/game_assets/hoyo_zzz.capsule.jpg"
         },
         "headerUrl": {
             "remoteUrl": "https://cdn2.steamgriddb.com/grid/460f8deae0ae09021b1d22e71c2d2348.webp",
-            "filePath": "%USERDATA%/game_assets/epic_525aa0efd70f4399b9f64bcd2a5b38c7.header.webp"
+            "filePath": "%USERDATA%/game_assets/hoyo_zzz.header.webp"
         }
     }
 }
