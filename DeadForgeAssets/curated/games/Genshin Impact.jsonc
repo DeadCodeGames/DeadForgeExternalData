@@ -1,0 +1,41 @@
+{
+    "matches": [
+        {
+            "source": "epic",
+            "id": "41869934302e4b8cafac2d3c0e7c293d" // Epic Version - DISCOURAGED
+        }
+    ],
+    "media": {
+        "iconUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/54795ec619ebda94c86d00184861c96f.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_genshinimpact.icon.png"
+        },
+        "heroUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/714aeac233808ffb2b01e3910edff2bc.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_genshinimpact.hero.jpg"
+        },
+        "logoUrl": {
+            "remoteUrl": {
+                "english": "https://cdn2.steamgriddb.com/logo/245142a8282a24362c6a1762f55dab27.png",
+                "japanese": "https://cdn2.steamgriddb.com/logo/3b8592aa617b0299e2269ed032a13773.png"
+            },
+            "filePath": {
+                "english": "%USERDATA%/game_assets/hoyo_genshinimpact.logo_english.png",
+                "japanese": "%USERDATA%/game_assets/hoyo_genshinimpact.logo_japanese.png"
+            },
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 60,
+                "width_pct": 40
+            }
+        },
+        "capsuleUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/d1760f7755a3859b6323395fdcdef11d.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_genshinimpact.capsule.png"
+        },
+        "headerUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/d70aeeddf4fd712766ac530137a79f91.jpg",
+            "filePath": "%USERDATA%/game_assets/hoyo_genshinimpact.header.png"
+        }
+    }
+}
