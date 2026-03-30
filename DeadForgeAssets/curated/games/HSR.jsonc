@@ -20,14 +20,14 @@
                 "schinese": "https://cdn2.steamgriddb.com/logo/46ea705a8b490eb87ce405797eced93e.png",
                 "tchinese": "https://cdn2.steamgriddb.com/logo/ef9f3a06134fc0e7bb1b5cf72e09fdf3.png",
                 "japanese": "https://cdn2.steamgriddb.com/logo/37ec1b44e5bed094033db159162ec190.png",
-                "korean": "https://cdn2.steamgriddb.com/logo/6e374691521a432196bdfdaf7a745c6e.png"
+                "koreana": "https://cdn2.steamgriddb.com/logo/6e374691521a432196bdfdaf7a745c6e.png"
             },
             "filePath": {
                 "english": "%USERDATA%/game_assets/hoyo_hsr.logo_english.png",
                 "schinese": "%USERDATA%/game_assets/hoyo_hsr.logo_schinese.png",
                 "tchinese": "%USERDATA%/game_assets/hoyo_hsr.logo_tchinese.png",
                 "japanese": "%USERDATA%/game_assets/hoyo_hsr.logo_japanese.png",
-                "korean": "%USERDATA%/game_assets/hoyo_hsr.logo_korean.png"
+                "koreana": "%USERDATA%/game_assets/hoyo_hsr.logo_korean.png"
             },
             "logo_position": {
                 "pinned_position": "CenterCenter",
