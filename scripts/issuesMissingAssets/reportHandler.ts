@@ -19,23 +19,23 @@ ${REPORT_END_TAG}
 \`\`\`
 
 This will automatically update the report and reopen the issue if there are new missing assets. Thank you for your contribution, and helping us stay organized! ^^`;
-export async function addMissingAssetsLabel(context: GitHubContext, issueNumber: number): Promise<void> {
+export async function addMissingAssetsLabel(context: GitHubContext, issueOrPullRequestNumber: number): Promise<void> {
     await context.octokit.issues.addAssignees({
         owner: context.owner,
         repo: context.repo,
-        issue_number: issueNumber,
+        issue_number: issueOrPullRequestNumber,
         assignees: DEFAULT_ASSIGNEES
     });
     await context.octokit.issues.addLabels({
         owner: context.owner,
         repo: context.repo,
-        issue_number: issueNumber,
+        issue_number: issueOrPullRequestNumber,
         labels: [MISSING_ASSETS_LABEL]
     });
     await context.octokit.request('PATCH /repos/{owner}/{repo}/issues/{issue_number}', {
         owner: context.owner,
         repo: context.repo,
-        issue_number: issueNumber,
+        issue_number: issueOrPullRequestNumber,
         type: "Assets"
     });
 }
