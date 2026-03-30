@@ -5,5 +5,43 @@
             "id": "0dc22b543a40440fab5a98d1e40c02c1"
         }
     ],
-    "media": {}
+    "media": {
+        "iconUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/icon/d3630410c51e60941a9001a46871070e.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_hi3.icon.png"
+        },
+        "heroUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/hero/a5211cd8d2605ed43c70fa82884cc849.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_hi3.hero.jpg"
+        },
+        "logoUrl": {
+            "remoteUrl": {
+                "english": "https://cdn2.steamgriddb.com/logo/8a42fb391ac55add6aac8811ffaea5f5.png",
+                "schinese": "https://cdn2.steamgriddb.com/logo/9763616920135ae280576494ba862400.png",
+                "tchinese": "https://cdn2.steamgriddb.com/logo/8d9b022a432f971e2709ee034c4c5b78.png",
+                "japanese": "https://cdn2.steamgriddb.com/logo/fbc76759695dc9f21aa1a66979ad484e.png",
+                "korean": "https://cdn2.steamgriddb.com/logo/ea00610769a1105bee9d3258af02ea4f.png"
+            },
+            "filePath": {
+                "english": "%USERDATA%/game_assets/hoyo_hi3.logo_english.png",
+                "schinese": "%USERDATA%/game_assets/hoyo_hi3.logo_schinese.png",
+                "tchinese": "%USERDATA%/game_assets/hoyo_hi3.logo_tchinese.png",
+                "japanese": "%USERDATA%/game_assets/hoyo_hi3.logo_japanese.png",
+                "korean": "%USERDATA%/game_assets/hoyo_hi3.logo_korean.png"
+            },
+            "logo_position": {
+                "pinned_position": "CenterCenter",
+                "height_pct": 40,
+                "width_pct": 25
+            }
+        },
+        "capsuleUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/a1fde6b743bdfa3c9798536192b9143d.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_hi3.capsule.jpg"
+        },
+        "headerUrl": {
+            "remoteUrl": "https://cdn2.steamgriddb.com/grid/71205fe30316d21c92a2a6fd890a17f8.png",
+            "filePath": "%USERDATA%/game_assets/hoyo_hi3.header.webp"
+        }
+    }
 }
